@@ -1,0 +1,44 @@
+.titulo{
+    text-align: center;
+    margin-right: 10%;
+    padding-bottom: 5%;
+}
+
+.bordaForm{
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+    height: 600px;
+    background-color: white;
+}
+
+input[type=text]{
+    width: 82%;
+}
+
+input[type=submit]{
+    width: 25%;
+    font-size: 14px;
+    height: 31px;
+    border: 1px solid black;
+    background: rgb(30, 30, 215);
+    border-radius: 6px;
+    cursor: pointer;
+}
+input[type=submit]:hover{
+    background: rgb(30, 30, 170);
+}
+
+input[type=button]{
+    width: 25%;
+    font-size: 14px;
+    height: 31px;
+    border: 1px solid black;
+    background: red;
+    border-radius: 6px;
+    cursor: pointer;
+}
+input[type=button]:hover{
+    background: rgb(185, 0, 0);
+}
