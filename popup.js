@@ -17,7 +17,7 @@ escurecePendente.addEventListener('click', event => {
     const nomesClasses = ['popupFechar', 'fundoPendente'];
     const deveFechar = nomesClasses.some(nomeClasse => nomeClasse === classNameOfClickedElement);
 
-    if(deveFechar){
+    if(deveFechar || event.target.className == 'fa-solid fa-xmark'){
         escurecePendente.style.display = 'none';
     }
 })
@@ -27,7 +27,7 @@ escurecePronto.addEventListener('click', event => {
     const nomesClasses = ['popupFechar', 'fundoPronto'];
     const deveFechar = nomesClasses.some(nomeClasse => nomeClasse === classNameOfClickedElement);
 
-    if(deveFechar){
+    if(deveFechar || event.target.className == 'fa-solid fa-xmark'){
         escurecePronto.style.display = 'none';
     }
 })

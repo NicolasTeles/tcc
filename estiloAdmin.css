@@ -56,6 +56,21 @@ button{
     top: 5px;
     right: 10px;
     cursor: pointer;
-    background:  crimson;
-    width: 15px;
+    background-color: transparent;
+    width: 20px;
+    height: 15px;
+    height: auto;
+    border-radius: 4px;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.popupFechar:hover{
+    background-color: crimson;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
 }
