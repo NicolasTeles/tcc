@@ -25,7 +25,6 @@
             </form>
             <p style="text-align: center;">Ainda não possui uma conta? <a href="cadastro.php" >Registre-se</a></p>
         </fieldset>
-
         <script src="formulario.js"></script>
     </body>
 </html>
