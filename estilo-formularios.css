@@ -1,44 +1,125 @@
-.titulo{
-    text-align: center;
-    margin-right: 10%;
-    padding-bottom: 5%;
+*{
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background: linear-gradient(90deg, #711613, #3a1624);
+    overflow: hidden;
 }
 
+.titulo{
+    text-align: center;    
+    font-weight: bold;
+    top: 135px;
+    position: relative;
+    color:whitesmoke;
+    font-size: 50px;
+    animation: fade 1s;
+}
 .bordaForm{
+
+    border: 1px solid rgb(78, 77, 77);
+    border-radius: 10px;
     width: 30%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 5%;
-    height: 600px;
+    margin-top: 8%;
+    height: 420px;
     background-color: white;
+    animation: fade 1s;
+}
+.divlink {
+    animation: fade 1s;
+}
+.divlink a {
+    text-decoration: none;
+    font-size: 22px;
+    color: whitesmoke;
+    width: 100px;
+}
+.divlink a:hover{
+    background: white;
+    border-radius: 6px;
+    height: auto;
+    color: #3a1624;
+    transition: all .2s ease-in-out;
+    position: relative;
+}
+
+
+form{
+    margin-left: 10%;
+    position: relative;
+    top: 50px; 
+    overflow: hidden;
+}
+form .input-block:nth-child(1){
+     animation: move 500ms;
+     animation-delay: 100ms;
+     animation-fill-mode: backwards;
+
+}
+form .input-block:nth-child(3){
+    animation: move 500ms;
+    animation-delay: 400ms;
+    animation-fill-mode: backwards;
+}
+form .divcadastro{
+    text-align: center; 
+    margin-right: 15%;
+    animation: move 500ms;
+    animation-delay: 600ms;
+    animation-fill-mode: backwards;
+}
+label{
+    font-weight: bold;
+    font-size: 1.5rem;
+   
 }
 
 input[type=text]{
-    width: 82%;
+    background-color:rgb(251, 249, 249);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 85%;
+    border: none;
+    border-bottom: 3px solid #323232;
+    padding: 10px;
+    font-size: .9rem;
+}
+input:focus{
+    outline: none;
 }
 
-input[type=submit]{
-    width: 25%;
-    font-size: 14px;
-    height: 31px;
-    border: 1px solid black;
-    background: rgb(30, 30, 215);
-    border-radius: 6px;
-    cursor: pointer;
+
+/*Keyframes para Animações*/
+@keyframes fade {
+    from{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
 }
-input[type=submit]:hover{
-    background: rgb(30, 30, 170);
+@keyframes move {
+    from{
+        opacity: 0;
+        transform: translateX(-35%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@keyframes bot{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.05);
+    }
 }
 
-input[type=button]{
-    width: 25%;
-    font-size: 14px;
-    height: 31px;
-    border: 1px solid black;
-    background: red;
-    border-radius: 6px;
-    cursor: pointer;
-}
-input[type=button]:hover{
-    background: rgb(185, 0, 0);
-}

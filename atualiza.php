@@ -11,11 +11,11 @@
         echo "<script>window.location = 'login.php';</script>";
     }else{
         if($conn->query($sql) === true){
-            echo "<script>alert('Registro atualizado com sucesso!');</script>";
+            echo "<script>alert('Login atualizado com sucesso!');</script>";
             echo "<script>window.location = 'login.php';</script>";
         }else{
             echo "Erro: " .$sql. "<br>" .$conn->error;
             echo "<script>window.history.back();</script>";
         }
     }
-?>
+?>  
