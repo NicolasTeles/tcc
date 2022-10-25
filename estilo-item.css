@@ -5,7 +5,6 @@
 }
 body{
     background: linear-gradient(90deg, #711613, #3a1624);
-    overflow: hidden;
 }
 
 .titulo{
@@ -20,11 +19,11 @@ body{
 
     border: 1px solid rgb(78, 77, 77);
     border-radius: 10px;
-    width: 30%;
+    width: 40%;
     margin-right: auto;
     margin-left: auto;
     margin-top: 8%;
-    height: 420px;
+    height: 700px;
     background-color: white;
     animation: fade 1s;
 }
@@ -76,6 +75,16 @@ label{
     font-size: 1.5rem;
    
 }
+textarea{
+    background-color:rgb(251, 249, 249);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 85%;
+    border: none;
+    border-bottom: 3px solid #323232;
+    padding: 10px;
+    font-size: .5rem;
+}
 
 input[type=text]{
     background-color:rgb(251, 249, 249);
@@ -86,6 +95,27 @@ input[type=text]{
     border-bottom: 3px solid #323232;
     padding: 10px;
     font-size: .9rem;
+}
+input[type=number]{
+    background-color:rgb(251, 249, 249);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 85%;
+    border: none;
+    border-bottom: 3px solid #323232;
+    padding: 10px;
+    font-size: .9rem;
+}
+select{
+    background-color:rgb(251, 249, 249);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 33%;
+    border: none;
+    border-bottom: 3px solid #323232;
+    padding: 10px;
+    font-size: .9rem;
+    text-align: justify;
 }
 input:focus{
     outline: none;

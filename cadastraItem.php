@@ -6,28 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="estilo-formularios.css">
+    <link rel="stylesheet" href="estilo-item.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
 <body>
-    <h1 class="titulo" style="top: 100px;">Cadastro</h1>
+    <h1 class="titulo" style="top: 100px;">Cadastro de Itens</h1>
     <fieldset class="bordaForm">
-        <form action="insert.php" method="post">
+        <form action="" method="post">
           
 
             <div class="input-block">
-                <label for="nome">Nome:</label><br>
-                <input type="text" id="nome" name="nome" placeholder="Nome" style="width: 42%" required>
-                <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" style="width: 41%" required>
+                <label for="nomeItem">Nome:</label><br>
+                <input type="text" id="nomeItem" name="nomeItem" placeholder="Nome" required>
             </div>
 
             <div style="height: 75px;"></div>
 
             <div class="input-block">
-                <label for="cel">Telefone:</label><br>
-                <input type="text" id="cel" name="cel" placeholder="(99) 9 9999-9999" maxlength="16" required>
+                <label for="desc">Descrição:</label><br>
+                <textarea name="desc" id="desc" cols="50" rows="2" style="width: 85%;" placeholder="Descrição"></textarea>
+            </div>
+
+            <div style="height: 75px;"></div>
+
+            <div class="input-block">
+                <label for="preco">Preço:</label><br>
+                <input type="number" name="preco" id="preco">
+            </div>
+
+            <div style="height: 30px;"></div>
+
+            
+            <div class="input-block">
+                <label for="tipo:">Tipo:</label><br>
+                <select name="tipo" id="tipo">
+                    <option value="Lanche">Lanche</option>
+                    <option value="Bebida">Bebida</option>
+                    <option value="Sobremesa">Sobremesa</option>
+                </select>
             </div>
 
             <div style="height: 75px;"></div>
