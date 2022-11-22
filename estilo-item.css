@@ -121,6 +121,16 @@ input:focus{
     outline: none;
 }
 
+input[type=file]{
+    background-color:rgb(251, 249, 249);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 85%;
+    border: none;
+    border-bottom: 3px solid #323232;
+    padding: 10px;
+    font-size: .5rem;
+}
 
 /*Keyframes para Animações*/
 @keyframes fade {

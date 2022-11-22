@@ -16,7 +16,6 @@
     <fieldset class="bordaForm">
         <form action="" method="post">
           
-
             <div class="input-block">
                 <label for="nomeItem">Nome:</label><br>
                 <input type="text" id="nomeItem" name="nomeItem" placeholder="Nome" required>
@@ -40,12 +39,21 @@
 
             
             <div class="input-block">
-                <label for="tipo:">Tipo:</label><br>
-                <select name="tipo" id="tipo">
-                    <option value="Lanche">Lanche</option>
-                    <option value="Bebida">Bebida</option>
-                    <option value="Sobremesa">Sobremesa</option>
-                </select>
+                <label for="tipo">Tipo:</label><br>
+                <div style="margin-left: 20%;">
+                    <select name="tipo" id="tipo" style="width: 60%;">
+                        <option value="Lanche">Lanche</option>
+                        <option value="Bebida">Bebida</option>
+                        <option value="Sobremesa">Sobremesa</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="height: 30px;"></div>
+
+            <div style="width: 85%;">
+                <label for="imagem">Imagem:</label>
+                <input type="file" class="form-control" accept="image/*" name="imagem" id="imagem">
             </div>
 
             <div style="height: 75px;"></div>
