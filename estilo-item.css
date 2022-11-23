@@ -23,20 +23,20 @@ body{
     margin-right: auto;
     margin-left: auto;
     margin-top: 8%;
-    height: 700px;
+    height: 720px;
     background-color: white;
     animation: fade 1s;
 }
 .divlink {
     animation: fade 1s;
 }
-.divlink a {
+.divlink{
     text-decoration: none;
     font-size: 22px;
     color: whitesmoke;
     width: 100px;
 }
-.divlink a:hover{
+.divlink:hover{
     background: white;
     border-radius: 6px;
     height: auto;
@@ -127,9 +127,12 @@ input[type=file]{
     border-top-right-radius: 8px;
     width: 85%;
     border: none;
-    border-bottom: 3px solid #323232;
     padding: 10px;
-    font-size: .5rem;
+    font-size: .9rem;
+    border-bottom: 3px solid #323232;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    height: 40px;
 }
 
 /*Keyframes para Animações*/

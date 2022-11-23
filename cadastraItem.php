@@ -44,7 +44,6 @@
                     <select name="tipo" id="tipo" style="width: 60%;">
                         <option value="Lanche">Lanche</option>
                         <option value="Bebida">Bebida</option>
-                        <option value="Sobremesa">Sobremesa</option>
                     </select>
                 </div>
             </div>
@@ -54,16 +53,15 @@
             <label for="imagem">Imagem:</label>
             <input type="file" class="form-control" accept="image/*" name="imagem" id="imagem">
 
-            <div style="height: 75px;"></div>
+            <div style="height: 50px;"></div>
 
             <div class= divcadastro>
                 <input type="submit" id="enviar" value="Cadastrar" style="margin-right: 10%;" class="btn btn-outline-primary">
                 <a href="index.html"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
             </div>
         </form>
-        <div style="height: 15px;"></div>
     </fieldset>
-    <div class="divlink"><p style="text-align: center;"><a href="login.php"> Já tenho uma conta ></a></p></div>
+    <div style="height: 75px;"></div>
   
     <script src="formulario.js"></script>
 </body>
