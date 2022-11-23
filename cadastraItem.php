@@ -32,7 +32,7 @@
 
             <div class="input-block">
                 <label for="preco">Preço:</label><br>
-                <input type="number" name="preco" id="preco">
+                <input type="number" name="preco" id="preco" placeholder="Preço">
             </div>
 
             <div style="height: 30px;"></div>
@@ -51,10 +51,8 @@
 
             <div style="height: 30px;"></div>
 
-            <div style="width: 85%;">
-                <label for="imagem">Imagem:</label>
-                <input type="file" class="form-control" accept="image/*" name="imagem" id="imagem">
-            </div>
+            <label for="imagem">Imagem:</label>
+            <input type="file" class="form-control" accept="image/*" name="imagem" id="imagem">
 
             <div style="height: 75px;"></div>
 
