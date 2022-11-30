@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="estiloFunc.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -34,6 +35,7 @@
             <div class="input-block">
                 <label for="senhaFunc">Senha:</label><br>
                 <input type="password" id="senhaFunc" name="senhaFunc" required>
+                <i class="bi bi-eye-slash bi-eye" id="botaoSenha"></i>
             </div>
 
             <div style="height: 75px;"></div>
@@ -41,6 +43,7 @@
             <div class="input-block">
                 <label for="confirmaSenha">Confirme a senha:</label><br>
                 <input type="password" id="confirmaSenha" name="confirmaSenha" required>
+                <i class="bi bi-eye-slash bi-eye" id="botaoConfirma"></i>
             </div>
 
             <div style="height: 75px;"></div>
@@ -52,6 +55,7 @@
         </form>
         <div style="height: 15px;"></div>
     </fieldset>
+    <script src="funcionario.js"></script>
 </body>
 
 </html>

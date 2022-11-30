@@ -7,6 +7,11 @@ body{
     background: linear-gradient(90deg, #711613, #3a1624);
 }
 
+i{
+    margin-left: -30px;
+    cursor: pointer;
+}
+
 .titulo{
     text-align: center;    
     font-weight: bold;
@@ -155,6 +160,10 @@ input[type=file]{
     height: 750px;
     background-color: white;
     animation: fade 1s;
+}
+
+button{
+    border: none;
 }
 
 /*Keyframes para Animações*/
