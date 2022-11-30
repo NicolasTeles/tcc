@@ -5,9 +5,9 @@
     $cel = $_POST['cel'];
     $consulta = "SELECT * FROM cliente WHERE numeroCliente = '" .$cel. "'";
     $resultado = $conn->query($consulta);
-    $sql = "INSERT INTO cliente (nomeCliente, sobrenomeCliente, numeroCliente) 
-    VALUES ('" .$nome. "', '" .$sobrenome. "', '" .$cel. "')";
     if($resultado->num_rows<=0){
+        $sql = "INSERT INTO cliente (nomeCliente, sobrenomeCliente, numeroCliente) 
+        VALUES ('" .$nome. "', '" .$sobrenome. "', '" .$cel. "')";
         if($conn->query($sql) === true){
             echo "<script>alert('Registro inserido com sucesso!');</script>";
             echo "<script>window.location = 'cadastro.php';</script>";

@@ -14,7 +14,7 @@
 <body>
     <h1 class="titulo" style="top: 100px;">Cadastro de Funcionário</h1>
     <fieldset class="bordaFunc">
-        <form action="" method="post">
+        <form action="insertFuncionario.php" method="post">
           
 
             <div class="input-block">

@@ -31,3 +31,15 @@ let cadastra = document.getElementById("enviar");
     senha.setAttribute("type", "password");
     confirma.setAttribute("type", "password");
 });
+
+const form = document.querySelector("form");
+cadastra.addEventListener("click", function(){
+    if(senha.value != confirma.value){
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+        }); 
+        alert("As senhas não coincidem");
+        senha.value="";
+        confirma.value="";
+    }
+});
