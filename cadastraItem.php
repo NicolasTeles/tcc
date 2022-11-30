@@ -14,7 +14,7 @@
 <body>
     <h1 class="titulo" style="top: 100px;">Cadastro de Itens</h1>
     <fieldset class="bordaForm">
-        <form action="" method="post">
+        <form action="insertItem.php" method="post">
           
             <div class="input-block">
                 <label for="nomeItem">Nome:</label><br>
@@ -62,8 +62,6 @@
         </form>
     </fieldset>
     <div style="height: 75px;"></div>
-  
-    <script src="formulario.js"></script>
 </body>
 
 </html>

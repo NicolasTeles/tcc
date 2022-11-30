@@ -106,6 +106,16 @@ input[type=number]{
     padding: 10px;
     font-size: .9rem;
 }
+input[type=password]{
+    background-color:rgb(251, 249, 249);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 85%;
+    border: none;
+    border-bottom: 3px solid #323232;
+    padding: 10px;
+    font-size: .9rem;
+}
 select{
     background-color:rgb(251, 249, 249);
     border-top-left-radius: 8px;
@@ -133,6 +143,18 @@ input[type=file]{
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     height: 40px;
+}
+
+.bordaFunc{
+    border: 1px solid rgb(78, 77, 77);
+    border-radius: 10px;
+    width: 40%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 8%;
+    height: 750px;
+    background-color: white;
+    animation: fade 1s;
 }
 
 /*Keyframes para Animações*/
