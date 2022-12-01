@@ -28,7 +28,7 @@ i{
     margin-right: auto;
     margin-left: auto;
     margin-top: 8%;
-    height: 720px;
+    /*height: 720px;*/
     background-color: white;
     animation: fade 1s;
 }
@@ -68,10 +68,9 @@ form .input-block:nth-child(3){
     animation-delay: 400ms;
     animation-fill-mode: backwards;
 }
-.divcadastro{
+form .divcadastro{
     text-align: center; 
     margin-right: 15%;
-    margin-top: 8%;
     animation: move 500ms;
     animation-delay: 600ms;
     animation-fill-mode: backwards;
