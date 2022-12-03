@@ -8,15 +8,10 @@
         echo "<script>alert('Email não cadastrado');</script>";
         echo "<script>window.location = 'loginFuncionario.php';</script>";
     }else{
-        $exibir = $resultado->fetch_assoc();
-        if($senha != $exibir["senhaFuncionario"]){
+        $validarSenha = $resultado->fetch_assoc();
+        if($senha != $validarSenha["senhaFuncionario"]){
             echo "<script>alert('Senha incorreta');</script>";
-            echo "<script>alert('" .$email. "');</script>";
             echo "<script>window.location = 'loginFuncionario.php';</script>";
-            echo "<script>let emailFunc = document.getElementById('emailFunc');</script>";
-            echo "<script>emailFunc.value =" .$email. ";</script>";
-            
-            
         }else{
             echo "<script>alert('login concluido com êxito');</script>";
             echo "<script>window.location = 'loginFuncionario.php';</script>";

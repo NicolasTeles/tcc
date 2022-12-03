@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Nov-2022 às 01:51
+-- Tempo de geração: 03-Dez-2022 às 20:32
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -33,16 +33,17 @@ CREATE TABLE `cliente` (
   `sobrenomeCliente` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Extraindo dados da tabela `cliente`
+-- Estrutura da tabela `funcionario`
 --
 
-INSERT INTO `cliente` (`nomeCliente`, `numeroCliente`, `sobrenomeCliente`) VALUES
-('Marcio', '(11) 1 1111-1111', 'Assis'),
-('Gabriel', '(22) 2 2222-2222', 'James'),
-('Nicolas', '(31) 9 8529-6189', 'Teles'),
-('Henrique ', '(31) 9 9999-9999', 'Augusto'),
-('Eduardo', '(33) 3 3333-3333', 'Octavio');
+CREATE TABLE `funcionario` (
+  `nomeFuncionario` varchar(40) NOT NULL,
+  `emailFuncionario` varchar(50) NOT NULL,
+  `senhaFuncionario` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -60,13 +61,6 @@ CREATE TABLE `item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `item`
---
-
-INSERT INTO `item` (`nomeItem`, `idItem`, `descItem`, `precoItem`, `tipoItem`, `imgItem`) VALUES
-('Teste', 1, 'Isso é um teste', '13', 'Bebida', 0x333336373831363433385f776964655f73686f745f7261696e696e675f6d6f6465726e5f7265666c6563746976655f6e656f6e5f6c69745f637962657270756e6b5f636974792e706e67);
-
---
 -- Índices para tabelas despejadas
 --
 
@@ -75,6 +69,12 @@ INSERT INTO `item` (`nomeItem`, `idItem`, `descItem`, `precoItem`, `tipoItem`, `
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`numeroCliente`);
+
+--
+-- Índices para tabela `funcionario`
+--
+ALTER TABLE `funcionario`
+  ADD PRIMARY KEY (`emailFuncionario`);
 
 --
 -- Índices para tabela `item`
@@ -90,7 +90,7 @@ ALTER TABLE `item`
 -- AUTO_INCREMENT de tabela `item`
 --
 ALTER TABLE `item`
-  MODIFY `idItem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idItem` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
