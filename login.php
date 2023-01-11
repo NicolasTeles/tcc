@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="estilo-formularios.css">
+    <link rel="stylesheet" href="estiloFormularios.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -37,7 +37,6 @@
         </form>
         <div style="height: 15px;"></div>
     </fieldset>
-    <div class="divlink"><p style="text-align: center;"><a href="cadastro.php">Registre-se > </a></p></div>
  
     <script src="formulario.js"></script>
 </body>

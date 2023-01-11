@@ -1,0 +1,7 @@
+.titulo{
+    text-align: center;    
+    font-weight: bold;
+    position: relative;
+    font-size: 50px;
+    animation: fade 1s;
+}

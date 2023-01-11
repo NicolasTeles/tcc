@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="estilo-item.css">
+    <link rel="stylesheet" href="estiloItem.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <script src="subtipo.js"></script>
 </head>
 
 <body>
     <h1 class="titulo" style="top: 100px;">Cadastro de Itens</h1>
     <fieldset class="bordaForm">
-        <form action="insertItem.php" method="post">
+        <form action="insertItem.php" method="post" enctype="multipart/form-data">
           
             <div class="input-block">
                 <label for="nomeItem">Nome:</label><br>
@@ -32,7 +32,7 @@
 
             <div class="input-block">
                 <label for="preco">Preço:</label><br>
-                <input type="number" name="preco" id="preco" placeholder="Preço">
+                <input type="text" name="preco" id="preco" placeholder="Preço">
             </div>
 
             <div style="height: 30px;"></div>
@@ -41,9 +41,25 @@
             <div class="input-block">
                 <label for="tipo">Tipo:</label><br>
                 <div style="margin-left: 20%;">
-                    <select name="tipo" id="tipo" style="width: 60%;">
+                    <select name="tipo" id="tipo" style="width: 60%;" onchange="mudaOpcao()">
                         <option value="Lanche">Lanche</option>
                         <option value="Bebida">Bebida</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="height: 30px;"></div>
+
+            
+            <div class="input-block">
+                <label for="subtipo">Sub-tipo:</label><br>
+                <div style="margin-left: 20%;">
+                    <select name="subtipo" id="subtipo" style="width: 60%;">
+                        <option value="Quiches" selected>Quiches</option>
+                        <option value="Folhados">Folhados</option>
+                        <option value="Pão de Queijo">Pão de Queijo</option>
+                        <option value="Sanduiches e Omeletes">Sanduiches & Omeletes</option>
+                        <option value="Doces">Doces</option>
                     </select>
                 </div>
             </div>
