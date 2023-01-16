@@ -33,7 +33,7 @@
               <th class="thCarrinho">Apagar</th>
               <tbody class="tbody"></tbody>
             </table>
-              <input type="button" value="Finalizar pedido" class="buttonCarrinho" onclick="">
+              <input type="button" value="Finalizar pedido" class="buttonCarrinho" onclick="produto.enviaPedido()">
 
           </div>
       </div>
@@ -688,7 +688,7 @@
   </div>
 
   <div class="fundo"></div>
-  <script src="index-script.js"></script>
+  <script src="indexScript.js"></script>
 </body>
 
 </html>

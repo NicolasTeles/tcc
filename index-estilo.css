@@ -80,7 +80,7 @@ header .navCarrinho .cardiv {
 }*/
 
 .linkUsuario{
-  text-decoration: none;
+  text-decoration: underline;
   background: transparent;
   width: 100%;
   border-radius: 0;

@@ -1,5 +1,5 @@
 <?php
-    include 'conexao.php';
+    require_once('conexao.php');
     $nome = $_POST['nome'];
     $sobrenome = $_POST['sobrenome'];
     $cel = $_POST['cel'];
@@ -19,5 +19,4 @@
         echo "<script>alert('Esse número de telefone já está cadastrado')</script>";
         echo "<script>window.location = 'cadastro.php';</script>";
     }
-    $conn->close();
 ?>

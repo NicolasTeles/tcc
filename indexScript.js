@@ -346,13 +346,12 @@ class Produto {
             //td_id.innerText = this.arrayProdutos[i].id;//dou valor as linhas da tabela
             td_nome.innerText = this.arrayProdutos[i].nomeProduto;
             td_preco.innerText = this.arrayProdutos[i].preco;
-            let precoSeparado = this.arrayProdutos[i].preco.split(/[$,]/);
-            let precoNum = Number(precoSeparado[1] + "." + precoSeparado[2]);
-            let totalNum = precoNum * this.arrayProdutos[i].qtde;
-            let totalString = totalNum.toString().split(".");
+            var precoSeparado = this.arrayProdutos[i].preco.split(/[$,]/);
+            var precoNum = Number(precoSeparado[1] + "." + precoSeparado[2]);
+            var totalNum = precoNum * this.arrayProdutos[i].qtde;
+            var totalString = totalNum.toString().split(".");
             if (totalString[1] != undefined && totalString[1] != null) {
-                td_total.innerText =
-                    "R$" + (totalString[0] + "," + totalString[1] + "0");
+                td_total.innerText = "R$" + (totalString[0] + "," + totalString[1] + "0");
             } else {
                 td_total.innerText = "R$" + (totalString[0] + ",00");
             }
@@ -405,12 +404,27 @@ class Produto {
             var img_produto = this.arrayProdutos[i].imagem;
             var nm_produto = this.arrayProdutos[i].nomeProduto;
             var qtde_produto = this.arrayProdutos[i].qtde;
+            var date = new Date();
+            var dataBrasil = date.toLocaleString();
+            var status_pedido = 'Pedido feito'; 
+            var total_produto;
+
+            var precoSeparado = this.arrayProdutos[i].preco.split(/[$,]/);
+            var precoNum = Number(precoSeparado[1] + "." + precoSeparado[2]);
+            var totalNum = precoNum * this.arrayProdutos[i].qtde;
+            var totalString = totalNum.toString().split(".");
+            if (totalString[1] != undefined && totalString[1] != null) {
+                total_produto = "R$" + (totalString[0] + "," + totalString[1] + "0");
+            } else {
+                total_produto = "R$" + (totalString[0] + ",00");
+            }
+
             var preco_produto = this.arrayProdutos[i].preco;
-            var total_produto =
-                this.arrayProdutos[i].preco * this.arrayProdutos[i].qtde;
-        }
-        var src =
-            "enviaPedido.php?imagem_produto=" +
+
+            var src =
+            "enviaPedido.php?data="+
+            dataBrasil+
+            "&imagem_produto=" +
             img_produto +
             "&nome=" +
             nm_produto +
@@ -419,8 +433,10 @@ class Produto {
             "&qtde=" +
             qtde_produto +
             "&total=" +
-            total_produto;
-        window.location.assign(src);
+            total_produto+
+            "&status="+status_pedido;
+            window.location.assign(src);
+        }
     }
     deletar(idDeletar) {
         let nomeDeletar;

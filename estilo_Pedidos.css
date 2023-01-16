@@ -1,0 +1,171 @@
+.classcabecalho {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(800deg, #3a1624, #711613);
+}
+
+.logoimg {
+    height: 115px;
+    width: 120px;
+}
+
+.blog-title:before,
+.blog-title:after {
+    background-color: #adabab;
+    content: "";
+    display: inline-block;
+    height: 4px;
+    border-radius: 15px;
+    vertical-align: middle;
+    border: 0.5px solid #acaaaa;
+    width: 50%;
+}
+
+.blog-title:before {
+    right: .5em;
+    margin-left: -50%;
+}
+
+.blog-title:after {
+    left: .5em;
+    margin-right: -50%;
+}
+
+h1 {
+    padding: 30px;
+    color: #6e6e6e;
+}
+
+.divPedido{
+  box-shadow: 0px 3px 13px #3f0c0b; 
+  background: #94443c;
+  border-radius: 5px;
+  padding: 20px;
+  width: 60vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+.divPedidoBranca_Pendente {
+    border-radius: 5px;
+    width: auto;
+    background-color: white;
+}
+.divPedidoBranca_Processo {
+    border-radius: 5px;
+    width: auto;
+    background-color: white;
+}
+.divPedidoBranca_Concluido {
+    border-radius: 5px;
+    width: auto;
+    background-color: white;
+}
+.divPedidoBranca_vazia{
+    border-radius: 5px;
+    width: 100%;
+    background-color: white;
+}
+.tabela{
+    border: 3px solid #adabab;
+    border-collapse: collapse;
+    height: 10vh;
+    width: auto;
+}
+.textoPedido{
+    text-align: center;
+    width: 100%; 
+}
+.textoProcesso{
+    text-align: center;
+    width: 100%; 
+}
+th{
+    background-color: lightgray;
+}
+td{
+    text-align: center;
+}
+.td_desc{
+    width: 10vw;
+    text-align: left;
+    word-break: break-word;
+}
+img{   
+    margin-top: 5px;
+    width: 80px;
+    height: auto;
+}
+.divStatus{
+    display: inline-block;
+}
+.divCancelado{
+    display: inline-block;
+}
+.buttonPedidoPendente {
+    padding: 0px 5px;
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 3px solid #fcc204;
+    border-radius: 5px;
+}
+.buttonPedidoPendente:hover {
+    background-color: #fcc204;
+    color: white;
+    opacity: 0.9;
+}
+.buttonPedidoCancelado{
+    display: inline-block;
+    padding: 0px 5px;
+    width: 130px;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 3px solid red;
+    border-radius: 5px;
+}
+.buttonPedidoCancelado:hover {
+    background-color: red;
+    color: white;
+    opacity: 0.9;
+}
+.buttonPedidoConcluido{
+    display: inline-block;
+    padding: 0px 5px;
+    width: 130px;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 3px solid #80d668;
+    border-radius: 5px;
+}
+.buttonPedidoConcluido:hover {
+    background-color: #80d668;
+    color: white;
+    opacity: 0.9;
+}
+.buttonPedidoFinalizado{
+    display: inline-block;
+    padding: 0px 5px;
+    width: 130px;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 3px solid rgb(56, 65, 97);
+    border-radius: 5px;
+}
+.buttonPedidoFinalizado:hover {
+    background-color: rgb(56, 65, 97);
+    color: white;
+    opacity: 0.9;
+}
+body{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
