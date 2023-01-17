@@ -17,4 +17,4 @@ input.addEventListener('keypress', () => {
     if(inputlenght === 11){
         input.value += "-"
     }
-})
+});

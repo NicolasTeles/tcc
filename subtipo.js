@@ -67,3 +67,64 @@ function mudaOpcao(){
         document.getElementById("subtipo").options.add(c);
     }
 }
+
+function criaOpcoes(){
+    var qtdeTamanhos = document.getElementById("qtdeTamanhos").value;
+    if(qtdeTamanhos > 3){
+        alert("O limite de opções é 3");
+        qtdeTamanhos.value = "";
+    }else if(qtdeTamanhos == 0 || qtdeTamanhos == "" || qtdeTamanhos == undefined || qtdeTamanhos == null){
+        //alert("Favor inserir uma quantidade de opções");
+        console.log()
+    }else{
+        for(let i=0; i<qtdeTamanhos; i++){
+            var label = document.createElement("label");
+            label.for = "field"+i;
+            label.innerHTML = i+1 +"ª opção";
+            var input = document.createElement("input");
+            input.type = "text";
+            input.name = "field"+i;
+            input.id = "field"+i;
+            document.getElementById("container").appendChild(label);
+            document.getElementById("container").appendChild(input);
+        }
+    }
+}
+$(document).ready(function(){
+    let textoCheckbox = document.getElementById("bold");
+    var testaChecado = document.getElementById("confereTamanho");
+
+    textoCheckbox.addEventListener('click', () => {
+        if(testaChecado.checked){
+            testaChecado.checked = false;
+            checou();
+        }else{
+            testaChecado.checked = true;
+            checou();
+        }
+    });
+});
+
+function checou(){
+    var checkbox = document.querySelector("#confereTamanho");
+    var numTamanhos = document.querySelector("#qtdeTamanhos");
+    var btnOpcao = document.querySelector("#criaOpcao");
+    var divContainer = document.querySelector("#container");
+    var textarea = document.querySelector("#desc");
+    
+    
+    
+    if(checkbox.checked){
+        numTamanhos.hidden = false;
+        btnOpcao.hidden = false;
+        divContainer.hidden = false;
+        textarea.value = "";
+        textarea.disabled = true;
+    }else{
+        numTamanhos.hidden = true;
+        btnOpcao.hidden = true;
+        divContainer.hidden = true;
+        textarea.value = "";
+        textarea.disabled = false;
+    }
+}

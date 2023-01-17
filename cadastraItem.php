@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="estiloItem.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="subtipo.js"></script>
 </head>
@@ -22,6 +23,18 @@
             </div>
 
             <div style="height: 75px;"></div>
+
+            <div class="input-block">
+                <input type="checkbox" name="confereTamanho" id="confereTamanho" onchange="checou()">
+                <p id="bold">Deseja ter tamanhos diferentes para esse item?</p>
+                <input type="number" name="qtdeTamanhos" id="qtdeTamanhos" max="3" min="1" hidden>
+                <button type="button" class="btn btn-secondary" id="criaOpcao" onclick="criaOpcoes()" hidden>Criar opções</button>
+                <div id="container" hidden>
+
+                </div>
+            </div>
+
+            <div style="height: 70px;"></div>
 
             <div class="input-block">
                 <label for="desc">Descrição:</label><br>

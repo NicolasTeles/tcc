@@ -100,11 +100,12 @@ input[type=number]{
     background-color:rgb(251, 249, 249);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    width: 85%;
+    width: 55%;
     border: none;
     border-bottom: 3px solid #323232;
     padding: 10px;
     font-size: .9rem;
+    display: inline-block;
 }
 input[type=password]{
     background-color:rgb(251, 249, 249);
@@ -155,6 +156,22 @@ input[type=file]{
     height: 750px;
     background-color: white;
     animation: fade 1s;
+}
+
+#bold{
+    font-size: 20px;
+    animation: fade;
+    font-weight: bolder;
+    display: inline-block;
+}
+
+button{
+    width: 30%;
+    display: inline-block;
+}
+
+#confereTamanho:hover, #bold:hover{
+    cursor: pointer;
 }
 
 /*Keyframes para Animações*/
