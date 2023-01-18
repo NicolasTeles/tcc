@@ -73,23 +73,45 @@ function criaOpcoes(){
     if(qtdeTamanhos > 3){
         alert("O limite de opções é 3");
         qtdeTamanhos.value = "";
-    }else if(qtdeTamanhos == 0 || qtdeTamanhos == "" || qtdeTamanhos == undefined || qtdeTamanhos == null){
-        //alert("Favor inserir uma quantidade de opções");
-        console.log()
+    }else if(!qtdeTamanhos){
+        alert("Favor inserir uma quantidade de opções");
     }else{
+        var tamanho = document.querySelectorAll(".tamanhos");
+        var labelTamanho = document.querySelectorAll(".labelTamanho");
+        // var precos = document.querySelectorAll(".precoMultiplo");
+        if (tamanho.length>qtdeTamanhos) {
+            for (let j = qtdeTamanhos; j < tamanho.length; j++) {
+                document.getElementById("container").removeChild(labelTamanho[j]);
+                document.getElementById("container").removeChild(tamanho[j]);
+                criaDesc();
+            }
+        }
         for(let i=0; i<qtdeTamanhos; i++){
-            var label = document.createElement("label");
-            label.for = "field"+i;
-            label.innerHTML = i+1 +"ª opção";
-            var input = document.createElement("input");
-            input.type = "text";
-            input.name = "field"+i;
-            input.id = "field"+i;
-            document.getElementById("container").appendChild(label);
-            document.getElementById("container").appendChild(input);
+            if(!tamanho[i]){
+                // var inputPreco = document.createElement("input");
+                // inputPreco.type = "text";
+                // inputPreco.name = "custo"+i;
+                // inputPreco.id = "custo"+i;
+                // inputPreco.classList.add("precoMultiplo");
+
+                var label = document.createElement("label");
+                label.for = "field"+i;
+                label.classList.add("labelTamanho");
+                label.innerHTML = i+1 +"ª opção";
+
+                var input = document.createElement("input");
+                input.type = "text";
+                input.name = "field"+i;
+                input.id = "field"+i;
+                input.classList.add("tamanhos");
+                input.oninput = criaDesc;
+                document.getElementById("container").appendChild(label);
+                document.getElementById("container").appendChild(input);
+            }
         }
     }
 }
+
 $(document).ready(function(){
     let textoCheckbox = document.getElementById("bold");
     var testaChecado = document.getElementById("confereTamanho");
@@ -126,5 +148,19 @@ function checou(){
         divContainer.hidden = true;
         textarea.value = "";
         textarea.disabled = false;
+    }
+}
+
+function criaDesc(){
+    tamanhos = document.querySelectorAll(".tamanhos");
+    var caixaTexto =  document.querySelector("#desc");
+    caixaTexto.value = "";
+    for (let i = 0; i < tamanhos.length; i++) {
+        if(tamanhos[i]){
+            caixaTexto.value += tamanhos[i].value;
+            if(tamanhos[i+1]){
+                caixaTexto.value += "/";
+            }
+        }
     }
 }

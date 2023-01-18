@@ -44,6 +44,9 @@
             <div style="height: 75px;"></div>
 
             <div class="input-block">
+                <div id="containerPreco">
+                    
+                </div>
                 <label for="preco">Preço:</label><br>
                 <input type="text" name="preco" id="preco" placeholder="Preço">
             </div>
