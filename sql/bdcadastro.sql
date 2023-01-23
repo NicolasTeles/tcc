@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Dez-2022 às 20:32
+-- Tempo de geração: 23-Jan-2023 às 11:26
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -33,6 +33,18 @@ CREATE TABLE `cliente` (
   `sobrenomeCliente` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `cliente`
+--
+
+INSERT INTO `cliente` (`nomeCliente`, `numeroCliente`, `sobrenomeCliente`) VALUES
+('Marcio', '(11) 1 1111-1111', 'Assis'),
+('Gabriel', '(22) 2 2222-2222', 'James'),
+('Guilherme', '(31) 9 5555-5555', 'Victor'),
+('Nicolas', '(31) 9 8529-6189', 'Teles'),
+('Henrique ', '(31) 9 9999-9999', 'Augusto'),
+('Eduardo', '(33) 3 3333-3333', 'Octavio');
+
 -- --------------------------------------------------------
 
 --
@@ -45,6 +57,13 @@ CREATE TABLE `funcionario` (
   `senhaFuncionario` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `funcionario`
+--
+
+INSERT INTO `funcionario` (`nomeFuncionario`, `emailFuncionario`, `senhaFuncionario`) VALUES
+('Henrique Augusto', 'henriqueaugusto@gmail.com', '123');
+
 -- --------------------------------------------------------
 
 --
@@ -55,10 +74,20 @@ CREATE TABLE `item` (
   `nomeItem` varchar(30) NOT NULL,
   `idItem` int(11) NOT NULL,
   `descItem` varchar(150) NOT NULL,
-  `precoItem` varchar(10) NOT NULL,
+  `precoItem` varchar(20) NOT NULL,
   `tipoItem` varchar(10) NOT NULL,
-  `imgItem` blob NOT NULL
+  `subtipoItem` varchar(21) NOT NULL,
+  `nomeImg` varchar(50) NOT NULL,
+  `extensaoImg` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `item`
+--
+
+INSERT INTO `item` (`nomeItem`, `idItem`, `descItem`, `precoItem`, `tipoItem`, `subtipoItem`, `nomeImg`, `extensaoImg`) VALUES
+('Camarão', 14, 'Folhado de camarão', '12,00', 'Lanche', 'Folhados', '112581825.jpg', 'jpg'),
+('Pão de queijo', 26, 'Gostoso', '5,00', 'Lanche', 'Pão de Queijo', '1779605252.jpg', 'jpg');
 
 --
 -- Índices para tabelas despejadas
@@ -90,7 +119,7 @@ ALTER TABLE `item`
 -- AUTO_INCREMENT de tabela `item`
 --
 ALTER TABLE `item`
-  MODIFY `idItem` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idItem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
