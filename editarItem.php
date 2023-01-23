@@ -8,7 +8,6 @@
     <title>Editar</title>
     <link rel="stylesheet" href="estiloItem.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="subtipo.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 
@@ -203,6 +202,7 @@
         header("location: listaCardapio.php");
     } 
     ?>
+    <script src="subtipo.js"></script>
 </body>
 
 </html>

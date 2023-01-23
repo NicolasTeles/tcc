@@ -6,16 +6,18 @@ if(isset($_GET['idItem'])){
     $consulta = "SELECT * FROM item WHERE idItem=$idItem";
     $folder = "imagens/";
     $resultado = $conn->query($consulta);
-    $exibir = $resultado->fetch_assoc();
-    if($conn->query($sql) === TRUE){
+    echo "<script>console.log($sql);</script>";
+    echo "<script>console.log($consulta);</script>";
+    /*if($conn->query($sql) === TRUE){
         echo "<script>alert('Registro excluído com sucesso');</script>";
-        if (file_exists($folder . $exibir['nomeImg'])) {
-            unlink($folder . $exibir['nomeImg']);
+        if (file_exists($folder . $resultado['nomeImg'])) {
+            unlink($folder . $resultado['nomeImg']);
+        }else{
+            echo "<script>alert('Erro ao excluir a imagem');</script>";
         }
-        header("Location: listaCardapio.php");
     }else{
         echo "<script>alert('Erro ao excluir o registro');</script>";
         header("Location: listaCardapio.php");
-    }
+    }*/
 }
 ?>

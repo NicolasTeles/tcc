@@ -78,21 +78,31 @@ function criaOpcoes(){
     }else{
         var tamanho = document.querySelectorAll(".tamanhos");
         var labelTamanho = document.querySelectorAll(".labelTamanho");
-        // var precos = document.querySelectorAll(".precoMultiplo");
+        var precos = document.querySelectorAll(".precoMultiplo");
+        var precoLabel = document.querySelectorAll(".labelPreco");
         if (tamanho.length>qtdeTamanhos) {
             for (let j = qtdeTamanhos; j < tamanho.length; j++) {
+                document.getElementById("containerPreco").removeChild(precos[j]);
+                document.getElementById("containerPreco").removeChild(precoLabel[j]);
                 document.getElementById("container").removeChild(labelTamanho[j]);
                 document.getElementById("container").removeChild(tamanho[j]);
                 criaDesc();
+                criaPreco();
             }
         }
         for(let i=0; i<qtdeTamanhos; i++){
             if(!tamanho[i]){
-                // var inputPreco = document.createElement("input");
-                // inputPreco.type = "text";
-                // inputPreco.name = "custo"+i;
-                // inputPreco.id = "custo"+i;
-                // inputPreco.classList.add("precoMultiplo");
+                var labelPreco = document.createElement("label");
+                labelPreco.for = "custo"+i;
+                labelPreco.classList.add("labelPreco");
+                labelPreco.innerHTML = i+1 +"° preço";
+
+                var inputPreco = document.createElement("input");
+                inputPreco.type = "text";
+                inputPreco.name = "custo"+i;
+                inputPreco.id = "custo"+i;
+                inputPreco.classList.add("precoMultiplo");
+                inputPreco.oninput = criaPreco;
 
                 var label = document.createElement("label");
                 label.for = "field"+i;
@@ -105,6 +115,9 @@ function criaOpcoes(){
                 input.id = "field"+i;
                 input.classList.add("tamanhos");
                 input.oninput = criaDesc;
+
+                document.getElementById("containerPreco").appendChild(labelPreco);
+                document.getElementById("containerPreco").appendChild(inputPreco);
                 document.getElementById("container").appendChild(label);
                 document.getElementById("container").appendChild(input);
             }
@@ -119,11 +132,10 @@ $(document).ready(function(){
     textoCheckbox.addEventListener('click', () => {
         if(testaChecado.checked){
             testaChecado.checked = false;
-            checou();
         }else{
             testaChecado.checked = true;
-            checou();
         }
+        checou();
     });
 });
 
@@ -133,6 +145,7 @@ function checou(){
     var btnOpcao = document.querySelector("#criaOpcao");
     var divContainer = document.querySelector("#container");
     var textarea = document.querySelector("#desc");
+    var precoGeral = document.querySelector("#preco");
     
     
     
@@ -140,27 +153,67 @@ function checou(){
         numTamanhos.hidden = false;
         btnOpcao.hidden = false;
         divContainer.hidden = false;
-        textarea.value = "";
+        textarea.value = "@@";
         textarea.disabled = true;
+        precoGeral.value = "@@";
+        precoGeral.disabled = true;
     }else{
         numTamanhos.hidden = true;
         btnOpcao.hidden = true;
         divContainer.hidden = true;
         textarea.value = "";
         textarea.disabled = false;
+        precoGeral.value = "";
+        precoGeral.disabled = false;
     }
 }
 
 function criaDesc(){
     tamanhos = document.querySelectorAll(".tamanhos");
     var caixaTexto =  document.querySelector("#desc");
-    caixaTexto.value = "";
+    caixaTexto.value = "@@";
     for (let i = 0; i < tamanhos.length; i++) {
-        if(tamanhos[i]){
+        if(tamanhos[i].value){
             caixaTexto.value += tamanhos[i].value;
-            if(tamanhos[i+1]){
+            if(tamanhos[i+1].value){
                 caixaTexto.value += "/";
             }
         }
     }
 }
+
+function criaPreco(){
+    var precoMultiplo = document.querySelectorAll(".precoMultiplo");
+    var valuePreco =  document.querySelector("#preco");
+    var split;
+    var precoCada;
+    valuePreco.value = "@@";
+    for (let i = 0; i < precoMultiplo.length; i++) {
+        if(precoMultiplo[i].value){
+            if(precoMultiplo[i].value.includes(",")){
+                split = precoMultiplo[i].value.split(",");
+                if(split[1].length == 1){
+                    split[1] = split[1]+"0";
+                }
+                precoCada = split[0] +","+ split[1];
+            } else if (precoMultiplo[i].value.includes(".")) {
+                split = precoMultiplo[i].value.split(".");
+                if(split[1].length == 1){
+                    split[1] = split[1]+"0";
+                }
+                precoCada = split[0] +","+ split[1];
+            }else{
+                precoCada = precoMultiplo[i].value+",00";
+            }
+            valuePreco.value += precoCada;
+            if(precoMultiplo[i+1].value){
+                valuePreco.value += "/";
+            }
+        }
+    }
+}
+
+document.querySelector("form").addEventListener('submit', ()=>{
+    document.querySelector("#desc").disabled = false;
+    document.querySelector("#preco").disabled = false; 
+});

@@ -6,20 +6,22 @@
     $tipo = $_POST['tipo'];
     $subtipo = $_POST["subtipo"];
 
-    if (str_contains($preco, ',')) {
-        $split = explode(",", $preco);
-        if(strlen($split[1]) == 1){
-            $split[1] = $split[1] . "0";
+    if (!str_contains($preco, "@@")) {
+        if (str_contains($preco, ',')) {
+            $split = explode(",", $preco);
+            if (strlen($split[1]) == 1) {
+                $split[1] = $split[1] . "0";
+            }
+            $preco = $split[0] . "," . $split[1];
+        } else if (str_contains($preco, '.')) {
+            $split = explode(".", $preco);
+            if (strlen($split[1]) == 1) {
+                $split[1] = $split[1] . "0";
+            }
+            $preco = $split[0] . "," . $split[1];
+        } else {
+            $preco = $preco . ",00";
         }
-        $preco = $split[0] . "," . $split[1];
-    }else if (str_contains($preco, '.')) {
-        $split = explode(".", $preco);
-        if(strlen($split[1]) == 1){
-            $split[1] = $split[1] . "0";
-        }
-        $preco = $split[0] . "," . $split[1];
-    }else{
-        $preco = $preco .",00";
     }
 
     $file = $_FILES["imagem"];

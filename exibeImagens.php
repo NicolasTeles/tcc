@@ -77,7 +77,8 @@
 
 <script>
   function confirmaExclusao(nomeImagem){
-    if (window.confirm("Deseja realmente excluir a imagem?")) {
+    if (confirm("Deseja realmente excluir a imagem?")) {
+      alert(nomeImagem);
       window.location = "excluirImagem.php?fileName=" + nomeImagem;
     }
   }

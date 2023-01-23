@@ -45,6 +45,10 @@ require_once("conexao.php");
                 </tr>
             <?php
             while ($exibir = $resultado->fetch_assoc()) {
+                if (str_contains($exibir["descItem"], "@@") or str_contains($exibir["precoItem"], "@@")) {
+                    $exibir["descItem"] = @end(explode("@@", $exibir["descItem"]));
+                    $exibir["precoItem"] = @end(explode("@@", $exibir["precoItem"]));
+                }
             ?>
                 <tr>
                     <td><?php echo $exibir["idItem"]; ?></td>
@@ -56,7 +60,7 @@ require_once("conexao.php");
                     <td><img src="imagens/<?php echo $exibir["nomeImg"] ?> "></td>
                     <td><a style="color: rgb(214, 111, 1);" href="editarItem.php?idItem=<?php echo $exibir['idItem'] ?>"><i class="fa-regular fa-pen-to-square"></i></a></td>
                     <td><a href="" onclick="confirmaApagar(
-                        '<?php echo $exibir['nomeItem'] ?>', '<?php echo $exibir['idItem'] ?>')">
+                        '<?php echo $exibir['nomeItem'] ?>', <?php echo $exibir['idItem'] ?>)">
                             <i style="color: red;" class="fa-trash fa-solid"></i>
                         </a>
                     </td>
@@ -70,9 +74,10 @@ require_once("conexao.php");
 
     <script>
         function confirmaApagar(nome, id){
-            if(window.confirm("Deseja realmente excluir o "+nome+"?")){
-                window.location = "excluirItem.php?idItem=" +id;
-            } 
+            if (confirm("Deseja deletar o item "+nome+"?")) {
+                console.log("excluirItem.php?idItem="+id);
+                window.location = "excluirItem.php?idItem="+id;
+            }
         }
     </script>
 </html>
