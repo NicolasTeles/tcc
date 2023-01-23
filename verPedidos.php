@@ -188,7 +188,7 @@ require_once('conexaoPedido.php');
                                 <div class='divStatus'>
                                     <form action='ocultarPedidoConcluido.php' method='POST'>
                                         <input type='hidden' name='idHidden' value=<?php echo $exibirPedido['id_pedido'] ?>>
-                                        <input type='submit' value='Ocultar pedido!' class='buttonPedidoFinalizado'>
+                                        <input type='submit' value='Pedido pago' class='buttonPedidoFinalizado'>
                                     </form>
                                 </div>
                             </td>

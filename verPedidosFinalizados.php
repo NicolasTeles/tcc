@@ -1,5 +1,5 @@
 <?php 
-require_once('conexaoPedido.php');
+include('conexao.php');
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -14,9 +14,8 @@ require_once('conexaoPedido.php');
     <title>Pedidos finalizados</title>
     <script>
         $(document).ready(function() {
-            $("#formPesquisar").submit(function(evento){
-                evento.preventDefault();
-                let pesquisar = $("#inputPesquisar").val();
+
+             let pesquisar = $("#inputPesquisar").val();
                 
                 let dados = {
                     pesquisa : pesquisar
@@ -24,8 +23,24 @@ require_once('conexaoPedido.php');
                 $.post("pesquisaData.php", dados, function(retorna){
                     $(".resultadosPesquisa").html(retorna)
                 });
+
+
+            $("#formPesquisar").submit(function(evento){
+                evento.preventDefault();
+                listar_registros();
             });
         });
+
+        function listar_registros(){
+            let pesquisar = $("#inputPesquisar").val();
+                
+                let dados = {
+                    pesquisa : pesquisar
+                }
+                $.post("pesquisaData.php", dados, function(retorna){
+                    $(".resultadosPesquisa").html(retorna)
+                });
+        }
     </script>
 </head>
 <body>
@@ -34,7 +49,7 @@ require_once('conexaoPedido.php');
     
         <form action="" id="formPesquisar" method="POST">
             <label for="inpuntPesquisar">Pesquisar data:</label>
-            <input type="text" name="inputPesquisar" id="inputPesquisar">
+            <input type="date" name="inputPesquisar" id="inputPesquisar" value='<?php echo date("Y-m-d"); ?>'>
             <input type="submit" name="EnviarPesquisar"value="Pesquisar">
         </form>
         <br>
