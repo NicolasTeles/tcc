@@ -144,6 +144,7 @@ function checou(){
     var numTamanhos = document.querySelector("#qtdeTamanhos");
     var btnOpcao = document.querySelector("#criaOpcao");
     var divContainer = document.querySelector("#container");
+    var precoContainer = document.querySelector("#containerPreco");
     var textarea = document.querySelector("#desc");
     var precoGeral = document.querySelector("#preco");
     
@@ -153,14 +154,24 @@ function checou(){
         numTamanhos.hidden = false;
         btnOpcao.hidden = false;
         divContainer.hidden = false;
+        precoContainer.hidden = false;
         textarea.value = "@@";
         textarea.disabled = true;
         precoGeral.value = "@@";
         precoGeral.disabled = true;
+        for (let i = 0; i < numTamanhos.value; i++) {
+            if (document.querySelectorAll(".tamanhos")[i].value) {
+                criaDesc();
+            }
+            if (document.querySelectorAll(".precoMultiplo")[i].value) {
+                criaPreco();
+            }
+        }
     }else{
         numTamanhos.hidden = true;
         btnOpcao.hidden = true;
         divContainer.hidden = true;
+        precoContainer.hidden = true;
         textarea.value = "";
         textarea.disabled = false;
         precoGeral.value = "";
@@ -175,8 +186,10 @@ function criaDesc(){
     for (let i = 0; i < tamanhos.length; i++) {
         if(tamanhos[i].value){
             caixaTexto.value += tamanhos[i].value;
-            if(tamanhos[i+1].value){
-                caixaTexto.value += "/";
+            if(tamanhos[i+1]){
+                if (tamanhos[i+1].value) {
+                    caixaTexto.value += "/";
+                }
             }
         }
     }
@@ -206,8 +219,10 @@ function criaPreco(){
                 precoCada = precoMultiplo[i].value+",00";
             }
             valuePreco.value += precoCada;
-            if(precoMultiplo[i+1].value){
-                valuePreco.value += "/";
+            if(precoMultiplo[i+1]){
+                if (precoMultiplo[i+1].value) {
+                    valuePreco.value += "/";
+                }
             }
         }
     }
