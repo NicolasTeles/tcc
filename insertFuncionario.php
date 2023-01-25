@@ -11,7 +11,7 @@
         VALUES ('" .$nomeCompleto. "', '" .$email. "', '" .$senha. "')";
         if($conn->query($sql) === true){
             echo "<script>alert('Funcionário inserido com sucesso!');</script>";
-            echo "<script>window.location = 'cadastraFuncionario.php';</script>";
+            header("Location: admin.php");
         }else{
             echo "Erro: " .$sql. "<br>" .$conn->error;
             echo "<script>window.history.back();</script>";

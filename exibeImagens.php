@@ -60,7 +60,7 @@
     <tr>
       <td><img src="<?php echo $dir . $file; ?>"></td>
       <td>
-        <a href="" onclick="confirmaExclusao('<?php echo $dir . $file; ?>')">
+        <a href="#" onclick="confirmaExclusao('<?php echo $dir . $file; ?>')">
           <i style="color: red;" class="fa-trash fa-solid"></i>
         </a>
       </td>

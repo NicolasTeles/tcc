@@ -10,17 +10,18 @@
         echo "<script>alert('Email não cadastrado');</script>";
         echo "<script>window.location = 'loginFuncionario.php';</script>";
     }else{
-        $validarSenha = $resultado->fetch_assoc();
-        if($senha != $validarSenha["senhaFuncionario"]){
+        $select = $resultado->fetch_assoc();
+        if($senha != $select["senhaFuncionario"]){
             echo "<script>alert('Senha incorreta');</script>";
             header("Location: loginFuncionario.php");
         }else{
             echo "<script>alert('login concluido com êxito');</script>";
-            $nomeCompleto = explode(" ", $validarSenha["NomeFuncionario"]);
+            $nomeCompleto = explode(" ", $select["NomeFuncionario"]);
             $_SESSION["nomeFunc"] = $nomeCompleto[0];
             $_SESSION["sobrenomeFunc"] = $nomeCompleto[1];
-            $_SESSION["emailFunc"] = $validarSenha["emailFuncionario"];
-            header("Location: admin-nicolas.php");
+            $_SESSION["emailFunc"] = $select["emailFuncionario"];
+            $_SESSION["idFunc"] = $select["idFuncionario"];
+            header("Location: admin.php");
         }
     }
 ?>

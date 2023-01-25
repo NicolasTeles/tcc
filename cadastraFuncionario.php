@@ -16,7 +16,6 @@
     <fieldset class="bordaFunc">
         <form action="insertFuncionario.php" method="post">
           
-
             <div class="input-block">
                 <label for="nomeFunc">Nome:</label><br>
                 <input type="text" id="nomeFunc" name="nomeFunc" placeholder="Nome" style="width: 42%" required>

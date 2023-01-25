@@ -8,7 +8,7 @@ if(isset($_GET['idItem'])){
     $resultado = $conn->query($consulta);
     echo "<script>console.log($sql);</script>";
     echo "<script>console.log($consulta);</script>";
-    /*if($conn->query($sql) === TRUE){
+    if($conn->query($sql) === TRUE){
         echo "<script>alert('Registro excluído com sucesso');</script>";
         if (file_exists($folder . $resultado['nomeImg'])) {
             unlink($folder . $resultado['nomeImg']);
@@ -18,6 +18,6 @@ if(isset($_GET['idItem'])){
     }else{
         echo "<script>alert('Erro ao excluir o registro');</script>";
         header("Location: listaCardapio.php");
-    }*/
+    }
 }
 ?>
