@@ -35,7 +35,6 @@ session_start();
                 <tr>
                     <th>Nome</th>
                     <th>Email</th>
-                    <th>Senha</th>
                     <th>Id</th>
                     <th>Editar</th>
                     <th>Excluir</th>
@@ -46,7 +45,6 @@ session_start();
                     <tr>
                         <td><?php echo $exibir["nomeFuncionario"]; ?></td>
                         <td><?php echo $exibir["emailFuncionario"]; ?></td>
-                        <td><?php echo $exibir["senhaFuncionario"]; ?></td>
                         <td><?php echo $exibir["idFuncionario"]; ?></td>
                         <td><a style="color: rgb(214, 111, 1);" href="#"><i class="fa-regular fa-pen-to-square"></i></a></td>
                         <td><a href="#" onclick="confirmaApagar(

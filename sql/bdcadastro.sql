@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Jan-2023 às 12:45
+-- Tempo de geração: 25-Jan-2023 às 20:46
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -52,7 +52,8 @@ INSERT INTO `cliente` (`nomeCliente`, `numeroCliente`, `sobrenomeCliente`) VALUE
 --
 
 CREATE TABLE `funcionario` (
-  `nomeFuncionario` varchar(40) NOT NULL,
+  `nomeFuncionario` varchar(20) NOT NULL,
+  `sobrenomeFuncionario` varchar(20) NOT NULL,
   `emailFuncionario` varchar(50) NOT NULL,
   `senhaFuncionario` varchar(30) NOT NULL,
   `idFuncionario` int(11) NOT NULL
@@ -62,8 +63,8 @@ CREATE TABLE `funcionario` (
 -- Extraindo dados da tabela `funcionario`
 --
 
-INSERT INTO `funcionario` (`nomeFuncionario`, `emailFuncionario`, `senhaFuncionario`, `idFuncionario`) VALUES
-('Henrique Augusto', 'henriqueaugusto@gmail.com', '123', 1);
+INSERT INTO `funcionario` (`nomeFuncionario`, `sobrenomeFuncionario`, `emailFuncionario`, `senhaFuncionario`, `idFuncionario`) VALUES
+('Henrique Augusto', '0', 'henriqueaugusto@gmail.com', '123', 1);
 
 -- --------------------------------------------------------
 
