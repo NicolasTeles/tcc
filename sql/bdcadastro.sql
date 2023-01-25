@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Jan-2023 às 11:24
+-- Tempo de geração: 25-Jan-2023 às 12:45
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -54,15 +54,16 @@ INSERT INTO `cliente` (`nomeCliente`, `numeroCliente`, `sobrenomeCliente`) VALUE
 CREATE TABLE `funcionario` (
   `nomeFuncionario` varchar(40) NOT NULL,
   `emailFuncionario` varchar(50) NOT NULL,
-  `senhaFuncionario` varchar(30) NOT NULL
+  `senhaFuncionario` varchar(30) NOT NULL,
+  `idFuncionario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `funcionario`
 --
 
-INSERT INTO `funcionario` (`nomeFuncionario`, `emailFuncionario`, `senhaFuncionario`) VALUES
-('Henrique Augusto', 'henriqueaugusto@gmail.com', '123');
+INSERT INTO `funcionario` (`nomeFuncionario`, `emailFuncionario`, `senhaFuncionario`, `idFuncionario`) VALUES
+('Henrique Augusto', 'henriqueaugusto@gmail.com', '123', 1);
 
 -- --------------------------------------------------------
 
@@ -104,7 +105,7 @@ ALTER TABLE `cliente`
 -- Índices para tabela `funcionario`
 --
 ALTER TABLE `funcionario`
-  ADD PRIMARY KEY (`emailFuncionario`);
+  ADD PRIMARY KEY (`idFuncionario`);
 
 --
 -- Índices para tabela `item`
@@ -115,6 +116,12 @@ ALTER TABLE `item`
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `funcionario`
+--
+ALTER TABLE `funcionario`
+  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `item`
