@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Jan-2023 às 11:26
+-- Tempo de geração: 25-Jan-2023 às 11:24
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -87,7 +87,8 @@ CREATE TABLE `item` (
 
 INSERT INTO `item` (`nomeItem`, `idItem`, `descItem`, `precoItem`, `tipoItem`, `subtipoItem`, `nomeImg`, `extensaoImg`) VALUES
 ('Camarão', 14, 'Folhado de camarão', '12,00', 'Lanche', 'Folhados', '112581825.jpg', 'jpg'),
-('Pão de queijo', 26, 'Gostoso', '5,00', 'Lanche', 'Pão de Queijo', '1779605252.jpg', 'jpg');
+('Pão de queijo', 26, 'Gostoso', '5,00', 'Lanche', 'Pão de Queijo', '1779605252.jpg', 'jpg'),
+('Chemex', 37, '@@200ml/300ml', '@@6,50/7,50', 'Bebida', 'Filtrados', '1994434705.webp', 'webp');
 
 --
 -- Índices para tabelas despejadas
@@ -119,7 +120,7 @@ ALTER TABLE `item`
 -- AUTO_INCREMENT de tabela `item`
 --
 ALTER TABLE `item`
-  MODIFY `idItem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `idItem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
