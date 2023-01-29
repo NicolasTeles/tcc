@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TCC</title>
   <link rel="stylesheet" href="index-estilo.css">
-  <link rel="stylesheet" href="estiloRodape.css">
+  <link rel="stylesheet" href="rodapepopup.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
@@ -24,29 +24,30 @@
     <nav class="navCarrinho">
       <div class="cardiv">
         <p class="textoTabela" hidden>Seu carrinho está vazinho =(</p>
-          <div class="divCarrinho" hidden>
-            <table class="tabela" border="1">
-              <th class="thCarrinho" colspan="2">Item</th>
-              <th class="thCarrinho">Preço</th>
-              <th class="thCarrinho">Quantidade</th>
-              <th class="thCarrinho">Total</th>
-              <th class="thCarrinho">Apagar</th>
-              <tbody class="tbody"></tbody>
-            </table>
-              <input type="button" value="Finalizar pedido" class="buttonCarrinho" onclick="produto.enviaPedido()">
+        <div class="divCarrinho" hidden>
+          <table class="tabela" border="1">
+            <th class="thCarrinho" colspan="2">Item</th>
+            <th class="thCarrinho">Obs</th>
+            <th class="thCarrinho">Preço</th>
+            <th class="thCarrinho">Quantidade</th>
+            <th class="thCarrinho">Total</th>
+            <th class="thCarrinho">Apagar</th>
+            <tbody class="tbody"></tbody>
+          </table>
+          <input type="button" value="Finalizar pedido" class="buttonCarrinho" onclick="produto.enviaPedido()">
 
-          </div>
+        </div>
       </div>
     </nav>
     <nav class="navUser">
-      <?php 
+      <?php
       if (!isset($_SESSION["nomeCliente"])) {
       ?>
         <h1 class="tituloUsuario">Login</h1>
         <a href="login.php" class="linkUsuario">Fazer login</a>
       <?php
       } else {
-        ?>
+      ?>
         <h1 class="tituloUsuario">Logout</h1>
         <a href="logout.php" class="linkUsuario">Sair</a>
       <?php
@@ -57,13 +58,13 @@
     <ul class="headerUL">
       <?php
       if (isset($_SESSION["nomeCliente"])) {
-        ?>
-      <p class="nomeSession"><?php echo $_SESSION["nomeCliente"] ?></p>      
-      <li class="headerLI"><button class="user"><i class="fa-solid fa-user-minus carrinho fa-3x"></i></button></li>
-      <?php
-      }else{
       ?>
-      <li class="headerLI"><button class="user"><i class="fa-solid fa-user-plus carrinho fa-3x"></i></button></li>
+        <p class="nomeSession"><?php echo $_SESSION["nomeCliente"] ?></p>
+        <li class="headerLI"><button class="user"><i class="fa-solid fa-user-minus carrinho fa-3x"></i></button></li>
+      <?php
+      } else {
+      ?>
+        <li class="headerLI"><button class="user"><i class="fa-solid fa-user-plus carrinho fa-3x"></i></button></li>
       <?php
       }
       ?>
@@ -101,6 +102,9 @@
           $sql = "SELECT * FROM item WHERE subtipoItem='Filtrados'";
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
+            if (str_contains($exibir["precoItem"], "@@")) {
+              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+            }
           ?>
             <p>
             <div class="d1">
@@ -112,6 +116,7 @@
                     <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
+                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
               </button>
             </div>
             </p>
@@ -136,6 +141,9 @@
           $sql = "SELECT * FROM item WHERE subtipoItem='Miseráveis'";
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
+            if (str_contains($exibir["precoItem"], "@@")) {
+              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+            }
           ?>
             <p>
             <div class="d1">
@@ -147,6 +155,7 @@
                     <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
+                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
               </button>
             </div>
             </p>
@@ -171,6 +180,9 @@
           $sql = "SELECT * FROM item WHERE subtipoItem='Expresso'";
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
+            if (str_contains($exibir["precoItem"], "@@")) {
+              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+            }
           ?>
             <p>
             <div class="d1">
@@ -182,6 +194,7 @@
                     <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
+                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
               </button>
             </div>
             </p>
@@ -206,6 +219,9 @@
           $sql = "SELECT * FROM item WHERE subtipoItem='Cappuccino'";
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
+            if (str_contains($exibir["precoItem"], "@@")) {
+              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+            }
           ?>
             <p>
             <div class="d1">
@@ -217,6 +233,7 @@
                     <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
+                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
               </button>
             </div>
             </p>
@@ -241,6 +258,9 @@
           $sql = "SELECT * FROM item WHERE subtipoItem='Cafés e Chás'";
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
+            if (str_contains($exibir["precoItem"], "@@")) {
+              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+            }
           ?>
             <p>
             <div class="d1">
@@ -252,6 +272,7 @@
                     <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
+                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
               </button>
             </div>
             </p>
@@ -276,6 +297,9 @@
           $sql = "SELECT * FROM item WHERE subtipoItem='Smoothie e Frappé'";
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
+            if (str_contains($exibir["precoItem"], "@@")) {
+              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+            }
           ?>
             <p>
             <div class="d1">
@@ -287,6 +311,7 @@
                     <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
+                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
               </button>
             </div>
             </p>
@@ -311,6 +336,9 @@
           $sql = "SELECT * FROM item WHERE subtipoItem='Chocolate'";
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
+            if (str_contains($exibir["precoItem"], "@@")) {
+              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+            }
           ?>
             <p>
             <div class="d1">
@@ -322,6 +350,7 @@
                     <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
+                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
               </button>
             </div>
             </p>
@@ -347,6 +376,9 @@
           $sql = "SELECT * FROM item WHERE subtipoItem='Sucos e Refrigerantes'";
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
+            if (str_contains($exibir["precoItem"], "@@")) {
+              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+            }
           ?>
             <p>
             <div class="d1">
@@ -358,6 +390,7 @@
                     <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
+                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
               </button>
             </div>
             </p>
@@ -382,6 +415,9 @@
           $sql = "SELECT * FROM item WHERE subtipoItem='Cervejas'";
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
+            if (str_contains($exibir["precoItem"], "@@")) {
+              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+            }
           ?>
             <p>
             <div class="d1">
@@ -393,6 +429,7 @@
                     <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
+                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
               </button>
             </div>
             </p>
@@ -417,6 +454,9 @@
           $sql = "SELECT * FROM item WHERE subtipoItem='Drinks'";
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
+            if (str_contains($exibir["precoItem"], "@@")) {
+              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+            }
           ?>
             <p>
             <div class="d1">
@@ -428,6 +468,7 @@
                     <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
+                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
               </button>
             </div>
             </p>
@@ -444,14 +485,14 @@
   <br><br>
   <div class="popup-fundo">
     <div class="popup">
-      <div class="popup-fechar"><i class="fa-solid fa-square-xmark fa-2x"></i></div>
+      <!--<div class="popup-fechar"><i class="fa-solid fa-square-xmark fa-2x"></i></div>
       <div class="popup-content">
         <div id="Img_Lanche">
           <img class=imgp style="width: 80%; border-radius: 15px;" src="">
         </div>
         <?php
-        if (isset($_SESSION["nomeCliente"])) {
-          ?>
+        // if (isset($_SESSION["nomeCliente"])) {
+        ?>
         <button onclick="proximo_item()">+</button>
         <button onclick="voltar_item()">-</button>
         <button onclick="produto.salvar()">ADD</button>
@@ -463,12 +504,59 @@
           <option value="4">4</option>
         </select>
         <?php
-        } else {
-          ?>
+        // } else {
+        ?>
         <button><a href="login.php">Faça login para poder adicionar itens ao carrinho</a></button>
         <?php
-        }
+        // }
         ?>
+      </div>
+    </div>-->
+
+      <div class="popupbranco">
+        <div class="popup-fechar"><i class="fa-solid fa-square-xmark fa-2x"></i></div>
+        <div class="popup-content">
+          <table class="popup-tabela" border=0>
+            <tr class="popuptr">
+              <td colspan=2> <img class="popup-tabimg" src="img/pao.jpg"></td>
+            </tr>
+            <tr class="popuptr">
+              <th colspan=2>
+                <h3 class="tituloDiv"> Titulo </h3>
+              </th>
+            </tr>
+            <tr class="popuptr" id="rowDesc">
+              <td colspan=2>
+                <p class="descDiv">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis qui perferendis enim laudantium
+                  natus?</p>
+              </td>
+            </tr>
+            <tr class="popuptr" id="rowObs">
+              <td colspan=2>
+                <textarea class="textpop" placeholder="Observações: "></textarea>
+              </td>
+            </tr>
+            <tr class="popuptr">
+              <td colspan=2>
+                <div class="radio">
+                  
+                </div>
+              </td>
+            </tr>
+            <tr class="popuptr">
+              <td style="width: 50%; text-align: left; text-indent: 3.5ch">
+                <input type="button" class="popup-button" value="+" onclick="proximo_item()">
+                <input type="text" class="popup-input" id="qtde" name="qtde">
+                <input type="button" class="popup-button" value="-" onclick="voltar_item()">
+              </td>
+              <td style="width: 50%;">
+                <button onclick="produto.salvar()" class="popup-addbot1">
+                  <p class="custoDiv">R$: 50,00</p>
+                </button><button class="popup-addbot" onclick="produto.salvar()"> Adicionar ao carrinho <i class="fa-solid fa-cart-plus"></i></button>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
   </div>
@@ -494,6 +582,9 @@
           $sql = "SELECT * FROM item WHERE subtipoItem='Quiches'";
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
+            if (str_contains($exibir["precoItem"], "@@")) {
+              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+            }
           ?>
             <p>
             <div class="d1">
@@ -505,6 +596,7 @@
                     <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
+                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
               </button>
             </div>
             </p>
@@ -529,6 +621,9 @@
           $sql = "SELECT * FROM item WHERE subtipoItem='Folhados'";
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
+            if (str_contains($exibir["precoItem"], "@@")) {
+              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+            }
           ?>
             <p>
             <div class="d1">
@@ -540,6 +635,7 @@
                     <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
+                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
               </button>
             </div>
             </p>
@@ -563,6 +659,9 @@
           $sql = "SELECT * FROM item WHERE subtipoItem='Pão de Queijo'";
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
+            if (str_contains($exibir["precoItem"], "@@")) {
+              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+            }
           ?>
             <p>
             <div class="d1">
@@ -574,6 +673,7 @@
                     <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
+                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
               </button>
             </div>
             </p>
@@ -597,6 +697,9 @@
           $sql = "SELECT * FROM item WHERE subtipoItem='Sanduiches e Omeletes'";
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
+            if (str_contains($exibir["precoItem"], "@@")) {
+              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+            }
           ?>
             <p>
             <div class="d1">
@@ -608,6 +711,7 @@
                     <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
+                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
               </button>
             </div>
             </p>
@@ -632,6 +736,9 @@
           $sql = "SELECT * FROM item WHERE subtipoItem='Doces'";
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
+            if (str_contains($exibir["precoItem"], "@@")) {
+              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+            }
           ?>
             <p>
             <div class="d1">
@@ -643,6 +750,7 @@
                     <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
+                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
               </button>
             </div>
             </p>
@@ -661,17 +769,16 @@
   <!-- Rodapé-->
   <footer>
     <div class="caixa">
-      <h2> Início </h2>
+      <h2><i class="fa-regular fa-clock"></i> Horarios:</h2>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Produto</a></li>
-        <li><a href="#">Download</a></li>
+        <li>Quinta a Segunda</li>
+        <li>15:30 - 21:00</li>
       </ul>
     </div>
 
     <div class="caixa">
 
-      <h2>Sobre nós</h2>
+      <h2> <i class="fa-solid fa-map-location-dot"></i> Endereço:</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, aliquam incidunt nobis praesentium a
         dolorum dolores id quae sequi earum, doloribus eum nemo nisi accusamus impedit magnam porro aspernatur

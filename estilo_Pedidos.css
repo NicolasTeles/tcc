@@ -1,14 +1,42 @@
-.classcabecalho {
-    top: 0;
-    position: fixed;
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header{
     width: 100%;
-    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    position: fixed;
+    top: 0%;
+    padding: 0px 50px;
     background: linear-gradient(800deg, #3a1624, #711613);
+    z-index: 1000;
+}
+body{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
-.logoimg {
-    height: 115px;
-    width: 120px;
+  .logoimg{
+        height: 115px;
+        width: 120px; 
+  }
+  .menu-btn{ 
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    width: 50px;
+    height: auto;
+}
+.menu-btn:hover{
+    transition: .2s linear; 
+    background: white;
+    height: 55px;
+    width: 60px;
+    border-radius: 8px;
 }
 
 .blog-title:before,
@@ -20,60 +48,83 @@
     border-radius: 15px;
     vertical-align: middle;
     border: 0.5px solid #acaaaa;
-    width: 50%;
+    width: 60%;
 }
 
 .blog-title:before {
     right: .5em;
-    margin-left: -50%;
+    margin-left: -60%;
 }
 
 .blog-title:after {
     left: .5em;
-    margin-right: -50%;
+    margin-right: -60%;
 }
 
 h1 {
+    animation: anima 800ms ease;
+    margin-top: 40px;
     padding: 30px;
     color: #6e6e6e;
+    margin-bottom: -40px;
 }
-
+.subti{
+    animation: anima2 800ms ease;
+    margin-top: 5em;
+    margin-bottom: 30px;
+    padding: 5px 100px;
+    color: #6e6e6e;
+    border-radius: 2px;
+    border-bottom: 4px solid #adabab;
+}
 .divPedido{
-  box-shadow: 0px 3px 13px #3f0c0b; 
+  animation: anima2 800ms ease;
+  box-shadow: 0px 5px 1em #3f0c0b; 
   background: #94443c;
   border-radius: 5px;
-  padding: 20px;
-  width: 60vw;
+  padding: 20px 50px;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   align-items: center;
 }
+
 .divPedidoBranca_Pendente {
     border-radius: 5px;
     width: auto;
-    background-color: white;
+    background-color: #fafdff;
 }
 .divPedidoBranca_Processo {
     border-radius: 5px;
     width: auto;
-    background-color: white;
+    background-color: #fafdff;;
 }
 .divPedidoBranca_Concluido {
     border-radius: 5px;
     width: auto;
-    background-color: white;
+    background-color: #fafdff;
 }
 .divPedidoBranca_vazia{
-    border-radius: 5px;
-    width: 100%;
-    background-color: white;
+    color: #474646;
+    height: 10vh;
+    border-radius: 10px;
+    width: 65vh;
+    background-color: #fafdff;
+    font-size: 23px;
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    font-size: 25px;
 }
 .tabela{
     border: 3px solid #adabab;
-    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
     height: 10vh;
-    width: auto;
+    width: 60vw;
+    background: #fafdff;
+    cursor: default;
 }
 .textoPedido{
     text-align: center;
@@ -83,21 +134,33 @@ h1 {
     text-align: center;
     width: 100%; 
 }
-th{
-    background-color: lightgray;
+th{ 
+    color: #383737;
+    background-color: #adabab;
+    padding: 10px;
 }
-td{
+td{    
+    padding: 10px;
     text-align: center;
+    border: 0;
+    border-bottom: 2px solid #adabab;
 }
-.td_desc{
+/**Quebra de linha na descrição**/
+.td_obs{
     width: 10vw;
     text-align: left;
     word-break: break-word;
 }
+
+tr:nth-child(even){
+    background:#e1e4e6;
+  }
+
 img{   
     margin-top: 5px;
-    width: 80px;
+    width: 100px;
     height: auto;
+    border-radius: 5px; 
 }
 .divStatus{
     display: inline-block;
@@ -105,67 +168,93 @@ img{
 .divCancelado{
     display: inline-block;
 }
+input[type=submit]{
+    cursor: pointer;
+}
 .buttonPedidoPendente {
-    padding: 0px 5px;
-    width: 100px;
-    height: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border: 3px solid #fcc204;
-    border-radius: 5px;
+    width: 130px;
+    height: 40px;
+    margin: 5px;
+    border: 2px solid #e89d10;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #383737;
+    
 }
 .buttonPedidoPendente:hover {
-    background-color: #fcc204;
-    color: white;
+    background-color: #e89d10;
+    color: #f1efef;
     opacity: 0.9;
 }
 .buttonPedidoCancelado{
-    display: inline-block;
-    padding: 0px 5px;
+    
     width: 130px;
-    height: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border: 3px solid red;
-    border-radius: 5px;
+    height: 40px;
+    margin: 5px;
+    border: 2px solid #bd2a33;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #383737;
 }
 .buttonPedidoCancelado:hover {
-    background-color: red;
-    color: white;
-    opacity: 0.9;
+    background-color: #bd2a33;
+    color: #f1efef;
+    opacity: .9;
 }
 .buttonPedidoConcluido{
-    display: inline-block;
-    padding: 0px 5px;
-    width: 130px;
-    height: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border: 3px solid #80d668;
-    border-radius: 5px;
+    width: 170px;
+    height: 40px;
+    border: 2px solid #028f76;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #383737;
 }
 .buttonPedidoConcluido:hover {
-    background-color: #80d668;
-    color: white;
-    opacity: 0.9;
+    background-color: #028f76;  
+    color: #f1efef;
+    opacity: .9;
 }
 .buttonPedidoFinalizado{
-    display: inline-block;
-    padding: 0px 5px;
-    width: 130px;
-    height: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border: 3px solid rgb(56, 65, 97);
-    border-radius: 5px;
+    width: 170px;
+    height: 40px;
+    border: 2px solid #384161;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #383737;
 }
 .buttonPedidoFinalizado:hover {
-    background-color: rgb(56, 65, 97);
+    background-color: #384161;
     color: white;
-    opacity: 0.9;
+    opacity: .9;
 }
-body{
+
+footer{  
+    color: #fafdff;
     align-items: center;
+    margin-top: 20vh;
+    width: 100%;
+    height: 60px;
     display: flex;
-    flex-direction: column;
+    background: #444;
+    padding: 0px 50px; 
+}
+@keyframes anima {
+    from{
+        transform: scale(0.99);
+        opacity: 0;    
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes anima2 {
+    from{
+        transform: translateY(10%);
+        opacity: 0;    
+    }
+    to{
+        transform: translateX(0%);
+        opacity: 1;
+    }
 }

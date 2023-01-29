@@ -1,76 +1,178 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+    font-family: sans-serif;
 }
 
-button{
-    display: block;     
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-}
-
-.fundoPendente{
-    display: none;
-    background: rgba(0, 0, 0, .5);
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0%;
+    padding: 0px 50px;
+    background: linear-gradient(800deg, #3a1624, #711613);
+    z-index: 1000;
+    height: 120px;
+}
+body{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+  .logoimg{
+        height: 115px;
+        width: 120px; 
+    }
+
+    .menu-btn{ 
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        width: 50px;
+        height: auto;
+    }
+    .menu-btn:hover{
+        transition: .2s linear; 
+        background: white;
+        height: 55px;
+        width: 60px;
+        border-radius: 8px;
+    }
+    .carrinho{
+        cursor: pointer;
+        color: white;
+    }
+    .carrinho:hover{
+        color: #741413;
+    }
+    .headerUL{
+        cursor: default;
+    }
+    .headerLI{
+        display: inline-block; 
+    }    
+
+    table{
+        text-align: center;
+        border-collapse: collapse;
+        width: 60%;
+        height: 50vh;
+    }
+   
+    .butadm{
+        animation: animaAdm3 1000ms ease;
+        font-weight: bold;
+        font-size: 25px;
+        margin: 40px;
+        width: 24vw ;
+        height: 22vh;
+        border-radius: 15px;
+        background: transparent;
+        border: 3px solid grey;
+        background: #f0f0f0;
+        color:#474646;
+        cursor: pointer;
+    }
+    .icon{
+        margin-bottom: 25px;
+    }
+    .butadm:hover{
+        box-shadow: 0px 2px 15px #1a1a1a;
+        background:#9c5d5b;
+        border:#9c5d5b;
+        color: #fafdff;
+        transform: scale(1.1);
+        transition: all 300ms ease-in-out;
+    }
+   
+    .DivCont{
+        animation: animaAdm2 800ms ease;
+        margin-top: 10vh;
+        box-shadow: 0px 5px 1em #3f0c0b; 
+        background: #94443c;
+        border-radius: 5px;
+        padding: 20px;
+        width: 62vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .DivBranca{
+        height: 10vh;
+        border-radius: 10px;
+        width: auto;
+        height: auto;
+        background-color: #fafdff;
+        font-size: 23px;
+        align-items: center;
+        display: flex;
+        font-weight: bold;
+    }
+    .blog-title:before,
+    .blog-title:after {
+    background-color:#adabab;
+    content: "";
+    display: inline-block;
+    height: 4px;
+    border-radius: 15px;
+    vertical-align: middle;
+    border: 0.5px solid #acaaaa;
     width: 100%;
-    height: 100%;
-}
-
-.fundoPronto{
-    display: none;
-    background: rgba(0, 0, 0, .5);
-    position: fixed;
-    top: 0;
-    left: 0;
+  }
+  .blog-title:before {
+    margin-left: -100%;
+  }
+  .blog-title:after {
+    margin-right: -100%;
+  }
+  h1{
+      animation: animaAdm 800ms ease;
+      color:#6e6e6e;
+      margin-top: 25vh;
+  }
+   
+footer{  
+    color: #fafdff;
+    align-items: center;
+    margin-top: 20vh;
     width: 100%;
-    height: 100%;
+    height: 60px;    
+    display: flex;
+    background: #444;
+    padding: 0px 50px; 
 }
 
-.popupPendente{
-    font-family: arial;
-    text-align: center;
-    width: 100%;
-    max-width: 500px;
-    margin: 10% auto;
-    padding: 20px;
-    background: white;
-    position: relative;
+@keyframes animaAdm {
+    from{
+        transform: scale(0.98);
+        opacity: 0;    
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
 }
-
-.popupPronto{
-    font-family: arial;
-    text-align: center;
-    width: 100%;
-    max-width: 500px;
-    margin: 10% auto;
-    padding: 20px;
-    background: white;
-    position: relative;
+@keyframes animaAdm2 {
+    from{
+        transform: translateY(10%);
+        opacity: 0;    
+    }
+    to{
+        transform: translateX(0%);
+        opacity: 1;
+    }
 }
-
-.popupFechar{
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    cursor: pointer;
-    background-color: transparent;
-    width: 20px;
-    height: 15px;
-    height: auto;
-    border-radius: 4px;
-    -moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
-}
-
-.popupFechar:hover{
-    background-color: crimson;
-    -moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
+@keyframes animaAdm3 {
+    from{
+        transform: scale(0.9);
+        opacity: 0;    
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
 }

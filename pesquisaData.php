@@ -19,7 +19,7 @@ print_r($_POST["pesquisa"]);
                             <th>Nome</th>
                             <th>Data</th>
                             <th>Quantidade</th>
-                            <th>Descrição</th>
+                            <th>Obs</th>
                             <th>Preço</th>
                             <th>Total</th>
                         </tr>
@@ -31,7 +31,7 @@ print_r($_POST["pesquisa"]);
                                     <td><?php echo $exibirPedido['nm_produto']?></td>
                                     <td><?php echo $exibirPedido['dataPedido_produto']?></td>
                                     <td><?php echo $exibirPedido['qtde_produto']?></td>
-                                    <td class='td_desc'><?php echo $exibirPedido['desc_produto']?></td>
+                                    <td class='td_obs'><?php echo $exibirPedido['obs_produto']?></td>
                                     <td><?php echo $exibirPedido['preco_produto']?></td>
                                     <td><?php echo $exibirPedido['total_produto']?></td>                
                                 </tr>

@@ -1,5 +1,5 @@
 <?php 
-include('conexao.php');
+include('conexaoPedido.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,29 +8,35 @@ include('conexao.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+    <script src="verPedidosFinalizados_js.js"></script>
     <link rel="stylesheet" href="estilo_Pedidos.css">
+    <link rel="stylesheet" href="estilo_Guilherme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>Ver pedidos</title>
 </head>
 
-<body class='body'>
-<header class="classcabecalho"> <img src="img_Guilherme/logo3.png" class="logoimg"></header>
+<body>
+<header><img src="img/logo3.png" class="logoimg">
+<ul class="headerUL">
+      <li class="headerLI"><button class="menu-btn" onclick="home()"><i class="fa-solid fa-house-chimney carrinho fa-3x"></i> </button></li>
+      </ul>
+      </header>
 <br><br><br><br><br><br><br><br>
-    <h1 class='blog-title'>Pedidos Pendentes</h1>
+<h1 class="blog-title"> Progresso dos Pedidos <i class="fa-solid fa-pen-to-square"></i> </h1>
+    <h2 class='subti'> Pendentes <i class="fa-solid fa-hourglass-start"></i></h2>
     <div class='divPedido'>
         <div class='divPedidoBranca_Pendente'>
             <?php 
-                $select = 'SELECT `img_produto`, `nm_produto`, `qtde_produto`, `obs_produto`, `preco_produto`, `total_produto`, `dataPedido_produto`, `status_pedido`, `id_pedido` FROM `pedido` WHERE `status_pedido`= "Pedido feito"';
+                $select = 'SELECT * FROM `pedido` WHERE `status_pedido`= "Pedido feito"';
                 $pedidosPedentes = $conn->query($select);
                 if($pedidosPedentes->num_rows > 0){    
              ?>
-            <table class='tabela' border='1'>
+            <table class='tabela'>
                 <tr>
-                    <th>Imagem</th>
-                    <th>Nome</th>
+                  
+                    <th colspan = 2 >Nome</th>
                     <th>Quantidade</th>
-                    <th>Descrição</th>
+                    <th>Obs</th>
                     <th>Preço</th>
                     <th>Total</th>
                     <th>Status</th>
@@ -42,21 +48,21 @@ include('conexao.php');
                     <td><img src="<?php echo $exibirPedido['img_produto']?>"></td>
                     <td><?php echo $exibirPedido['nm_produto']?></td>
                     <td><?php echo $exibirPedido['qtde_produto']?></td>
-                    <td class='td_desc'><?php echo $exibirPedido['obs_produto']?></td>
+                    <td class='td_obs'><?php echo $exibirPedido['obs_produto']?></td>
                     <td><?php echo $exibirPedido['preco_produto']?></td>
                     <td><?php echo $exibirPedido['total_produto']?></td>
                     <td>
                         <div class='divStatus'>
                             <form action='atualizarPedidoFeito.php' method='POST'>
                                 <input type='hidden' name='idHidden' value=<?php echo $exibirPedido['id_pedido']?>>
-                                <input type='submit' value=' Vou preparar!' class='buttonPedidoPendente'>
+                                <input type='submit' value='Preparar' class='buttonPedidoPendente'>
                             </form>
                         </div>
 
-                        <div class='divCancelado-Interrompido'>
+                        <div class='divCancelado'>
                             <form action='CancelarPedido.php' method='POST'>
                                 <input type='hidden' name='idHidden' value=<?php echo $exibirPedido['id_pedido']?>>
-                                <input type='submit' value='Pedido cancelado!' class='buttonPedidoCancelado'>
+                                <input type='submit' value='Cancelar' class='buttonPedidoCancelado'>
                             </form>
                         </div>
                     </td>
@@ -73,25 +79,25 @@ include('conexao.php');
                         divPedidoBranca_Pedente.classList.remove("divPedidoBranca_Pendente");
                         divPedidoBranca_Pedente.classList.add("divPedidoBranca_vazia");
                     </script>
-                    <p class='textoPedido'>Não há pedidos pendentes!</p>       
+                    <p class='textoPedido'>Não existem pedidos pendentes <i class="fa-regular fa-calendar-xmark"></i></p>       
             <?php 
                 }
             ?> 
         </div>
     </div>
 
-    <h1 class='blog-title'>Pedidos em processo</h1>
+    <h2 class='subti'> Em processo <i class="fa-solid fa-hourglass-half"></i></h2>
     <div class='divPedido'>
         <div class='divPedidoBranca_Processo'>
     <?php 
-        $select = 'SELECT `img_produto`, `nm_produto`, `qtde_produto`, `obs_produto`, `preco_produto`, `total_produto`, `dataPedido_produto`, `status_pedido`, `id_pedido` FROM `pedido` WHERE `status_pedido`= "Pedido em processo"';
+        $select = 'SELECT * FROM `pedido` WHERE `status_pedido`= "Pedido em processo"';
         $pedidosPedentes = $conn->query($select);
         if($pedidosPedentes->num_rows > 0){
     ?>           
     <table class='tabela' border='1'>
         <tr>
-            <th>Imagem</th>
-            <th>Nome</th>
+            
+            <th colspan = 2 >Nome</th>
             <th>Quantidade</th>
             <th>Descrição</th>
             <th>Preço</th>
@@ -105,23 +111,14 @@ include('conexao.php');
             <td><img src="<?php echo $exibirPedido['img_produto']?>"></td>
             <td><?php echo $exibirPedido['nm_produto']?></td>
             <td><?php echo $exibirPedido['qtde_produto']?></td>
-            <td class='td_desc'><?php echo $exibirPedido['obs_produto']?></td>
+            <td class='td_obs'><?php echo $exibirPedido['obs_produto']?></td>
             <td><?php echo $exibirPedido['preco_produto']?></td>
             <td><?php echo $exibirPedido['total_produto']?></td>
             <td>
-                <div class='divStatus'>   
-                    <form action='atualizarPedidoProcesso.php' method='POST'>
-                        <input type='hidden' name='idHidden' value=<?php echo $exibirPedido['id_pedido']?>>
-                        <input type='submit' value='Pedido concluido!' class='buttonPedidoConcluido'>
-                    </form>
-                </div>    
-
-                <div class='divCancelado-Interrompido'>
-                    <form action='InterromperPedido.php' method='POST'>
-                        <input type='hidden' name='idHidden' value=<?php echo $exibirPedido['id_pedido']?>>
-                        <input type='submit' value='Pedido interrompido!' class='buttonPedidoInterrompido'>
-                    </form>
-                </div>
+                <form action='atualizarPedidoProcesso.php' method='POST'>
+                <input type='hidden' name='idHidden' value=<?php echo $exibirPedido['id_pedido']?>>
+                <input type='submit' value='Concluido' class='buttonPedidoConcluido'>
+                </form>
             </td>
         </tr>
     
@@ -137,25 +134,24 @@ include('conexao.php');
                         divPedidoBranca_Processo.classList.remove("divPedidoBranca_Processo");
                         divPedidoBranca_Processo.classList.add("divPedidoBranca_vazia");
                     </script>
-                    <p class='textoPedido'>Não há pedidos em processo!</p>       
+                    <p class='textoPedido'>Não existem pedidos em processo <i class="fa-regular fa-calendar-xmark"></i></p>       
             <?php 
                 }
             ?>     
            </div>
     </div>
 
-    <h1 class='blog-title'>Pedidos concluído</h1>
+    <h2 class='subti'> Concluído(s) <i class="fa-solid fa-hourglass-end"></i></h2>
     <div class='divPedido'>
         <div class='divPedidoBranca_Concluido'>
             <?php 
-                $select = 'SELECT `img_produto`, `nm_produto`, `qtde_produto`, `obs_produto`, `preco_produto`, `total_produto`, `dataPedido_produto`, `status_pedido`, `id_pedido` FROM `pedido` WHERE `status_pedido`= "Pedido concluído"';
+                $select = 'SELECT * FROM `pedido` WHERE `status_pedido`= "Pedido concluído"';
                 $pedidosPedentes = $conn->query($select);
                 if($pedidosPedentes->num_rows > 0){
             ?>
                 <table class='tabela' border='1'>
                     <tr>
-                        <th>Imagem</th>
-                        <th>Nome</th>
+                        <th colspan = 2 >Nome</th>
                         <th>Quantidade</th>
                         <th>Descrição</th>
                         <th>Preço</th>
@@ -169,14 +165,14 @@ include('conexao.php');
             <td><img src="<?php echo $exibirPedido['img_produto']?>"></td>
             <td><?php echo $exibirPedido['nm_produto']?></td>
             <td><?php echo $exibirPedido['qtde_produto']?></td>
-            <td class='td_desc'><?php echo $exibirPedido['obs_produto']?></td>
+            <td class='td_obs'><?php echo $exibirPedido['obs_produto']?></td>
             <td><?php echo $exibirPedido['preco_produto']?></td>
             <td><?php echo $exibirPedido['total_produto']?></td>
             <td>
                 <div class='divStatus'>
                     <form action='ocultarPedidoConcluido.php' method='POST'>
                         <input type='hidden' name='idHidden' value=<?php echo $exibirPedido['id_pedido']?>>
-                        <input type='submit' value='Pedido pago!' class='buttonPedidoFinalizado'>
+                        <input type='submit' value='Pago' class='buttonPedidoFinalizado'>
                     </form>
                 </div>
             </td>
@@ -194,14 +190,16 @@ include('conexao.php');
                         divPedidoBranca_Concluido.classList.remove("divPedidoBranca_Concluido");
                         divPedidoBranca_Concluido.classList.add("divPedidoBranca_vazia");
                     </script>
-                    <p class='textoPedido'>Não há pedidos concluídos!</p>       
+                    <p class='textoPedido'>Não existem pedidos concluídos <i class="fa-regular fa-calendar-xmark"></i></p>       
             <?php 
                 }
             ?>    
        </div>
     </div>
-<button onclick=unloadScrollBars()>Att</button>
+    <footer>
+   <i class="fa-solid fa-mug-saucer fa-2x" aria-hidden="true"></i>
+   </footer>    
+   <script src="home.js"></script> 
 </body>
 
 </html>
-<script src="javaScript.js"></script>

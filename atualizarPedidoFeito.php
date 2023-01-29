@@ -1,8 +1,8 @@
 <?php
 header("location: verPedidos.php");
-include('conexao.php');
+include('conexaoPedido.php');
 echo $_POST['idHidden'];
-$selectUpdate = 'SELECT `img_produto`, `nm_produto`, `qtde_produto`, `desc_produto`, `preco_produto`, `total_produto`, `dataPedido_produto`, `status_pedido`, `id_pedido` FROM `pedido`';
+$selectUpdate = 'SELECT * FROM `pedido`';
 $selectPedidos = $conn->query($selectUpdate);
 
 while($updatePedidos = $selectPedidos->fetch_assoc()){
