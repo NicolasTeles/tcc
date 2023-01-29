@@ -81,7 +81,6 @@ require_once("conexao.php");
 <script>
     function confirmaApagar(nome, id) {
         if (confirm("Deseja deletar o item " + nome + "?")) {
-            console.log("excluirItem.php?idItem=" + id);
             window.location = "excluirItem.php?idItem=" + id;
         }
     }

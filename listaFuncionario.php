@@ -36,17 +36,15 @@ session_start();
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Id</th>
-                    <th>Editar</th>
                     <th>Excluir</th>
                 </tr>
                 <?php
                 while ($exibir = $resultado->fetch_assoc()) {
                 ?>
                     <tr>
-                        <td><?php echo $exibir["nomeFuncionario"]; ?></td>
+                        <td><?php echo $exibir["nomeFuncionario"] ." ". $exibir["sobrenomeFuncionario"]; ?></td>
                         <td><?php echo $exibir["emailFuncionario"]; ?></td>
                         <td><?php echo $exibir["idFuncionario"]; ?></td>
-                        <td><a style="color: rgb(214, 111, 1);" href="#"><i class="fa-regular fa-pen-to-square"></i></a></td>
                         <td><a href="#" onclick="confirmaApagar(
                         '<?php echo $exibir['nomeFuncionario'] ?>', <?php echo $exibir['idFuncionario'] ?>)">
                                 <i style="color: red;" class="fa-trash fa-solid"></i>
@@ -63,7 +61,7 @@ session_start();
 <script>
     function confirmaApagar(nome, id) {
         if (confirm("Deseja deletar o funcionário " + nome + "?")) {
-            
+            window.location = "excluirFuncionario.php?idFunc="+id;
         }
     }
 </script>

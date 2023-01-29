@@ -5,11 +5,11 @@
     $emailFunc = $_POST["emailFunc"];
     //encriptar senha: $senha = password_hash($_POST["senhaFunc"], PASSWORD_ARGON2I);
     $senhaFunc = $_POST["senhaFunc"];
-    $consulta = "SELECT * FROM funcionario WHERE emailFuncionario = '" .$email. "'";
+    $consulta = "SELECT * FROM funcionario WHERE emailFuncionario = '" .$emailFunc. "'";
     $resultado = $conn->query($consulta);
     if($resultado->num_rows<=0){
         $sql = "INSERT INTO funcionario (nomeFuncionario, sobrenomeFuncionario, emailFuncionario, senhaFuncionario)
-        VALUES ('" .$nomeFunc. "', '" .$sobrenomeFunc. "' '" .$email. "', '" .$senhaFunc. "')";
+        VALUES ('" .$nomeFunc. "', '" .$sobrenomeFunc. "', '" .$emailFunc. "', '" .$senhaFunc. "')";
         if($conn->query($sql) === true){
             echo "<script>alert('Funcionário inserido com sucesso!');</script>";
             header("Location: admin.php");

@@ -47,7 +47,7 @@ session_start();
 
     <h1 class="titulo" style="top: 100px;">Edição de Funcionário</h1>
     <fieldset class="bordaFunc">
-        <form action="editarFuncionario.php" method="post">
+        <form action="editarFuncionario.php?idFunc=<?php echo $_GET['idFunc'];?>" method="post">
 
             <div class="input-block">
                 <label for="nomeFunc">Nome:</label><br>
