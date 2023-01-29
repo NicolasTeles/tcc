@@ -42,15 +42,15 @@
     <nav class="navUser">
       <?php
       if (!isset($_SESSION["nomeCliente"])) {
-      ?>
+        ?>
         <h1 class="tituloUsuario">Login</h1>
         <a href="login.php" class="linkUsuario">Fazer login</a>
-      <?php
+        <?php
       } else {
-      ?>
+        ?>
         <h1 class="tituloUsuario">Logout</h1>
         <a href="logout.php" class="linkUsuario">Sair</a>
-      <?php
+        <?php
       }
       ?>
     </nav>
@@ -58,17 +58,20 @@
     <ul class="headerUL">
       <?php
       if (isset($_SESSION["nomeCliente"])) {
-      ?>
-        <p class="nomeSession"><?php echo $_SESSION["nomeCliente"] ?></p>
+        ?>
+        <p class="nomeSession">
+          <?php echo $_SESSION["nomeCliente"] ?>
+        </p>
         <li class="headerLI"><button class="user"><i class="fa-solid fa-user-minus carrinho fa-3x"></i></button></li>
-      <?php
+        <?php
       } else {
-      ?>
+        ?>
         <li class="headerLI"><button class="user"><i class="fa-solid fa-user-plus carrinho fa-3x"></i></button></li>
-      <?php
+        <?php
       }
       ?>
-      <li class="headerLI"><button class="menu-btn"><i class="fa-solid fa-cart-arrow-down carrinho fa-3x"></i></button></li>
+      <li class="headerLI"><button class="menu-btn"><i class="fa-solid fa-cart-arrow-down carrinho fa-3x"></i></button>
+      </li>
     </ul>
   </header>
 
@@ -103,25 +106,31 @@
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
             if (str_contains($exibir["precoItem"], "@@")) {
-              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+              $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-          ?>
+            ?>
             <p>
             <div class="d1">
               <button class="popup-link">
                 <table>
                   <tr>
                     <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable"><?php echo $exibir['nomeItem']; ?></th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <th style="width: 150px" class="nomeTable">
+                      <?php echo $exibir['nomeItem']; ?>
+                    </th>
+                    <td style="width: 80px" class="precoTable">R$
+                      <?php echo $exibir['precoItem']; ?>
+                    </td>
                   </tr>
                 </table>
-                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
+                <p hidden class="descTable">
+                  <?php echo $exibir["descItem"]; ?>
+                </p>
               </button>
             </div>
             </p>
             <br>
-          <?php
+            <?php
           }
           ?>
         </div>
@@ -142,25 +151,31 @@
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
             if (str_contains($exibir["precoItem"], "@@")) {
-              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+              $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-          ?>
+            ?>
             <p>
             <div class="d1">
               <button class=popup-link>
                 <table>
                   <tr>
                     <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable"><?php echo $exibir['nomeItem']; ?></th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <th style="width: 150px" class="nomeTable">
+                      <?php echo $exibir['nomeItem']; ?>
+                    </th>
+                    <td style="width: 80px" class="precoTable">R$
+                      <?php echo $exibir['precoItem']; ?>
+                    </td>
                   </tr>
                 </table>
-                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
+                <p hidden class="descTable">
+                  <?php echo $exibir["descItem"]; ?>
+                </p>
               </button>
             </div>
             </p>
             <br>
-          <?php
+            <?php
           }
           ?>
         </div>
@@ -181,25 +196,31 @@
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
             if (str_contains($exibir["precoItem"], "@@")) {
-              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+              $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-          ?>
+            ?>
             <p>
             <div class="d1">
               <button class=popup-link>
                 <table>
                   <tr>
                     <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable"><?php echo $exibir['nomeItem']; ?></th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <th style="width: 150px" class="nomeTable">
+                      <?php echo $exibir['nomeItem']; ?>
+                    </th>
+                    <td style="width: 80px" class="precoTable">R$
+                      <?php echo $exibir['precoItem']; ?>
+                    </td>
                   </tr>
                 </table>
-                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
+                <p hidden class="descTable">
+                  <?php echo $exibir["descItem"]; ?>
+                </p>
               </button>
             </div>
             </p>
             <br>
-          <?php
+            <?php
           }
           ?>
         </div>
@@ -220,25 +241,31 @@
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
             if (str_contains($exibir["precoItem"], "@@")) {
-              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+              $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-          ?>
+            ?>
             <p>
             <div class="d1">
               <button class=popup-link>
                 <table>
                   <tr>
                     <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable"><?php echo $exibir['nomeItem']; ?></th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <th style="width: 150px" class="nomeTable">
+                      <?php echo $exibir['nomeItem']; ?>
+                    </th>
+                    <td style="width: 80px" class="precoTable">R$
+                      <?php echo $exibir['precoItem']; ?>
+                    </td>
                   </tr>
                 </table>
-                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
+                <p hidden class="descTable">
+                  <?php echo $exibir["descItem"]; ?>
+                </p>
               </button>
             </div>
             </p>
             <br>
-          <?php
+            <?php
           }
           ?>
         </div>
@@ -259,25 +286,31 @@
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
             if (str_contains($exibir["precoItem"], "@@")) {
-              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+              $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-          ?>
+            ?>
             <p>
             <div class="d1">
               <button class=popup-link>
                 <table>
                   <tr>
                     <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable"><?php echo $exibir['nomeItem']; ?></th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <th style="width: 150px" class="nomeTable">
+                      <?php echo $exibir['nomeItem']; ?>
+                    </th>
+                    <td style="width: 80px" class="precoTable">R$
+                      <?php echo $exibir['precoItem']; ?>
+                    </td>
                   </tr>
                 </table>
-                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
+                <p hidden class="descTable">
+                  <?php echo $exibir["descItem"]; ?>
+                </p>
               </button>
             </div>
             </p>
             <br>
-          <?php
+            <?php
           }
           ?>
         </div>
@@ -298,25 +331,31 @@
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
             if (str_contains($exibir["precoItem"], "@@")) {
-              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+              $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-          ?>
+            ?>
             <p>
             <div class="d1">
               <button class=popup-link>
                 <table>
                   <tr>
                     <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable"><?php echo $exibir['nomeItem']; ?></th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <th style="width: 150px" class="nomeTable">
+                      <?php echo $exibir['nomeItem']; ?>
+                    </th>
+                    <td style="width: 80px" class="precoTable">R$
+                      <?php echo $exibir['precoItem']; ?>
+                    </td>
                   </tr>
                 </table>
-                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
+                <p hidden class="descTable">
+                  <?php echo $exibir["descItem"]; ?>
+                </p>
               </button>
             </div>
             </p>
             <br>
-          <?php
+            <?php
           }
           ?>
         </div>
@@ -337,25 +376,31 @@
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
             if (str_contains($exibir["precoItem"], "@@")) {
-              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+              $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-          ?>
+            ?>
             <p>
             <div class="d1">
               <button class=popup-link>
                 <table>
                   <tr>
                     <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable"><?php echo $exibir['nomeItem']; ?></th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <th style="width: 150px" class="nomeTable">
+                      <?php echo $exibir['nomeItem']; ?>
+                    </th>
+                    <td style="width: 80px" class="precoTable">R$
+                      <?php echo $exibir['precoItem']; ?>
+                    </td>
                   </tr>
                 </table>
-                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
+                <p hidden class="descTable">
+                  <?php echo $exibir["descItem"]; ?>
+                </p>
               </button>
             </div>
             </p>
             <br>
-          <?php
+            <?php
           }
           ?>
         </div>
@@ -377,25 +422,31 @@
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
             if (str_contains($exibir["precoItem"], "@@")) {
-              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+              $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-          ?>
+            ?>
             <p>
             <div class="d1">
               <button class=popup-link>
                 <table>
                   <tr>
                     <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable"><?php echo $exibir['nomeItem']; ?></th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <th style="width: 150px" class="nomeTable">
+                      <?php echo $exibir['nomeItem']; ?>
+                    </th>
+                    <td style="width: 80px" class="precoTable">R$
+                      <?php echo $exibir['precoItem']; ?>
+                    </td>
                   </tr>
                 </table>
-                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
+                <p hidden class="descTable">
+                  <?php echo $exibir["descItem"]; ?>
+                </p>
               </button>
             </div>
             </p>
             <br>
-          <?php
+            <?php
           }
           ?>
         </div>
@@ -416,25 +467,31 @@
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
             if (str_contains($exibir["precoItem"], "@@")) {
-              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+              $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-          ?>
+            ?>
             <p>
             <div class="d1">
               <button class=popup-link>
                 <table>
                   <tr>
                     <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable"><?php echo $exibir['nomeItem']; ?></th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <th style="width: 150px" class="nomeTable">
+                      <?php echo $exibir['nomeItem']; ?>
+                    </th>
+                    <td style="width: 80px" class="precoTable">R$
+                      <?php echo $exibir['precoItem']; ?>
+                    </td>
                   </tr>
                 </table>
-                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
+                <p hidden class="descTable">
+                  <?php echo $exibir["descItem"]; ?>
+                </p>
               </button>
             </div>
             </p>
             <br>
-          <?php
+            <?php
           }
           ?>
         </div>
@@ -455,25 +512,31 @@
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
             if (str_contains($exibir["precoItem"], "@@")) {
-              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+              $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-          ?>
+            ?>
             <p>
             <div class="d1">
               <button class=popup-link>
                 <table>
                   <tr>
                     <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable"><?php echo $exibir['nomeItem']; ?></th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <th style="width: 150px" class="nomeTable">
+                      <?php echo $exibir['nomeItem']; ?>
+                    </th>
+                    <td style="width: 80px" class="precoTable">R$
+                      <?php echo $exibir['precoItem']; ?>
+                    </td>
                   </tr>
                 </table>
-                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
+                <p hidden class="descTable">
+                  <?php echo $exibir["descItem"]; ?>
+                </p>
               </button>
             </div>
             </p>
             <br>
-          <?php
+            <?php
           }
           ?>
         </div>
@@ -527,7 +590,8 @@
             </tr>
             <tr class="popuptr" id="rowDesc">
               <td colspan=2>
-                <p class="descDiv">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis qui perferendis enim laudantium
+                <p class="descDiv">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis qui perferendis
+                  enim laudantium
                   natus?</p>
               </td>
             </tr>
@@ -539,7 +603,7 @@
             <tr class="popuptr">
               <td colspan=2>
                 <div class="radio">
-                  
+
                 </div>
               </td>
             </tr>
@@ -552,7 +616,8 @@
               <td style="width: 50%;">
                 <button onclick="produto.salvar()" class="popup-addbot1">
                   <p class="custoDiv">R$: 50,00</p>
-                </button><button class="popup-addbot" onclick="produto.salvar()"> Adicionar ao carrinho <i class="fa-solid fa-cart-plus"></i></button>
+                </button><button class="popup-addbot" onclick="produto.salvar()"> Adicionar ao carrinho <i
+                    class="fa-solid fa-cart-plus"></i></button>
               </td>
             </tr>
           </table>
@@ -583,25 +648,31 @@
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
             if (str_contains($exibir["precoItem"], "@@")) {
-              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+              $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-          ?>
+            ?>
             <p>
             <div class="d1">
               <button class=popup-link>
                 <table>
                   <tr>
                     <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable"><?php echo $exibir['nomeItem']; ?></th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <th style="width: 150px" class="nomeTable">
+                      <?php echo $exibir['nomeItem']; ?>
+                    </th>
+                    <td style="width: 80px" class="precoTable">R$
+                      <?php echo $exibir['precoItem']; ?>
+                    </td>
                   </tr>
                 </table>
-                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
+                <p hidden class="descTable">
+                  <?php echo $exibir["descItem"]; ?>
+                </p>
               </button>
             </div>
             </p>
             <br>
-          <?php
+            <?php
           }
           ?>
         </div>
@@ -622,25 +693,31 @@
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
             if (str_contains($exibir["precoItem"], "@@")) {
-              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+              $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-          ?>
+            ?>
             <p>
             <div class="d1">
               <button class=popup-link>
                 <table>
                   <tr>
                     <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable"><?php echo $exibir['nomeItem']; ?></th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <th style="width: 150px" class="nomeTable">
+                      <?php echo $exibir['nomeItem']; ?>
+                    </th>
+                    <td style="width: 80px" class="precoTable">R$
+                      <?php echo $exibir['precoItem']; ?>
+                    </td>
                   </tr>
                 </table>
-                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
+                <p hidden class="descTable">
+                  <?php echo $exibir["descItem"]; ?>
+                </p>
               </button>
             </div>
             </p>
             <br>
-          <?php
+            <?php
           }
           ?>
         </div>
@@ -660,25 +737,31 @@
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
             if (str_contains($exibir["precoItem"], "@@")) {
-              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+              $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-          ?>
+            ?>
             <p>
             <div class="d1">
               <button class=popup-link>
                 <table>
                   <tr>
                     <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable"><?php echo $exibir['nomeItem']; ?></th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <th style="width: 150px" class="nomeTable">
+                      <?php echo $exibir['nomeItem']; ?>
+                    </th>
+                    <td style="width: 80px" class="precoTable">R$
+                      <?php echo $exibir['precoItem']; ?>
+                    </td>
                   </tr>
                 </table>
-                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
+                <p hidden class="descTable">
+                  <?php echo $exibir["descItem"]; ?>
+                </p>
               </button>
             </div>
             </p>
             <br>
-          <?php
+            <?php
           }
           ?>
         </div>
@@ -698,25 +781,31 @@
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
             if (str_contains($exibir["precoItem"], "@@")) {
-              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+              $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-          ?>
+            ?>
             <p>
             <div class="d1">
               <button class=popup-link>
                 <table>
                   <tr>
                     <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable"><?php echo $exibir['nomeItem']; ?></th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <th style="width: 150px" class="nomeTable">
+                      <?php echo $exibir['nomeItem']; ?>
+                    </th>
+                    <td style="width: 80px" class="precoTable">R$
+                      <?php echo $exibir['precoItem']; ?>
+                    </td>
                   </tr>
                 </table>
-                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
+                <p hidden class="descTable">
+                  <?php echo $exibir["descItem"]; ?>
+                </p>
               </button>
             </div>
             </p>
             <br>
-          <?php
+            <?php
           }
           ?>
         </div>
@@ -737,25 +826,31 @@
           $resultado = $conn->query($sql);
           while ($exibir = $resultado->fetch_assoc()) {
             if (str_contains($exibir["precoItem"], "@@")) {
-              $exibir["precoItem"] = str_replace("@@", "",  $exibir["precoItem"]);
+              $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-          ?>
+            ?>
             <p>
             <div class="d1">
               <button class=popup-link>
                 <table>
                   <tr>
                     <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable"><?php echo $exibir['nomeItem']; ?></th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <th style="width: 150px" class="nomeTable">
+                      <?php echo $exibir['nomeItem']; ?>
+                    </th>
+                    <td style="width: 80px" class="precoTable">R$
+                      <?php echo $exibir['precoItem']; ?>
+                    </td>
                   </tr>
                 </table>
-                <p hidden class="descTable"><?php echo $exibir["descItem"]; ?></p>
+                <p hidden class="descTable">
+                  <?php echo $exibir["descItem"]; ?>
+                </p>
               </button>
             </div>
             </p>
             <br>
-          <?php
+            <?php
           }
           ?>
         </div>
