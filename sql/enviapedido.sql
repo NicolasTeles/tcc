@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Jan-2023 às 11:25
+-- Tempo de geração: 30-Jan-2023 às 12:36
 -- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 7.4.29
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,20 +32,21 @@ CREATE TABLE `pedido` (
   `qtde_produto` int(3) NOT NULL,
   `obs_produto` varchar(100) NOT NULL,
   `preco_produto` varchar(8) NOT NULL,
-  `total_produto` int(10) NOT NULL,
+  `total_produto` varchar(10) NOT NULL,
   `dataPedido_produto` varchar(20) DEFAULT NULL,
   `status_pedido` varchar(20) NOT NULL,
   `img_produto` varchar(100) NOT NULL,
-  `id_pedido` int(11) NOT NULL
+  `id_pedido` int(11) NOT NULL,
+  `nomeCliente` varchar(20) NOT NULL,
+  `numeroCliente` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `pedido`
 --
 
-INSERT INTO `pedido` (`nm_produto`, `qtde_produto`, `obs_produto`, `preco_produto`, `total_produto`, `dataPedido_produto`, `status_pedido`, `img_produto`, `id_pedido`) VALUES
-('Hamburguer', 3, '500ml', '19', 57, '23/01/2023 07:58:43', 'Pedido feito', 'img_Guilherme/comida.jpg', 88),
-('Hamburguer', 3, '500ml', '19', 57, '23/01/2023 13:43:48', 'Pedido feito', 'img_Guilherme/comida.jpg', 89);
+INSERT INTO `pedido` (`nm_produto`, `qtde_produto`, `obs_produto`, `preco_produto`, `total_produto`, `dataPedido_produto`, `status_pedido`, `img_produto`, `id_pedido`, `nomeCliente`, `numeroCliente`) VALUES
+('Chemex', 1, 'teste', 'R$6,50', 'R$6,50', '29/01/2023 20:22:10', 'Pedido finalizado', 'http://localhost/tccCRUDnicolas/imagens/1994434705.webp', 108, 'Nicolas', '(31) 9 8529-6189');
 
 --
 -- Índices para tabelas despejadas
@@ -65,7 +66,7 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT de tabela `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

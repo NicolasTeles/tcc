@@ -1,9 +1,9 @@
 function unloadScrollBars() {
-    if (document.body.style.overflow == "hidden") {
-        document.body.style.overflow = "auto";
-    }else{
-        document.body.style.overflow = "hidden";
-    }
+  if (document.body.style.overflow == "hidden") {
+    document.body.style.overflow = "auto";
+  } else {
+    document.body.style.overflow = "hidden";
+  }
 }
 
 //clicar na posição
@@ -57,7 +57,7 @@ btn.onclick = function () {
     btnuser.classList.add("user");
     nomeCliente.style.display = "inline-block";
   }
-}
+};
 
 btn.addEventListener("click", () => {
   produto.btnConfereCarrinho();
@@ -104,7 +104,7 @@ btnuser.onclick = function () {
       nomeCliente.style.display = "inline-block";
     }
   }
-}
+};
 btnuser.addEventListener("click", () => {
   if (fund.style.display == "block") {
     fund.style.display = "none";
@@ -149,14 +149,21 @@ popdiv.forEach((mostra) => {
   mostra.addEventListener("click", () => {
     mostra.classList.add("referencia");
     imagemClicada = document.querySelector(".referencia").querySelector(".im2");
-    tituloClicado = document.querySelector(".referencia").querySelector(".nomeTable");
-    custoClicado = document.querySelector(".referencia").querySelector(".precoTable");
-    descClicada = document.querySelector(".referencia").querySelector(".descTable");
+    tituloClicado = document
+      .querySelector(".referencia")
+      .querySelector(".nomeTable");
+    custoClicado = document
+      .querySelector(".referencia")
+      .querySelector(".precoTable");
+    descClicada = document
+      .querySelector(".referencia")
+      .querySelector(".descTable");
 
     imagemDiv = document.querySelector(".popup-tabimg");
     tituloDiv = document.querySelector(".tituloDiv");
     custoDiv = document.querySelector(".custoDiv");
     descDiv = document.querySelector(".descDiv");
+    document.querySelector(".textpop").value = "";
 
     if (descClicada.innerHTML.includes("@@")) {
       document.querySelector("div.radio").innerHTML = "";
@@ -178,11 +185,12 @@ popdiv.forEach((mostra) => {
         opcao.name = "obs";
         opcao.id = "obs" + i;
         opcao.style = "margin-left: 30px";
-        opcao.setAttribute("onchange", "geraPreco("+i+")");
+        opcao.setAttribute("onchange", "geraPreco(" + i + ")");
 
         labelOpcao = document.createElement("label");
         labelOpcao.innerHTML = descClicada[i];
-        labelOpcao.setAttribute("onclick", "labelMarca("+i+")");
+        labelOpcao.id = "labelObs"+i;
+        labelOpcao.setAttribute("onclick", "labelMarca(" + i + ")");
         document.querySelector("div.radio").appendChild(opcao);
         document.querySelector("div.radio").appendChild(labelOpcao);
       }
@@ -206,12 +214,12 @@ popdiv.forEach((mostra) => {
 });
 
 function geraPreco(index) {
-    document.querySelector(".custoDiv").innerHTML = "R$"+custoClicado[index];
+  document.querySelector(".custoDiv").innerHTML = "R$" + custoClicado[index];
 }
 
-function labelMarca(index){
-    document.querySelector("#obs"+index).checked = true;
-    geraPreco(index);
+function labelMarca(index) {
+  document.querySelector("#obs" + index).checked = true;
+  geraPreco(index);
 }
 
 popup.addEventListener("click", (event) => {
@@ -293,7 +301,6 @@ const divCarrinho = document.querySelector(".divCarrinho");
 const textoTabela = document.querySelector(".textoTabela");
 const tbodyCheckout = document.querySelector(".tbodyCheckout");
 const tbody = document.querySelector(".tbody");
-const checkCarrinho = document.querySelector("fa-solid fa-circle-check fa-1x");
 
 let item;
 let precoUnit;
@@ -358,9 +365,9 @@ class Produto {
     var qtde = document.getElementById("qtde");
     var qtdeValor;
     if (qtde.value) {
-        qtdeValor = qtde.value;
-    }else{
-        qtdeValor = 1;
+      qtdeValor = qtde.value;
+    } else {
+      qtdeValor = 1;
     }
 
     let produto = {};
@@ -369,7 +376,26 @@ class Produto {
     produto.nomeProduto = document.querySelector(".tituloDiv").innerHTML;
     produto.qtde = qtdeValor;
     produto.preco = document.querySelector(".custoDiv").innerHTML;
-    produto.obs = "teste";
+    if (!document.querySelector("#rowDesc").hidden) {
+      if (document.querySelector(".textpop").value) {
+        produto.obs = document.querySelector(".textpop").value;
+      }else{
+        produto.obs = "Sem observações";
+      }
+    }else if (!document.querySelector("div.radio").hidden) {
+      const radioInputs = document.querySelectorAll("[name='obs']");
+
+      for (let input of radioInputs) {
+        if (input.checked) {
+          let index = input.id.replace("obs", "");
+          produto.obs = document.querySelector("#labelObs"+index).innerHTML;
+          break;
+        }else{
+          produto.obs = document.querySelector("#labelObs0").innerHTML;
+        }
+      }
+      console.log("teste");
+    }
     return produto;
   }
   listaTabela() {

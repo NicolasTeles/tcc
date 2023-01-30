@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Jan-2023 às 20:46
+-- Tempo de geração: 30-Jan-2023 às 12:36
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -64,7 +64,7 @@ CREATE TABLE `funcionario` (
 --
 
 INSERT INTO `funcionario` (`nomeFuncionario`, `sobrenomeFuncionario`, `emailFuncionario`, `senhaFuncionario`, `idFuncionario`) VALUES
-('Henrique Augusto', '0', 'henriqueaugusto@gmail.com', '123', 1);
+('Henrique', 'Augusto', 'henriqueamt@gmail.com', '123', 2);
 
 -- --------------------------------------------------------
 
@@ -122,7 +122,7 @@ ALTER TABLE `item`
 -- AUTO_INCREMENT de tabela `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `item`
