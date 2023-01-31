@@ -5,7 +5,7 @@ require_once('conexaoPedido.php');
 print_r($_POST["pesquisa"]);
 $pesquisar = $_POST["pesquisa"];
 
-$select = "SELECT * FROM `pedido` WHERE dataPedido_Produto like '%$pesquisar%'";
+$select = "SELECT * FROM pedido WHERE dataPedido_Produto like '%$pesquisar%'";
 
 $pedidosPedentes = $conn->query($select);
 
@@ -22,6 +22,7 @@ if ($pedidosPedentes->num_rows > 0) {
                     <th>Obs</th>
                     <th>Preço</th>
                     <th>Total</th>
+                    <th>Cliente</th>
                 </tr>
                 <?php
                 while ($exibirPedido = $pedidosPedentes->fetch_assoc()) {
@@ -31,9 +32,10 @@ if ($pedidosPedentes->num_rows > 0) {
                         <td><?php echo $exibirPedido['nm_produto'] ?></td>
                         <td><?php echo $exibirPedido['dataPedido_produto'] ?></td>
                         <td><?php echo $exibirPedido['qtde_produto'] ?></td>
-                        <td class='td_obs'><?php echo $exibirPedido['obs_produto'] ?></td>
+                        <td><?php echo $exibirPedido['obs_produto'] ?></td>
                         <td><?php echo $exibirPedido['preco_produto'] ?></td>
                         <td><?php echo $exibirPedido['total_produto'] ?></td>
+                        <td><?php echo $exibirPedido["nomeCliente"] ?></td>
                     </tr>
                 <?php
                 }

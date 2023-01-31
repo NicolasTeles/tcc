@@ -416,7 +416,7 @@ class Produto {
       //td_id.innerText = this.arrayProdutos[i].id;//dou valor as linhas da tabela
       td_obs.innerText = this.arrayProdutos[i].obs;
       td_nome.innerText = this.arrayProdutos[i].nomeProduto;
-      td_preco.innerText = this.arrayProdutos[i].preco;
+      td_preco.innerHTML = this.arrayProdutos[i].preco;
       var precoSeparado = this.arrayProdutos[i].preco.split(/[$,]/);
       var precoNum = Number(precoSeparado[1] + "." + precoSeparado[2]);
       var totalNum = precoNum * this.arrayProdutos[i].qtde;

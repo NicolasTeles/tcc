@@ -145,12 +145,6 @@ td{
     border: 0;
     border-bottom: 2px solid #adabab;
 }
-/**Quebra de linha na descrição**/
-.td_obs{
-    width: 10vw;
-    text-align: left;
-    word-break: break-word;
-}
 
 tr:nth-child(even){
     background:#e1e4e6;
@@ -231,7 +225,7 @@ input[type=submit]{
 footer{  
     color: #fafdff;
     align-items: center;
-    margin-top: 20vh;
+    margin-top: 45vh;
     width: 100%;
     height: 60px;
     display: flex;

@@ -1,5 +1,5 @@
 <?php
-include('conexaoPedido.php');
+require_once('conexaoPedido.php');
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -65,6 +65,7 @@ include('conexaoPedido.php');
     <footer>
         <i class="fa-solid fa-mug-saucer fa-2x" aria-hidden="true"></i>
     </footer>
+
     <script src="home.js"></script>
 </body>
 

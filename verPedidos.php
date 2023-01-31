@@ -39,6 +39,7 @@ include('conexaoPedido.php');
                         <th>Obs</th>
                         <th>Preço</th>
                         <th>Total</th>
+                        <th>Cliente</th>
                         <th>Status</th>
                     </tr>
                     <?php
@@ -48,9 +49,10 @@ include('conexaoPedido.php');
                             <td><img src="<?php echo $exibirPedido['img_produto'] ?>"></td>
                             <td><?php echo $exibirPedido['nm_produto'] ?></td>
                             <td><?php echo $exibirPedido['qtde_produto'] ?></td>
-                            <td class='td_obs'><?php echo $exibirPedido['obs_produto'] ?></td>
+                            <td><?php echo $exibirPedido['obs_produto'] ?></td>
                             <td><?php echo $exibirPedido['preco_produto'] ?></td>
                             <td><?php echo $exibirPedido['total_produto'] ?></td>
+                            <td><?php echo $exibirPedido["nomeCliente"] ?></td>
                             <td>
                                 <div class='divStatus'>
                                     <form action='atualizarPedidoFeito.php' method='POST'>
@@ -102,6 +104,7 @@ include('conexaoPedido.php');
                         <th>Descrição</th>
                         <th>Preço</th>
                         <th>Total</th>
+                        <th>Cliente</th>
                         <th>Status</th>
                     </tr>
                     <?php
@@ -111,9 +114,10 @@ include('conexaoPedido.php');
                             <td><img src="<?php echo $exibirPedido['img_produto'] ?>"></td>
                             <td><?php echo $exibirPedido['nm_produto'] ?></td>
                             <td><?php echo $exibirPedido['qtde_produto'] ?></td>
-                            <td class='td_obs'><?php echo $exibirPedido['obs_produto'] ?></td>
+                            <td><?php echo $exibirPedido['obs_produto'] ?></td>
                             <td><?php echo $exibirPedido['preco_produto'] ?></td>
                             <td><?php echo $exibirPedido['total_produto'] ?></td>
+                            <td><?php echo $exibirPedido["nomeCliente"] ?></td>
                             <td>
                                 <form action='atualizarPedidoProcesso.php' method='POST'>
                                     <input type='hidden' name='idHidden' value=<?php echo $exibirPedido['id_pedido'] ?>>
@@ -156,6 +160,7 @@ include('conexaoPedido.php');
                         <th>Descrição</th>
                         <th>Preço</th>
                         <th>Total</th>
+                        <th>Cliente</th>
                         <th>Status</th>
                     </tr>
                     <?php
@@ -165,9 +170,10 @@ include('conexaoPedido.php');
                             <td><img src="<?php echo $exibirPedido['img_produto'] ?>"></td>
                             <td><?php echo $exibirPedido['nm_produto'] ?></td>
                             <td><?php echo $exibirPedido['qtde_produto'] ?></td>
-                            <td class='td_obs'><?php echo $exibirPedido['obs_produto'] ?></td>
+                            <td><?php echo $exibirPedido['obs_produto'] ?></td>
                             <td><?php echo $exibirPedido['preco_produto'] ?></td>
                             <td><?php echo $exibirPedido['total_produto'] ?></td>
+                            <td><?php echo $exibirPedido["nomeCliente"] ?></td>
                             <td>
                                 <div class='divStatus'>
                                     <form action='ocultarPedidoConcluido.php' method='POST'>

@@ -42,15 +42,15 @@
     <nav class="navUser">
       <?php
       if (!isset($_SESSION["nomeCliente"])) {
-        ?>
+      ?>
         <h1 class="tituloUsuario">Login</h1>
         <a href="login.php" class="linkUsuario">Fazer login</a>
-        <?php
+      <?php
       } else {
-        ?>
+      ?>
         <h1 class="tituloUsuario">Logout</h1>
         <a href="logout.php" class="linkUsuario">Sair</a>
-        <?php
+      <?php
       }
       ?>
     </nav>
@@ -58,16 +58,16 @@
     <ul class="headerUL">
       <?php
       if (isset($_SESSION["nomeCliente"])) {
-        ?>
+      ?>
         <p class="nomeSession">
           <?php echo $_SESSION["nomeCliente"] ?>
         </p>
         <li class="headerLI"><button class="user"><i class="fa-solid fa-user-minus carrinho fa-3x"></i></button></li>
-        <?php
+      <?php
       } else {
-        ?>
+      ?>
         <li class="headerLI"><button class="user"><i class="fa-solid fa-user-plus carrinho fa-3x"></i></button></li>
-        <?php
+      <?php
       }
       ?>
       <li class="headerLI"><button class="menu-btn"><i class="fa-solid fa-cart-arrow-down carrinho fa-3x"></i></button>
@@ -108,7 +108,7 @@
             if (str_contains($exibir["precoItem"], "@@")) {
               $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-            ?>
+          ?>
             <p>
             <div class="d1">
               <button class="popup-link">
@@ -130,7 +130,7 @@
             </div>
             </p>
             <br>
-            <?php
+          <?php
           }
           ?>
         </div>
@@ -153,7 +153,7 @@
             if (str_contains($exibir["precoItem"], "@@")) {
               $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-            ?>
+          ?>
             <p>
             <div class="d1">
               <button class=popup-link>
@@ -175,7 +175,7 @@
             </div>
             </p>
             <br>
-            <?php
+          <?php
           }
           ?>
         </div>
@@ -198,7 +198,7 @@
             if (str_contains($exibir["precoItem"], "@@")) {
               $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-            ?>
+          ?>
             <p>
             <div class="d1">
               <button class=popup-link>
@@ -220,7 +220,7 @@
             </div>
             </p>
             <br>
-            <?php
+          <?php
           }
           ?>
         </div>
@@ -243,7 +243,7 @@
             if (str_contains($exibir["precoItem"], "@@")) {
               $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-            ?>
+          ?>
             <p>
             <div class="d1">
               <button class=popup-link>
@@ -265,7 +265,7 @@
             </div>
             </p>
             <br>
-            <?php
+          <?php
           }
           ?>
         </div>
@@ -288,7 +288,7 @@
             if (str_contains($exibir["precoItem"], "@@")) {
               $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-            ?>
+          ?>
             <p>
             <div class="d1">
               <button class=popup-link>
@@ -310,7 +310,7 @@
             </div>
             </p>
             <br>
-            <?php
+          <?php
           }
           ?>
         </div>
@@ -333,7 +333,7 @@
             if (str_contains($exibir["precoItem"], "@@")) {
               $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-            ?>
+          ?>
             <p>
             <div class="d1">
               <button class=popup-link>
@@ -355,7 +355,7 @@
             </div>
             </p>
             <br>
-            <?php
+          <?php
           }
           ?>
         </div>
@@ -378,7 +378,7 @@
             if (str_contains($exibir["precoItem"], "@@")) {
               $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-            ?>
+          ?>
             <p>
             <div class="d1">
               <button class=popup-link>
@@ -400,7 +400,7 @@
             </div>
             </p>
             <br>
-            <?php
+          <?php
           }
           ?>
         </div>
@@ -424,7 +424,7 @@
             if (str_contains($exibir["precoItem"], "@@")) {
               $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-            ?>
+          ?>
             <p>
             <div class="d1">
               <button class=popup-link>
@@ -446,7 +446,7 @@
             </div>
             </p>
             <br>
-            <?php
+          <?php
           }
           ?>
         </div>
@@ -469,7 +469,7 @@
             if (str_contains($exibir["precoItem"], "@@")) {
               $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-            ?>
+          ?>
             <p>
             <div class="d1">
               <button class=popup-link>
@@ -491,7 +491,7 @@
             </div>
             </p>
             <br>
-            <?php
+          <?php
           }
           ?>
         </div>
@@ -514,7 +514,7 @@
             if (str_contains($exibir["precoItem"], "@@")) {
               $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-            ?>
+          ?>
             <p>
             <div class="d1">
               <button class=popup-link>
@@ -536,7 +536,7 @@
             </div>
             </p>
             <br>
-            <?php
+          <?php
           }
           ?>
         </div>
@@ -615,9 +615,8 @@
               </td>
               <td style="width: 50%;">
                 <button onclick="produto.salvar()" class="popup-addbot1">
-                  <p class="custoDiv">R$: 50,00</p>
-                </button><button class="popup-addbot" onclick="produto.salvar()"> Adicionar ao carrinho <i
-                    class="fa-solid fa-cart-plus"></i></button>
+                  <p class="custoDiv">R$ 50,00</p>
+                </button><button class="popup-addbot" onclick="produto.salvar()"> Adicionar ao carrinho <i class="fa-solid fa-cart-plus"></i></button>
               </td>
             </tr>
           </table>
@@ -650,7 +649,7 @@
             if (str_contains($exibir["precoItem"], "@@")) {
               $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-            ?>
+          ?>
             <p>
             <div class="d1">
               <button class=popup-link>
@@ -672,7 +671,7 @@
             </div>
             </p>
             <br>
-            <?php
+          <?php
           }
           ?>
         </div>
@@ -695,7 +694,7 @@
             if (str_contains($exibir["precoItem"], "@@")) {
               $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-            ?>
+          ?>
             <p>
             <div class="d1">
               <button class=popup-link>
@@ -717,7 +716,7 @@
             </div>
             </p>
             <br>
-            <?php
+          <?php
           }
           ?>
         </div>
@@ -739,7 +738,7 @@
             if (str_contains($exibir["precoItem"], "@@")) {
               $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-            ?>
+          ?>
             <p>
             <div class="d1">
               <button class=popup-link>
@@ -761,7 +760,7 @@
             </div>
             </p>
             <br>
-            <?php
+          <?php
           }
           ?>
         </div>
@@ -783,7 +782,7 @@
             if (str_contains($exibir["precoItem"], "@@")) {
               $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-            ?>
+          ?>
             <p>
             <div class="d1">
               <button class=popup-link>
@@ -805,7 +804,7 @@
             </div>
             </p>
             <br>
-            <?php
+          <?php
           }
           ?>
         </div>
@@ -828,7 +827,7 @@
             if (str_contains($exibir["precoItem"], "@@")) {
               $exibir["precoItem"] = str_replace("@@", "", $exibir["precoItem"]);
             }
-            ?>
+          ?>
             <p>
             <div class="d1">
               <button class=popup-link>
@@ -850,7 +849,7 @@
             </div>
             </p>
             <br>
-            <?php
+          <?php
           }
           ?>
         </div>

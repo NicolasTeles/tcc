@@ -170,12 +170,6 @@ td{
 }
 tr:nth-child(even){
     background:#e1e4e6;
-  }
-
-.td_obs{
-    width: 10vw;
-    text-align: left;
-    word-break: break-word;
 }
 .textoAtualizar{
     text-align: center;
