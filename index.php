@@ -844,7 +844,7 @@
             <tr class="popuptr">
               <td style="width: 50%; text-align: left; text-indent: 3.5ch">
                 <input type="button" class="popup-button" value="+" onclick="proximo_item()">
-                <input type="text" class="popup-input" id="qtde" name="qtde">
+                <input type="text" class="popup-input" id="qtde" name="qtde" readonly>
                 <input type="button" class="popup-button" value="-" onclick="voltar_item()">
               </td>
               <td style="width: 50%;">
