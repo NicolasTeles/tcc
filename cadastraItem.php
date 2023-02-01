@@ -21,7 +21,7 @@
                 <input type="text" id="nomeItem" name="nomeItem" placeholder="Nome" required>
             </div>
 
-            <div style="height: 75px;"></div>
+            <div style="height: 45px;"></div>
 
             <div class="input-block">
                 <input type="checkbox" name="confereTamanho" id="confereTamanho" onchange="checou()">
@@ -33,14 +33,14 @@
                 </div>
             </div>
 
-            <div style="height: 70px;"></div>
+            <div style="height: 45px;"></div>
 
             <div class="input-block">
                 <label for="desc">Descrição:</label><br>
                 <textarea name="desc" id="desc" cols="50" rows="2" style="width: 85%;" placeholder="Descrição"></textarea>
             </div>
 
-            <div style="height: 75px;"></div>
+            <div style="height: 45px;"></div>
 
             <div class="input-block">
                 <div id="containerPreco">
@@ -54,7 +54,7 @@
 
             
             <div class="input-block">
-                <label for="tipo">Tipo:</label><br>
+                <label style="margin-left: 39%;" for="tipo">Tipo:</label><br>
                 <div style="margin-left: 20%;">
                     <select name="tipo" id="tipo" style="width: 60%;" onchange="mudaOpcao()">
                         <option value="Lanche">Lanche</option>
@@ -66,8 +66,8 @@
             <div style="height: 30px;"></div>
 
             
-            <div class="input-block">
-                <label for="subtipo">Sub-tipo:</label><br>
+            <div class="input-block"  style="animation: move 500ms; animation-delay: 1200ms; animation-fill-mode: backwards;">
+                <label style="margin-left: 35%;" for="subtipo">Sub-tipo:</label><br>
                 <div style="margin-left: 20%;">
                     <select name="subtipo" id="subtipo" style="width: 60%;">
                         <option value="Quiches" selected>Quiches</option>
@@ -81,19 +81,21 @@
 
             <div style="height: 30px;"></div>
 
+            <div class="imganima">
             <label for="imagem">Imagem:</label>
             <input type="file" class="form-control" accept="image/*" name="imagem" id="imagem">
-
+            <div></div>
             <div style="height: 50px;"></div>
 
             <div class= divcadastro>
                 <input type="submit" id="enviar" value="Cadastrar" style="margin-right: 10%;" class="btn btn-outline-primary">
                 <a href="index.html"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
             </div>
-        </form>
-    </fieldset>
+  
     <div style="height: 75px;"></div>
+    </form>
+    </fieldset> 
     <script src="subtipo.js"></script>
 </body>
 
-</html>
+</html> 

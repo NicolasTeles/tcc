@@ -47,12 +47,25 @@
 
             <div style="height: 75px;"></div>
 
+            <div class="input-block">
+                <label for="">Tipo do funcionário:</label>
+                <br><br>
+                <div style="margin-left: 25%; margin-right: 25%;">
+                    <input type="radio" name="tipoFunc" id="tipoAdm" value="ADMIN">
+                    <label for="tipoFunc" onclick="marcaTipo('tipoAdm')">Admin</label>
+                    <input type="radio" name="tipoFunc" id="tipoComum" value="COMUM">
+                    <label for="tipoFunc" onclick="marcaTipo('tipoComum')">Comum</label>
+                </div>
+            </div>
+
+            <div style="height: 75px;"></div>
+
             <div class= divcadastro>
                 <input type="submit" id="enviar" value="Cadastrar" style="margin-right: 10%;" class="btn btn-outline-primary">
                 <a href="index.html"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
             </div>
+        <div style="height: 60px;"></div>
         </form>
-        <div style="height: 15px;"></div>
     </fieldset>
     <script src="funcionario.js"></script>
 </body>

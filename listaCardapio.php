@@ -62,7 +62,7 @@ require_once("conexao.php");
                     <td><?php echo $exibir["subtipoItem"]; ?></td>
                     <td><img class = "imged" src="imagens/<?php echo $exibir["nomeImg"] ?> "></td>
                     <td><a style="color: #d66f01;" href="editarItem.php?idItem=<?php echo $exibir['idItem'] ?>"><i class="fa-regular fa-pen-to-square fa-lg"></i></a></td>
-                    <td><a href="" onclick="confirmaApagar(
+                    <td><a href="#" onclick="confirmaApagar(
                         '<?php echo $exibir['nomeItem'] ?>', <?php echo $exibir['idItem'] ?>)">
                             <i style="color: #bd2a33;" class="fa-trash fa-solid fa-lg"></i>
                         </a>

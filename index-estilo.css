@@ -188,10 +188,7 @@ header .navCarrinho .cardiv {
   height: 50px;
   color: #6e6e6e;
   border: 3px solid #adabab;
-  ;
   border-radius: 5px;
-  position: relative;
-  top: 57vh;
   cursor: pointer;
 
 }
@@ -407,9 +404,10 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  width: 60%;
+  width: 100%;
   height: 100%;
   display: none;
+  z-index: 2;
 }
 
 .nomeSession {
@@ -491,6 +489,15 @@ p {
 
   .fundo {
     width: 0;
+  }
+}
+
+@media(max-height:850px){
+  .buttonCarrinho{
+    top: 55vh;
+  } 
+  header nav {
+    width: 50%;
   }
 }
 

@@ -77,14 +77,12 @@ btnuser.onclick = function () {
       btn.classList.add("menu-btn2");
       imguser.classList.remove("fa-user-plus");
       imguser.classList.add("fa-circle-xmark");
-      fund.style.width = "80%";
       nomeCliente.style.display = "none";
     } else {
       btn.classList.remove("menu-btn2");
       btn.classList.add("menu-btn");
       imguser.classList.remove("fa-circle-xmark");
       imguser.classList.add("fa-user-plus");
-      fund.style.width = "60%";
       nomeCliente.style.display = "inline-block";
     }
   } else if (imgUserMinus) {
@@ -93,14 +91,12 @@ btnuser.onclick = function () {
       btn.classList.add("menu-btn2");
       imgUserMinus.classList.remove("fa-user-minus");
       imgUserMinus.classList.add("fa-circle-xmark");
-      fund.style.width = "80%";
       nomeCliente.style.display = "none";
     } else {
       btn.classList.remove("menu-btn2");
       btn.classList.add("menu-btn");
       imgUserMinus.classList.remove("fa-circle-xmark");
       imgUserMinus.classList.add("fa-user-minus");
-      fund.style.width = "60%";
       nomeCliente.style.display = "inline-block";
     }
   }
@@ -176,9 +172,9 @@ popdiv.forEach((mostra) => {
       document.querySelector("div.radio").appendChild(paragrafo);
 
       custoClicado = custoClicado.innerHTML.replace("R$", "");
-      descClicada = descClicada.innerHTML.replace("@@", "");
+      var descricaoClicada = descClicada.innerHTML.replace("@@", "");
       custoClicado = custoClicado.split("/");
-      descClicada = descClicada.split("/");
+      descricaoClicada = descricaoClicada.split("/");
       for (let i = 0; i < custoClicado.length; i++) {
         opcao = document.createElement("input");
         opcao.type = "radio";
@@ -188,14 +184,14 @@ popdiv.forEach((mostra) => {
         opcao.setAttribute("onchange", "geraPreco(" + i + ")");
 
         labelOpcao = document.createElement("label");
-        labelOpcao.innerHTML = descClicada[i];
-        labelOpcao.id = "labelObs"+i;
+        labelOpcao.innerHTML = descricaoClicada[i];
+        labelOpcao.id = "labelObs" + i;
         labelOpcao.setAttribute("onclick", "labelMarca(" + i + ")");
         document.querySelector("div.radio").appendChild(opcao);
         document.querySelector("div.radio").appendChild(labelOpcao);
       }
       custoDiv.innerHTML = "R$" + custoClicado[0];
-      descDiv.innerHTML = descClicada;
+      descDiv.innerHTML = descricaoClicada;
     } else {
       document.querySelector("#rowDesc").hidden = false;
       document.querySelector("#rowObs").hidden = false;
@@ -351,9 +347,11 @@ class Produto {
       //conferir se existe produtos com mesmo Id
       if (produto.imagem == array[i].imagem) {
         //caso exista irei apenas mudar a quantidade
-        inserir = false;
-        this.arrayProdutos[i].qtde =
-          parseInt(this.arrayProdutos[i].qtde) + parseInt(produto.qtde); //produto.qtde estou pegando valor do input digitado, pois é do array de mesmo id
+        if (produto.obs == array[i].obs) {
+          inserir = false;
+          this.arrayProdutos[i].qtde =
+          parseInt(this.arrayProdutos[i].qtde) + parseInt(produto.qtde);
+        }
       }
     }
     if (inserir) {
@@ -379,18 +377,18 @@ class Produto {
     if (!document.querySelector("#rowDesc").hidden) {
       if (document.querySelector(".textpop").value) {
         produto.obs = document.querySelector(".textpop").value;
-      }else{
+      } else {
         produto.obs = "Sem observações";
       }
-    }else if (!document.querySelector("div.radio").hidden) {
+    } else if (!document.querySelector("div.radio").hidden) {
       const radioInputs = document.querySelectorAll("[name='obs']");
 
       for (let input of radioInputs) {
         if (input.checked) {
           let index = input.id.replace("obs", "");
-          produto.obs = document.querySelector("#labelObs"+index).innerHTML;
+          produto.obs = document.querySelector("#labelObs" + index).innerHTML;
           break;
-        }else{
+        } else {
           produto.obs = document.querySelector("#labelObs0").innerHTML;
         }
       }
@@ -511,7 +509,9 @@ class Produto {
         status_pedido +
         "&obs=" +
         obs_produto;
-      window.location.assign(src);
+      if (confirm("Tem certeza de enviar seu pedido?")) {
+        window.location.assign(src);
+      }
     }
   }
   deletar(idDeletar) {
@@ -557,3 +557,8 @@ class Produto {
   }
 }
 var produto = new Produto();
+
+
+function login(){
+  window.location = "login.php";
+}

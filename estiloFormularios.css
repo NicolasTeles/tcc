@@ -15,16 +15,15 @@ body{
     color:whitesmoke;
     font-size: 50px;
     animation: fade 1s;
-    margin-top: 50px;
+    margin-top: 8%;
 }
 .bordaForm{
-
     border: 1px solid rgb(78, 77, 77);
     border-radius: 10px;
     width: 30%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 8%;
+    margin-top: 3%;
     height: 420px;
     background-color: white;
     animation: fade 1s;
@@ -122,4 +121,3 @@ input:focus{
         transform: scale(1.05);
     }
 }
-

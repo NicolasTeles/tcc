@@ -114,7 +114,7 @@
                     <input type="text" id="nomeItem" name="nomeItem" placeholder="Nome" required value="<?php echo $exibir['nomeItem']; ?>">
                 </div>
 
-                <div style="height: 75px;"></div>
+                <div style="height: 45px;"></div>
 
                 <?php
                 if (isset($splitDesc)) {
@@ -136,7 +136,7 @@
                         </div>
                     </div>
 
-                    <div style="height: 70px;"></div>
+                    <div style="height: 45px;"></div>
 
                     <div class="input-block">
                         <label for="desc">Descrição:</label><br>
@@ -145,14 +145,15 @@
                         </textarea>
                     </div>
 
-                    <div style="height: 75px;"></div>
+                    <div style="height: 45px;"></div>
 
                     <div class="input-block">
                         <div id="containerPreco">
                             <?php
                             for ($i=0; $i < sizeof($splitPreco); $i++) { 
                             ?>
-                                <label for="custo<?php echo $i;?>" class="labelPreco"><?php echo $i+1;?>° preço</label><br>
+                                <label for="custo<?php echo $i;?>" class="labelPreco"><?php echo $i+1;?>° preço</label>
+                                <br>
                                 <input type="text" name="custo<?php echo $i;?>" id="custo<?php echo $i;?>" value="<?php echo $splitPreco[$i];?>" oninput="criaPreco()" class="precoMultiplo"><br>
                             <?php
                             }
@@ -175,14 +176,14 @@
                         </div>
                     </div>
 
-                    <div style="height: 70px;"></div>
+                    <div style="height: 35px;"></div>
 
                     <div class="input-block">
                         <label for="desc">Descrição:</label><br>
                         <textarea name="desc" id="desc" cols="50" rows="2" style="width: 85%;" placeholder="Descrição"><?php echo $exibir['descItem']; ?></textarea>
                     </div>
 
-                    <div style="height: 75px;"></div>
+                    <div style="height: 35px;"></div>
 
                     <div class="input-block">
                         <div id="containerPreco">
@@ -200,7 +201,7 @@
 
 
                 <div class="input-block">
-                    <label for="tipo">Tipo:</label><br>
+                    <label style="margin-left: 39%;" for="tipo">Tipo:</label><br>
                     <div style="margin-left: 20%;">
                         <select name="tipo" id="tipo" style="width: 60%;" onchange="mudaOpcao()">
                             <option value="Lanche">Lanche</option>
@@ -231,8 +232,8 @@
                 <div style="height: 30px;"></div>
 
 
-                <div class="input-block">
-                    <label for="subtipo">Sub-tipo:</label><br>
+                <div class="input-block" style="animation: move 500ms; animation-delay: 1200ms; animation-fill-mode: backwards;">
+                    <label style="margin-left: 36%;" for="subtipo">Sub-tipo:</label><br>
                     <div style="margin-left: 20%;">
                         <select name="subtipo" id="subtipo" style="width: 60%;">
                             <option value="Quiches">Quiches</option>
@@ -247,12 +248,12 @@
                 <div style="height: 30px;"></div>
 
                 <div class="input-block" id="divBotao">
-                    <label for="avisoMudar">Deseja mudar a imagem desse item?</label>
+                    <label style="margin-left: 12%;" for="avisoMudar">Deseja mudar a imagem desse item?</label>
                     <input type="button" onclick="mostraFile()" class="btn btn-warning" name="avisoMudar" id="avisoMudar" value="Mudar imagem do item" style="margin-left: 25%; width: 35%;">
                 </div>
 
                 <div id="divImagem" hidden>
-                    <label for="imagem">Imagem(deixe o campo vazio para nao alterar):</label>
+                    <label for="imagem">Imagem: (Deixe o campo vazio para não alterar)</label>
                     <input type="file" class="form-control" accept="image/*" name="imagem" id="imagem">
                 </div>
 
@@ -269,13 +270,14 @@
                     <input type="submit" id="enviar" value="Cadastrar" style="margin-right: 10%;" class="btn btn-outline-primary">
                     <a href="listaCardapio.php"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
                 </div>
-            </form>
-        </fieldset>
+            
         <div style="height: 75px;"></div>
+        </form> 
+        </fieldset>
     <?php
     } else {
         echo "<script>alert('Id de item não informado');</script>";
-        header("location: listaCardapio.php");
+        echo "<script>window.location = 'listaCardapio.php';</script>";
     }
     ?>
     <script src="subtipo.js"></script>

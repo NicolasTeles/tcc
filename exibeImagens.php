@@ -36,7 +36,7 @@
     ?>
     <div class=divPedido>
       <div class="SemP">
-        <table class="tabela" style="wigth: 50%;">
+        <table class="tabela" style="width: 50%;">
           <tr>
             <th>Imagem</th>
             <th>Excluir</th>
@@ -62,7 +62,7 @@
             <tr>
               <td><img class=imgex src="<?php echo $dir . $file; ?>"></td>
               <td>
-                <a href="" onclick="confirmaExclusao('<?php echo $dir . $file; ?>')">
+                <a href="#" onclick="confirmaExclusao('<?php echo $dir . $file; ?>')">
                   <i style="color: #bd2a33;" class="fa-trash fa-solid fa-2x"></i>
                 </a>
               </td>
@@ -82,7 +82,6 @@
 <script>
   function confirmaExclusao(nomeImagem) {
     if (confirm("Deseja realmente excluir a imagem?")) {
-      alert(nomeImagem);
       window.location = "excluirImagem.php?fileName=" + nomeImagem;
     }
   }
