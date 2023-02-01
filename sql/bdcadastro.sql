@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Jan-2023 às 12:36
+-- Tempo de geração: 01-Fev-2023 às 14:41
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -56,6 +56,7 @@ CREATE TABLE `funcionario` (
   `sobrenomeFuncionario` varchar(20) NOT NULL,
   `emailFuncionario` varchar(50) NOT NULL,
   `senhaFuncionario` varchar(30) NOT NULL,
+  `tipoFuncionario` varchar(5) NOT NULL,
   `idFuncionario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -63,8 +64,8 @@ CREATE TABLE `funcionario` (
 -- Extraindo dados da tabela `funcionario`
 --
 
-INSERT INTO `funcionario` (`nomeFuncionario`, `sobrenomeFuncionario`, `emailFuncionario`, `senhaFuncionario`, `idFuncionario`) VALUES
-('Henrique', 'Augusto', 'henriqueamt@gmail.com', '123', 2);
+INSERT INTO `funcionario` (`nomeFuncionario`, `sobrenomeFuncionario`, `emailFuncionario`, `senhaFuncionario`, `tipoFuncionario`, `idFuncionario`) VALUES
+('Henrique', 'Augusto', 'henriqueaugusto@gmail.com', '123', 'ADMIN', 3);
 
 -- --------------------------------------------------------
 
@@ -122,7 +123,7 @@ ALTER TABLE `item`
 -- AUTO_INCREMENT de tabela `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `item`
