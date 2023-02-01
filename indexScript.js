@@ -36,6 +36,7 @@ btn.onclick = function () {
   if (imgcart.classList.contains("fa-cart-arrow-down")) {
     btnuser.classList.remove("user");
     btnuser.classList.add("user2");
+    btnuser.disabled = true;
     imgcart.classList.remove("fa-cart-arrow-down");
     imgcart.classList.add("fa-circle-xmark");
     if (imguser) {
@@ -55,6 +56,7 @@ btn.onclick = function () {
     }
     btnuser.classList.remove("user2");
     btnuser.classList.add("user");
+    btnuser.disabled = false;
     nomeCliente.style.display = "inline-block";
   }
 };
@@ -75,12 +77,14 @@ btnuser.onclick = function () {
     if (imguser.classList.contains("fa-user-plus")) {
       btn.classList.remove("menu-btn");
       btn.classList.add("menu-btn2");
+      btn.disabled = true;
       imguser.classList.remove("fa-user-plus");
       imguser.classList.add("fa-circle-xmark");
       nomeCliente.style.display = "none";
     } else {
       btn.classList.remove("menu-btn2");
       btn.classList.add("menu-btn");
+      btn.disabled = false;
       imguser.classList.remove("fa-circle-xmark");
       imguser.classList.add("fa-user-plus");
       nomeCliente.style.display = "inline-block";
@@ -89,12 +93,14 @@ btnuser.onclick = function () {
     if (imgUserMinus.classList.contains("fa-user-minus")) {
       btn.classList.remove("menu-btn");
       btn.classList.add("menu-btn2");
+      btn.disabled = true;
       imgUserMinus.classList.remove("fa-user-minus");
       imgUserMinus.classList.add("fa-circle-xmark");
       nomeCliente.style.display = "none";
     } else {
       btn.classList.remove("menu-btn2");
       btn.classList.add("menu-btn");
+      btn.disabled = false;
       imgUserMinus.classList.remove("fa-circle-xmark");
       imgUserMinus.classList.add("fa-user-minus");
       nomeCliente.style.display = "inline-block";

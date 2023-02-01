@@ -30,10 +30,10 @@ session_start();
             WHERE idFuncionario = $idFunc";
         if ($conn->query($sql) === TRUE) {
             echo "<script>alert('Registro atualizado com sucesso');</script>";
-            header("Location: admin.php");
+            echo "<script>window.location = 'admin.php';</script>";
         } else {
             echo "<script>alert('Erro ao atualizar o registro');</script>";
-            header("Location: admin.php");
+            echo "<script>window.location = 'admin.php';</script>";
         }
     }
 
@@ -42,24 +42,23 @@ session_start();
         $consulta = "SELECT *  FROM funcionario WHERE idFuncionario = $idFunc";
         $resultado = $conn->query($consulta);
         $exibir = $resultado->fetch_assoc();
-    }
     ?>
 
     <h1 class="titulo" style="top: 100px;">Edição de Funcionário</h1>
     <fieldset class="bordaFunc">
-        <form action="editarFuncionario.php?idFunc=<?php echo $_GET['idFunc'];?>" method="post">
+        <form action="editarFuncionario.php?idFunc=<?php echo $_GET['idFunc']; ?>" method="post">
 
             <div class="input-block">
                 <label for="nomeFunc">Nome:</label><br>
-                <input type="text" id="nomeFunc" name="nomeFunc" value="<?php echo $exibir["nomeFuncionario"];?>" placeholder="Nome" style="width: 42%" required>
-                <input type="text" id="sobrenomeFunc" name="sobrenomeFunc" value="<?php echo $exibir["sobrenomeFuncionario"];?>" placeholder="Sobrenome" style="width: 41%" required>
+                <input type="text" id="nomeFunc" name="nomeFunc" value="<?php echo $exibir["nomeFuncionario"]; ?>" placeholder="Nome" style="width: 42%" required>
+                <input type="text" id="sobrenomeFunc" name="sobrenomeFunc" value="<?php echo $exibir["sobrenomeFuncionario"]; ?>" placeholder="Sobrenome" style="width: 41%" required>
             </div>
 
             <div style="height: 75px;"></div>
 
             <div class="input-block">
                 <label for="emailFunc">Email:</label><br>
-                <input type="text" id="emailFunc" name="emailFunc" value="<?php echo $exibir["emailFuncionario"];?>" placeholder="exemplo@gmail.com" required>
+                <input type="text" id="emailFunc" name="emailFunc" value="<?php echo $exibir["emailFuncionario"]; ?>" placeholder="exemplo@gmail.com" required>
             </div>
 
             <div style="height: 75px;"></div>
@@ -73,7 +72,12 @@ session_start();
         <div style="height: 15px;"></div>
     </fieldset>
     <script src="funcionario.js"></script>
-</body>
+    <?php
+    }else{
+        echo "<script>alert('Erro ao atualizar o registro');</script>";
+        echo "<script>window.location = 'admin.php';</script>";
+    }
+    ?>
 </body>
 
 </html>
