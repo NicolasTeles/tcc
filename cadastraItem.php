@@ -9,9 +9,29 @@
     <link rel="stylesheet" href="estiloItem.css">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <?php
+    if (!isset($_SESSION["nomeFunc"])) {
+        ?>
+        <style>
+            body{
+                background: linear-gradient(800deg, #3a1624, #741413);
+            }
+            .alert.alert-warning{
+                margin: 150px;
+                width: 80%;
+                background-color: white;
+                color: #3a1624;
+            }
+        </style>
+        <?php
+    }
+    ?>
 </head>
 
 <body>
+<?php
+    if (isset($_SESSION["nomeFunc"])) {
+        ?>
     <h1 class="titulo" style="top: 100px;">Cadastro de Itens</h1>
     <fieldset class="bordaForm">
         <form action="insertItem.php" method="post" enctype="multipart/form-data">
@@ -96,6 +116,15 @@
     </form>
     </fieldset> 
     <script src="subtipo.js"></script>
+    <?php
+    }else{
+        ?>
+        <div class="text-center alert alert-warning">
+            Usuário não logado, favor <a href="loginFuncionario.php">fazer login</a>
+        </div>
+        <?php
+    }
+    ?>
 </body>
 
 </html> 

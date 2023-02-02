@@ -109,7 +109,21 @@ footer .caixa:nth-child(4) {
     height: 100%;
     display: none;
     z-index: 1100;
+    overflow: scroll;
+    overflow-x: hidden;
 }
+.popup-fundo::-webkit-scrollbar{
+    width: 15px;
+
+  }
+  .popup-fundo::-webkit-scrollbar-track{
+    background: #adabab;
+  }
+  .popup-fundo::-webkit-scrollbar-thumb{
+    border: 4.5px solid #adabab;
+    border-radius: 25px;
+    background-color:#f1efef;
+  }
 
 .popup{
     text-align: center;

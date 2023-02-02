@@ -23,7 +23,15 @@
   <header class="classcabecalho"> <img src="img/logo3.png" class="logoimg">
     <nav class="navCarrinho">
       <div class="cardiv">
-        <p class="textoTabela" hidden>Seu carrinho está vazinho =(</p>
+        <table class="textoTabela">
+            <tr>
+              <th rowspan="2"><i class="fa-regular fa-face-frown fa-5x"></i></th>
+              <td class="Carrinho-VazioTD"> OPS!</td>
+            </tr>
+            <tr>
+              <td class="Carrinho-VazioTD" colspan="2">Seu carrinho esta vazio!</td>
+            </tr>
+          </table>
         <div class="divCarrinho" hidden>
           <table class="tabela" border="1">
             <th class="thCarrinho" colspan="2">Item</th>
@@ -782,34 +790,6 @@
 
   <div class="popup-fundo">
     <div class="popup">
-      <!--<div class="popup-fechar"><i class="fa-solid fa-square-xmark fa-2x"></i></div>
-      <div class="popup-content">
-        <div id="Img_Lanche">
-          <img class=imgp style="width: 80%; border-radius: 15px;" src="">
-        </div>
-        <?php
-        // if (isset($_SESSION["nomeCliente"])) {
-        ?>
-        <button onclick="proximo_item()">+</button>
-        <button onclick="voltar_item()">-</button>
-        <button onclick="produto.salvar()">ADD</button>
-        <br>
-        <select id="qtde" name="qtde" size="1">
-          <option value="1" selected>1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
-        <?php
-        // } else {
-        ?>
-        <button><a href="login.php">Faça login para poder adicionar itens ao carrinho</a></button>
-        <?php
-        // }
-        ?>
-      </div>
-    </div>-->
-
       <div class="popupbranco">
         <div class="popup-fechar"><i class="fa-solid fa-square-xmark fa-2x"></i></div>
         <div class="popup-content">

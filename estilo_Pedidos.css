@@ -208,6 +208,20 @@ input[type=submit]{
     color: #f1efef;
     opacity: .9;
 }
+.buttonPedidoInterrompido {
+    width: 170px;
+    height: 40px;
+    margin: 5px;
+    border: 2px solid #f18723;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #383737;
+}
+.buttonPedidoInterrompido:hover {
+    background-color: #f18723;
+    color: #f1efef;
+    opacity: .9;
+}
 .buttonPedidoFinalizado{
     width: 170px;
     height: 40px;

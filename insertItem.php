@@ -45,7 +45,7 @@
                 VALUES ('$nomeItem', '$desc', '$preco', '$tipo', '$subtipo', '$novoNome', '$extensaoImg')";
         if($conn->query($sql) === TRUE){
             echo "<script>alert('Item inserido com sucesso!');</script>";
-            echo "<script>window.location = 'cadastraItem.php';</script>";
+            echo "<script>window.location = 'admin.php';</script>";
         }else{
             echo "Erro: " .$sql. "<br>" .$conn->error;
             echo "<script>window.history.back();</script>";

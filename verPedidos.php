@@ -119,10 +119,19 @@ include('conexaoPedido.php');
                             <td><?php echo $exibirPedido['total_produto'] ?></td>
                             <td><?php echo $exibirPedido["nomeCliente"] ?></td>
                             <td>
-                                <form action='atualizarPedidoProcesso.php' method='POST'>
-                                    <input type='hidden' name='idHidden' value=<?php echo $exibirPedido['id_pedido'] ?>>
-                                    <input type='submit' value='Concluido' class='buttonPedidoConcluido'>
-                                </form>
+                                <div class='divStatus'>
+                                    <form action='atualizarPedidoProcesso.php' method='POST'>
+                                        <input type='hidden' name='idHidden' value=<?php echo $exibirPedido['id_pedido'] ?>>
+                                        <input type='submit' value='Pedido concluido!' class='buttonPedidoConcluido'>
+                                    </form>
+                                </div>
+
+                                <div class='divCancelado-Interrompido'>
+                                    <form action='InterromperPedido.php' method='POST'>
+                                        <input type='hidden' name='idHidden' value=<?php echo $exibirPedido['id_pedido'] ?>>
+                                        <input type='submit' value='Pedido interrompido!' class='buttonPedidoInterrompido'>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
 

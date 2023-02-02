@@ -27,7 +27,7 @@ header {
 header .navCarrinho {
   position: absolute;
   background: linear-gradient(35deg, #3a1624, #741413);
-  width: 40%;
+  width: 60%;
   top: 100%;
   right: -100%;
   height: 100vh;
@@ -77,8 +77,25 @@ header .navCarrinho .cardiv {
   background: #f1efef;
   border-radius: 10px;
   height: 80vh;
-  width: auto;
+  width: 95%;
   border: 3px solid #adabab;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.cardiv2::-webkit-scrollbar {
+  width: 15px;
+
+}
+
+.cardiv2::-webkit-scrollbar-track {
+  background: #adabab;
+}
+
+.cardiv2::-webkit-scrollbar-thumb {
+  border: 4.5px solid #adabab;
+  border-radius: 25px;
+  background-color: #f1efef;
 }
 
 .linkUsuario {
@@ -152,11 +169,9 @@ header .navCarrinho .cardiv {
 
 /***/
 .tabela {
-  border-radius: 5px;
   overflow: hidden;
   border: none;
   border-collapse: collapse;
-
 }
 
 .tabela td {
@@ -164,6 +179,7 @@ header .navCarrinho .cardiv {
   background: #ebebeb;
   border: none;
   border-bottom: 3px solid #adabab;
+  width: 10%;
 }
 
 .thCarrinho {
@@ -190,7 +206,7 @@ header .navCarrinho .cardiv {
   border: 3px solid #adabab;
   border-radius: 5px;
   cursor: pointer;
-
+  margin-top: 10px;
 }
 
 .buttonCarrinho:hover {
@@ -200,11 +216,31 @@ header .navCarrinho .cardiv {
   opacity: 0.9;
 }
 
+.textoTabela {
+  text-align: left;
+  margin-top: 30vh;
+  margin-left: 15%;
+}
+
+.Carrinho-VazioTD:nth-child(2) {
+  font-size: 50px;
+  text-indent: .5ch;
+}
+
+.Carrinho-VazioTD:nth-child(1) {
+  font-size: 25px;
+  text-indent: 1ch;
+}
+
 /***/
 
 .headerUL {
   cursor: default;
   word-spacing: 50px;
+}
+
+.fa-trash.fa-solid:hover {
+  cursor: pointer;
 }
 
 .headerLI {
@@ -435,10 +471,6 @@ p {
     width: 60%;
     background: linear-gradient(65deg, #3a1624, #741413);
   }
-
-  .fundo {
-    width: 40%;
-  }
 }
 
 @media(max-width: 950px) {
@@ -486,16 +518,13 @@ p {
     height: 75vh;
     width: 90vw;
   }
-
-  .fundo {
-    width: 0;
-  }
 }
 
-@media(max-height:850px){
-  .buttonCarrinho{
+@media(max-height:850px) {
+  .buttonCarrinho {
     top: 55vh;
-  } 
+  }
+
   header nav {
     width: 50%;
   }

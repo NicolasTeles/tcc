@@ -13,13 +13,12 @@
         $select = $resultado->fetch_assoc();
         if($senha != $select["senhaFuncionario"]){
             echo "<script>alert('Senha incorreta');</script>";
-            header("Location: loginFuncionario.php");
+            echo "<script>window.location = 'loginFuncionario.php';</script>";
         }else{
-            echo "<script>alert('login concluido com êxito');</script>";
-            $nomeCompleto = explode(" ", $select["NomeFuncionario"]);
-            $_SESSION["nomeFunc"] = $nomeCompleto[0];
-            $_SESSION["sobrenomeFunc"] = $nomeCompleto[1];
+            $_SESSION["nomeFunc"] = $select["nomeFuncionario"];
+            $_SESSION["sobrenomeFunc"] = $select["sobrenomeFuncionario"];
             $_SESSION["emailFunc"] = $select["emailFuncionario"];
+            $_SESSION["tipoFunc"] = $select["tipoFuncionario"];
             $_SESSION["idFunc"] = $select["idFuncionario"];
             header("Location: admin.php");
         }

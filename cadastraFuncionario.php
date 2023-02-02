@@ -9,9 +9,29 @@
     <link rel="stylesheet" href="estilo-func.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <?php
+    if (!isset($_SESSION["nomeFunc"])) {
+        ?>
+        <style>
+            body{
+                background: linear-gradient(800deg, #3a1624, #741413);
+            }
+            .alert.alert-warning{
+                margin: 150px;
+                width: 80%;
+                background-color: white;
+                color: #3a1624;
+            }
+        </style>
+        <?php
+    }
+    ?>
 </head>
 
 <body>
+<?php
+    if (isset($_SESSION["nomeFunc"])) {
+        ?>
     <h1 class="titulo" style="top: 100px;">Cadastro de Funcionário</h1>
     <fieldset class="bordaFunc">
         <form action="insertFuncionario.php" method="post">
@@ -68,6 +88,15 @@
         </form>
     </fieldset>
     <script src="funcionario.js"></script>
+    <?php
+    }else{
+        ?>
+        <div class="text-center alert alert-warning">
+            Usuário não logado, favor <a href="loginFuncionario.php">fazer login</a>
+        </div>
+        <?php
+    }
+    ?>
 </body>
 
 </html>
