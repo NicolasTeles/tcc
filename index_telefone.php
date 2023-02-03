@@ -52,12 +52,12 @@
       if (!isset($_SESSION["nomeCliente"])) {
       ?>
         <h1 class="tituloUsuario">Login</h1>
-        <a href="login.php" class="linkUsuario">Fazer login</a>
+        <a href="login_telefone.php" class="linkUsuario">Fazer login</a>
       <?php
       } else {
       ?>
         <h1 class="tituloUsuario">Logout</h1>
-        <a href="logout.php" class="linkUsuario">Sair</a>
+        <a href="logout_telefone.php" class="linkUsuario">Sair</a>
       <?php
       }
       ?>
@@ -122,11 +122,11 @@
               <button class="popup-link">
                 <table>
                   <tr>
-                    <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable">
+                    <td style="width: 5vh;"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
+                    <th style="width: 15vh; text-align: left;" class="nomeTable">
                       <?php echo $exibir['nomeItem']; ?>
                     </th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <td style="width: 10vh;" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
                 <p hidden class="descTable">
@@ -165,11 +165,11 @@
               <button class=popup-link>
                 <table>
                   <tr>
-                    <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable">
+                    <td style="width: 5vh;"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
+                    <th style="width: 15vh;" class="nomeTable">
                       <?php echo $exibir['nomeItem']; ?>
                     </th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <td style="width: 10vh;" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
                 <p hidden class="descTable">
@@ -208,11 +208,11 @@
               <button class=popup-link>
                 <table>
                   <tr>
-                    <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable">
+                    <td style="width: 5vh;"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
+                    <th style="width: 15vh;" class="nomeTable">
                       <?php echo $exibir['nomeItem']; ?>
                     </th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <td style="width: 10vh;" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
                 <p hidden class="descTable">
@@ -251,11 +251,11 @@
               <button class=popup-link>
                 <table>
                   <tr>
-                    <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable">
+                    <td style="width: 5vh;"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
+                    <th style="width: 15vh;" class="nomeTable">
                       <?php echo $exibir['nomeItem']; ?>
                     </th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <td style="width: 10vh;" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
                 <p hidden class="descTable">
@@ -294,11 +294,11 @@
               <button class=popup-link>
                 <table>
                   <tr>
-                    <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable">
+                    <td style="width: 5vh;"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
+                    <th style="width: 15vh;" class="nomeTable">
                       <?php echo $exibir['nomeItem']; ?>
                     </th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <td style="width: 10vh;" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
                 <p hidden class="descTable">
@@ -337,11 +337,11 @@
               <button class=popup-link>
                 <table>
                   <tr>
-                    <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable">
+                    <td style="width: 5vh;"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
+                    <th style="width: 15vh;" class="nomeTable">
                       <?php echo $exibir['nomeItem']; ?>
                     </th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?>
+                    <td style="width: 10vh;" class="precoTable">R$<?php echo $exibir['precoItem']; ?>
                   </tr>
                 </table>
                 <p hidden class="descTable">
@@ -380,11 +380,11 @@
               <button class=popup-link>
                 <table>
                   <tr>
-                    <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable">
+                    <td style="width: 5vh;"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
+                    <th style="width: 15vh;" class="nomeTable">
                       <?php echo $exibir['nomeItem']; ?>
                     </th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <td style="width: 10vh;" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
                 <p hidden class="descTable">
@@ -424,11 +424,11 @@
               <button class=popup-link>
                 <table>
                   <tr>
-                    <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable">
+                    <td style="width: 5vh;"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
+                    <th style="width: 15vh;" class="nomeTable">
                       <?php echo $exibir['nomeItem']; ?>
                     </th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <td style="width: 10vh;" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
                 <p hidden class="descTable">
@@ -467,11 +467,11 @@
               <button class=popup-link>
                 <table>
                   <tr>
-                    <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable">
+                    <td style="width: 5vh;"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
+                    <th style="width: 15vh;" class="nomeTable">
                       <?php echo $exibir['nomeItem']; ?>
                     </th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <td style="width: 10vh;" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
                 <p hidden class="descTable">
@@ -510,11 +510,11 @@
               <button class=popup-link>
                 <table>
                   <tr>
-                    <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable">
+                    <td style="width: 5vh;"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
+                    <th style="width: 15vh;" class="nomeTable">
                       <?php echo $exibir['nomeItem']; ?>
                     </th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <td style="width: 10vh;" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
                 <p hidden class="descTable">
@@ -565,11 +565,11 @@
               <button class=popup-link>
                 <table>
                   <tr>
-                    <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable">
+                    <td style="width: 5vh;"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
+                    <th style="width: 15vh;" class="nomeTable">
                       <?php echo $exibir['nomeItem']; ?>
                     </th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <td style="width: 10vh;" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
                 <p hidden class="descTable">
@@ -608,11 +608,11 @@
               <button class=popup-link>
                 <table>
                   <tr>
-                    <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable">
+                    <td style="width: 5vh;"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
+                    <th style="width: 15vh;" class="nomeTable">
                       <?php echo $exibir['nomeItem']; ?>
                     </th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <td style="width: 10vh;" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
                 <p hidden class="descTable">
@@ -650,11 +650,11 @@
               <button class=popup-link>
                 <table>
                   <tr>
-                    <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable">
+                    <td style="width: 5vh;"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
+                    <th style="width: 15vh;" class="nomeTable">
                       <?php echo $exibir['nomeItem']; ?>
                     </th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <td style="width: 10vh;" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
                 <p hidden class="descTable">
@@ -692,11 +692,11 @@
               <button class=popup-link>
                 <table>
                   <tr>
-                    <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable">
+                    <td style="width: 5vh;"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
+                    <th style="width: 15vh;" class="nomeTable">
                       <?php echo $exibir['nomeItem']; ?>
                     </th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <td style="width: 10vh;" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
                 <p hidden class="descTable">
@@ -735,11 +735,11 @@
               <button class=popup-link>
                 <table>
                   <tr>
-                    <td style="width: 100px"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
-                    <th style="width: 150px" class="nomeTable">
+                    <td style="width: 5vh;"> <img src="imagens/<?php echo $exibir['nomeImg']; ?>" class="im2"></td>
+                    <th style="width: 15vh;" class="nomeTable">
                       <?php echo $exibir['nomeItem']; ?>
                     </th>
-                    <td style="width: 80px" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
+                    <td style="width: 10vh;" class="precoTable">R$<?php echo $exibir['precoItem']; ?></td>
                   </tr>
                 </table>
                 <p hidden class="descTable">
@@ -837,9 +837,9 @@
                 <?php
                 } else {
                 ?>
-                  <button onclick="login()" class="popup-addbot1">
+                  <button onclick="login_telefone()" class="popup-addbot1">
                     <p class="custoDiv">R$ 50,00</p>
-                  </button><button class="popup-addbot" onclick="login()"> Faça login para adicionar itens </button>
+                  </button><button class="popup-addbot" onclick="login_telefone()"> Faça login para adicionar itens </button>
                 <?php
                 }
                 ?>

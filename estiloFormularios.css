@@ -6,10 +6,13 @@
 body{
     background: linear-gradient(90deg, #711613, #3a1624);
     overflow: hidden;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
 }
 
-.titulo{
-    text-align: center;    
+.titulo{   
     font-weight: bold;
     position: relative;
     color:whitesmoke;
@@ -21,8 +24,6 @@ body{
     border: 1px solid rgb(78, 77, 77);
     border-radius: 10px;
     width: 30%;
-    margin-right: auto;
-    margin-left: auto;
     margin-top: 3%;
     height: 420px;
     background-color: white;
@@ -119,5 +120,39 @@ input:focus{
     }
     to{
         transform: scale(1.05);
+    }
+}
+@media (max-width: 1280px) {
+    body{
+        overflow-y: scroll;
+    }
+    .titulo{
+        margin-top: 4%;
+    }
+    .bordaForm{
+        width: 95%;
+        height: auto;
+        }
+        input[type=button], input[type=submit]{
+    
+            font-weight: bold;
+            border: 2px solid;
+            width: 35vw;
+            height: 50px;
+        }   
+    } 
+@media (max-width: 950px) {
+    .bordaForm{
+    width: 95%;
+    height: auto;
+    margin-top: 10%;
+    }
+    .titulo{
+        margin-top: 20%;
+    }
+    input[type=button], input[type=submit]{
+        font-weight: bold;
+        width: 35vw;
+        height: 50px;
     }
 }

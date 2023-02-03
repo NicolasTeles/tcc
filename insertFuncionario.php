@@ -1,5 +1,7 @@
 <?php
     require_once("conexao.php");
+    session_start();
+    session_unset();
     $nomeFunc = $_POST["nomeFunc"];
     $sobrenomeFunc = $_POST["sobrenomeFunc"];
     $emailFunc = $_POST["emailFunc"];
@@ -12,7 +14,11 @@
         $sql = "INSERT INTO funcionario (nomeFuncionario, sobrenomeFuncionario, emailFuncionario, senhaFuncionario, tipoFuncionario)
         VALUES ('" .$nomeFunc. "', '" .$sobrenomeFunc. "', '" .$emailFunc. "', '" .$senhaFunc. "', '" .$tipoFunc. "')";
         if($conn->query($sql) === true){
-            echo "<script>alert('Funcionário inserido com sucesso!');</script>";
+            $_SESSION["nomeFunc"] = $select["nomeFuncionario"];
+            $_SESSION["sobrenomeFunc"] = $select["sobrenomeFuncionario"];
+            $_SESSION["emailFunc"] = $select["emailFuncionario"];
+            $_SESSION["tipoFunc"] = $select["tipoFuncionario"];
+            $_SESSION["idFunc"] = $select["idFuncionario"];
             header("Location: admin.php");
         }else{
             echo "Erro: " .$sql. "<br>" .$conn->error;

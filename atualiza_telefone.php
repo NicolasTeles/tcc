@@ -17,7 +17,7 @@
         $_SESSION['nomeCliente'] = $nome;
         $_SESSION['sobrenomeCliente'] = $sobrenome;
         $_SESSION['celCliente'] = $cel;
-        header("Location: index.php");
+        header("Location: index_telefone.php");
     }else{
         echo "Erro: " .$sql. "<br>" .$conn->error;
         echo "<script>window.history.back();</script>";

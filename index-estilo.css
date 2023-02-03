@@ -465,69 +465,125 @@ p {
   }
 }
 
-@media(max-width:1430px) {
-
-  header nav {
-    width: 60%;
-    background: linear-gradient(65deg, #3a1624, #741413);
-  }
-}
-
-@media(max-width: 950px) {
-  .escolha {
+@media(max-width: 950px)
+{ 
+  .escolha{
+    margin-top: 10%;
     width: 80%;
   }
-
-  .blog-title:after,
-  .blog-title:before,
-  h1 {
+  .blog-title:after, .blog-title:before, h1{
     font-size: 27px;
-    width: 65%;
+    width: 57%;
   }
-
-  .container,
-  .container2 {
-    width: 97%;
-
+   .container, .container2{
+     width: 97%;
+   }
+   .accordion_item{
+     width: 89vw;
+   }
+   .accordion_content{
+    justify-content: center;
+    display: flex;
+   }
+   .accordion_header{
+     padding: 35px;
+     font-size: 100%;
+   }
+   .classcabecalho{
+    height:160px; 
   }
-
-  .accordion_item {
-    width: 89vw;
-  }
-
-  .accordion_header {
-    padding: 35px;
-    font-size: 20px;
-  }
-
-  .classcabecalho {
-    height: 160px;
-  }
-
-  .classcabecalhomin {
+  .classcabecalhomin{
     transition: .6s ease;
-    height: 120px;
+    height:120px; 
   }
-
-  header nav {
+  header nav{
     width: 100%;
-    background: linear-gradient(90deg, #3a1624, #741413);
+    background: linear-gradient(90deg, #3a1624,#741413);
   }
-
-  header nav .cardiv {
+  header nav .cardiv{
+    text-align: center;
     height: 75vh;
     width: 90vw;
   }
+  header nav .cardiv2{
+    height: 70vh;
 }
-
-@media(max-height:850px) {
-  .buttonCarrinho {
-    top: 55vh;
+  .fundo{
+    width: 0;
   }
-
-  header nav {
-    width: 50%;
+  .tabela td{
+    padding: 15px 3px;
+    font-size: small;
   }
+  .thCarrinho{
+    padding: 5px 3px;
+    font-size: small;
+  }
+  .buttonCarrinho{
+    width: 80vw;
+    font-size: medium;
+  }
+  .imgCarrinho{
+    margin: 2px;
+    width: 35px;
+    height: 35px;
+  }
+  .inputQtde {
+    width:20px;
+    height: 20px;
+}
+  .buttonqQtdeCarrinho {
+    width: 20px;
+    height: 20px;
+}
+.headerUL{
+  word-spacing: 15px;
+}
+}
+@media(max-width: 360px){
+  .headerUL{
+    display: flex;
+    flex-direction: column;
+
+  }
+  .menu-btn{
+    margin: 10px;
+    width: 60px;
+  }
+  .textoTabela{
+    text-align: left; 
+    margin-top: 70%;
+    margin-left: 10px;
+    font-size: 20px;
+}
+  .Carrinho-VazioTD:nth-child(2){
+    font-size: 30px;
+    text-indent: 0ch;
+}
+  .Carrinho-VazioTD:nth-child(1){
+    font-size: 25px;
+    text-indent: 0ch;
+}
+.accordion_header{
+  padding: 35px;
+  font-size: 90%;
+}
+.tabela td{
+  padding: 15px 2px;
+  font-size: x-small;
+}
+.thCarrinho{
+  padding: 5px 2px;
+  font-size: x-small;
+}
+.inputQtde {
+  width: 15px;
+  height: 20px;
+}
+.buttonqQtdeCarrinho {
+  width: 15px;
+  height: 20px;
+}
 }
 
 @keyframes animaindex {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Fev-2023 às 14:41
+-- Tempo de geração: 03-Fev-2023 às 00:33
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -41,7 +41,7 @@ INSERT INTO `cliente` (`nomeCliente`, `numeroCliente`, `sobrenomeCliente`) VALUE
 ('Marcio', '(11) 1 1111-1111', 'Assis'),
 ('Gabriel', '(22) 2 2222-2222', 'James'),
 ('Guilherme', '(31) 9 5555-5555', 'Victor'),
-('Nicolas', '(31) 9 8529-6189', 'Teles'),
+('Quimico', '(31) 9 8529-6189', 'Louco'),
 ('Henrique ', '(31) 9 9999-9999', 'Augusto'),
 ('Eduardo', '(33) 3 3333-3333', 'Octavio');
 

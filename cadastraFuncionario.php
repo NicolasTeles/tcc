@@ -31,6 +31,7 @@
 <body>
 <?php
     if (isset($_SESSION["nomeFunc"])) {
+    if ($_SESSION["tipoFunc"] == "ADMIN") {
         ?>
     <h1 class="titulo" style="top: 100px;">Cadastro de Funcionário</h1>
     <fieldset class="bordaFunc">
@@ -89,6 +90,13 @@
     </fieldset>
     <script src="funcionario.js"></script>
     <?php
+    }else{
+        ?>
+        <div class="text-center alert alert-warning">
+            Usuário não autenticado,<a href="admin.php">voltar para a página inicial</a>
+        </div>
+        <?php
+    }
     }else{
         ?>
         <div class="text-center alert alert-warning">

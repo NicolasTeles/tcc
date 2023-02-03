@@ -90,12 +90,12 @@ footer .caixa:nth-child(4) {
 {
     footer{
         flex-direction: column;
-       
+
     }
     footer .caixa{
         width: 100%;
         text-align: center;
-        
+
     }
 }
 
@@ -308,43 +308,91 @@ p{
 }
 
 /** Resolução **/
+
 @media(max-width: 950px){
     .d1{
-        width: 100%;
+        width: 97%;
         display: flex;
-        border-radius: 0;
-        border-bottom: 2px #adabab;
+        border-radius: 15;
+        border-bottom: 2px #adabab; 
     }
     .popup{
         max-width: 95%;
     }
     .popupbranco{
-        height: 80vh;
+        height: auto;
     }
     .popuptr:nth-child(2){
-        font-size: 45px;
-        height: 40px;
+        font-size: 3vh;
+        height: 5vh;
     }
     .popuptr:nth-child(3){
-        font-size: 20px;
-        height: 170px;
+        font-size: 16px;
+        height: 12vh;
         text-indent: 3ch;
-        
+        margin-top: 3vh;
+        margin-bottom: 3vh;
     }
-    .popuptr:nth-child(4){
-       height: 50px;  
-       text-align: center;
-    }
+
     .popup-addbot{
-        width: 80%;
-        height: 50px;
-        margin-right: 0;
-        margin-top: 80px;
-        font-size: 20px;
+        margin-top: 10px;
+        width: 30vw;
+        height: 45px;
+        margin-right: .5ch;
+        font-size: 15px;
+    }
+    .popup-addbot1{
+        width: 14vw;
+
     }
     .popup-tabimg{
-        width: 90vw;
-        height: 350px;
+        width: 91vw;
+        height: 220px;
     }
-    
+    .textpop{
+        width: 80vw;
+        height: 9vh;
+    }
+    .popup-button{
+        width: 40px;
+        height: 30px;
+        font-size: 15px;
+    }
+    .popup-input{
+        font-size: 15px;
+        height: 30px;
+        width: 40px;
+        margin: 0px;
+    }
+    .radio p{
+        font-size: 16px;
+    }
+}
+@media(max-width: 320px){
+    .popup-button{
+        width: 4vh;
+        height: 4vh;
+        font-size: 10px;
+    }
+    .popup-input{
+        font-size: 10px;
+        width: 4vh;
+        height: 4vh;
+
+    }
+    .popup-addbot{
+        margin-top: 10px;
+        width: 28vw;
+        height: 45px;
+        margin-right: 1ch;
+        font-size: 10px;
+    }
+    .popup-addbot1{
+        width: 14vw;
+        font-size: 10px;
+    }
+    .popup{
+        max-width: 98%;
+    }
+
 }

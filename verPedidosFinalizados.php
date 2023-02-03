@@ -1,5 +1,6 @@
 <?php
 require_once('conexaoPedido.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -15,6 +16,24 @@ require_once('conexaoPedido.php');
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php
+    if (!isset($_SESSION["nomeFunc"])) {
+    ?>
+        <style>
+            body {
+                background: linear-gradient(800deg, #3a1624, #741413);
+            }
+
+            .alert.alert-warning {
+                margin: 150px;
+                width: 80%;
+                background-color: white;
+                color: #3a1624;
+            }
+        </style>
+    <?php
+    }
+    ?>
     <title>Pedidos finalizados</title>
     <script>
         $(document).ready(function() {
@@ -43,30 +62,42 @@ require_once('conexaoPedido.php');
 </head>
 
 <body>
-    <header><img src="img/logo3.png" class="logoimg">
-        <ul class="headerUL">
-            <li class="headerLI"><button class="menu-btn" onclick="home()"><i class="fa-solid fa-house-chimney carrinho fa-3x"></i> </button></li>
-        </ul>
-    </header>
-    <br><br><br><br><br><br><br><br>
-    <h1 class="blog-title"> Historico de Pedidos <i class="fa-solid fa-clock-rotate-left"></i> </h1>
-    <form action="" id="formPesquisar" method="POST">
-        <label for="inpuntPesquisar">Pesquise pela data:</label>
+    <?php
+    if (isset($_SESSION["idFunc"])) {
+    ?>
+        <header><img src="img/logo3.png" class="logoimg">
+            <ul class="headerUL">
+                <li class="headerLI"><button class="menu-btn" onclick="home()"><i class="fa-solid fa-house-chimney carrinho fa-3x"></i> </button></li>
+            </ul>
+        </header>
+        <div style="height: 24vh"></div>
+        <h1 class="blog-title"> Historico de Pedidos <i class="fa-solid fa-clock-rotate-left"></i> </h1>
+        <form action="" id="formPesquisar" method="POST">
+            <label for="inpuntPesquisar">Pesquise pela data:</label>
 
-        <div class="al">
-            <input type="date" name="inputPesquisar" id="inputPesquisar">
-            <button type="submit" name="EnviarPesquisar" id="inputBotao"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div class="al">
+                <input type="date" name="inputPesquisar" id="inputPesquisar">
+                <button type="submit" name="EnviarPesquisar" id="inputBotao"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </form>
+        <br>
+        <div class="resultadosPesquisa">
         </div>
-    </form>
-    <br>
-    <div class="resultadosPesquisa">
-    </div>
 
-    <footer>
-        <i class="fa-solid fa-mug-saucer fa-2x" aria-hidden="true"></i>
-    </footer>
+        <footer>
+            <i class="fa-solid fa-mug-saucer fa-2x" aria-hidden="true"></i>
+        </footer>
 
-    <script src="home.js"></script>
+        <script src="home.js"></script>
+    <?php
+    } else {
+    ?>
+        <div class="text-center alert alert-warning">
+            Usuário não logado, favor <a href="loginFuncionario.php">fazer login</a>
+        </div>
+    <?php
+    }
+    ?>
 </body>
 
 </html>

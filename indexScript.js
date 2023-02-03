@@ -562,3 +562,6 @@ var produto = new Produto();
 function login(){
   window.location = "login.php";
 }
+function login_telefone(){
+  window.location = "login_telefone.php";
+}
