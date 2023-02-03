@@ -767,7 +767,7 @@
     <div class="caixa">
       <h2><i class="fa-regular fa-clock"></i> Horarios:</h2>
       <ul>
-        <li>Quinta a Segunda</li>
+        <li>Quinta a Terça</li>
         <li>15:30 - 21:00</li>
       </ul>
     </div>
@@ -776,17 +776,14 @@
 
       <h2> <i class="fa-solid fa-map-location-dot"></i> Endereço:</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, aliquam incidunt nobis praesentium a
-        dolorum dolores id quae sequi earum, doloribus eum nemo nisi accusamus impedit magnam porro aspernatur
-        optio?
+      Av. Frederico Varnhagem, 50 Loja 01 - Pioneiros
       </p>
     </div>
   </footer>
   <div class="rodape">
     <h2><i class="fa-solid fa-mug-saucer" aria-hidden="true"></i></h2>
     <div class="sociais">
-      <div class="social"> <a href="#"> <i class="fa-brands fa-instagram" aria-hidden="true"></i> </a></div>
-      <div class="social"> <a href="#"> <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> </a></div>
+      <div class="social"> <a href="https://www.instagram.com/secretocafe_/"> <i class="fa-brands fa-instagram" aria-hidden="true"></i> </a></div>
     </div>
   </div>
 
