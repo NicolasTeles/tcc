@@ -13,14 +13,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Café secreto</title>
-  <link rel="stylesheet" href="index-estilo.css">
-  <link rel="stylesheet" href="rodapepopup.css">
+  <link rel="stylesheet" href="../css/index-estilo.css">
+  <link rel="stylesheet" href="../css/rodapepopup.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 
 <body>
-  <header class="classcabecalho"> <img src="img/logo3.png" class="logoimg">
+  <header class="classcabecalho"> <img src="../img/logo3.png" class="logoimg">
     <nav class="navCarrinho">
       <div class="cardiv">
         <table class="textoTabela">
@@ -852,7 +852,7 @@
   </div>
 
   <div class="fundo"></div>
-  <script src="indexScript.js"></script>
+  <script src="../javascript/indexScript.js"></script>
 </body>
 
 </html>

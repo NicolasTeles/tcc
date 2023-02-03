@@ -497,7 +497,7 @@ class Produto {
       var preco_produto = this.arrayProdutos[i].preco;
 
       var src =
-        "enviaPedido.php?data=" +
+        "../php/enviaPedido.php?data=" +
         dataBrasil +
         "&imagem_produto=" +
         img_produto +
@@ -560,8 +560,8 @@ var produto = new Produto();
 
 
 function login(){
-  window.location = "login.php";
+  window.location = "../php/login.php";
 }
 function login_telefone(){
-  window.location = "login_telefone.php";
+  window.location = "../php/login_telefone.php";
 }

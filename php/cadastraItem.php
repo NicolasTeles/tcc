@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="estiloItem.css">
+    <link rel="stylesheet" href="../css/estiloItem.css">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <?php
@@ -116,7 +119,7 @@
     <div style="height: 75px;"></div>
     </form>
     </fieldset> 
-    <script src="subtipo.js"></script>
+    <script src="../javascript/subtipo.js"></script>
     <?php
     }else{
         ?>

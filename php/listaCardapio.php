@@ -11,9 +11,9 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="estiloLista.css">
-    <link rel="stylesheet" href="estilo_Pedidos.css">
-    <link rel="stylesheet" href="estilo_Guilherme.css">
+    <link rel="stylesheet" href="../css/estiloLista.css">
+    <link rel="stylesheet" href="../css/estilo_Pedidos.css">
+    <link rel="stylesheet" href="../css/estilo_Guilherme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <?php
     if (!isset($_SESSION["nomeFunc"])) {
@@ -42,7 +42,7 @@ session_start();
     <?php
     if (isset($_SESSION["idFunc"])) {
     ?>
-        <header><img src="img/logo3.png" class="logoimg">
+        <header><img src="../img/logo3.png" class="logoimg">
             <ul class="nav justify-content-end">
                 <li class="nav-item">
                     <button class="menu-btn" onclick="home()"><i class="fa-solid fa-house-chimney carrinho fa-2x"></i> </button>
@@ -136,6 +136,6 @@ session_start();
     }
 </script>
 
-<script src="home.js"></script>
+<script src="../javascript/home.js"></script>
 
 </html>

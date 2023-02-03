@@ -11,14 +11,13 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="estiloLista.css">
-    <link rel="stylesheet" href="estilo_Pedidos.css">
-    <link rel="stylesheet" href="estilo_Guilherme.css">
+    <link rel="stylesheet" href="../css/estiloLista.css">
+    <link rel="stylesheet" href="../css/estilo_Pedidos.css">
+    <link rel="stylesheet" href="../css/estilo_Guilherme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <?php
     if (!isset($_SESSION["nomeFunc"])) {
     ?>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
             body {
                 background: linear-gradient(800deg, #3a1624, #741413);
@@ -42,7 +41,7 @@ session_start();
     if (isset($_SESSION["idFunc"])) {
     ?>
         <header>
-            <img src="img/logo3.png" class="logoimg">
+            <img src="../img/logo3.png" class="logoimg">
             <ul class="nav justify-content-end">
                 <li class="nav-item">
                     <button class="menu-btn"><i class="fa-solid fa-house-chimney carrinho fa-2x"></i> </button>

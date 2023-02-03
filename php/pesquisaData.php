@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="estilo_PedidoFinalizados.css">
+<link rel="stylesheet" href="../css/estilo_PedidoFinalizados.css">
 <?php 
 
 require_once('conexaoPedido.php');

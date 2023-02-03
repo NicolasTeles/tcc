@@ -9,7 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estiloAdmin.css">
+    <link rel="stylesheet" href="../css/estiloAdmin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title> Local de Administração</title>
     <?php
@@ -36,7 +36,7 @@ session_start();
     <?php
     if (isset($_SESSION["nomeFunc"])) {
         ?>
-    <header><img src="img/logo3.png" class="logoimg">
+    <header><img src="../img/logo3.png" class="logoimg">
         <ul class="headerUL">
             <li class="headerLI nomeSession"><?php echo $_SESSION["nomeFunc"];?></li>
             <li class="headerLI"><button class="menu-btn"><i class="fa-solid fa-user-gear carrinho fa-3x"></i> </button></li>
@@ -92,7 +92,7 @@ session_start();
         <i class="fa-solid fa-mug-saucer fa-2x" aria-hidden="true"></i>
     </footer>
     <div class="fundo"></div>
-    <script src="admin-script.js"></script>
+    <script src="../javascript/admin-script.js"></script>
     <?php
     }else{
         ?>
