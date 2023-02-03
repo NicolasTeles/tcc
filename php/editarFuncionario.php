@@ -74,21 +74,21 @@ session_start();
                             <input type="text" id="sobrenomeFunc" name="sobrenomeFunc" value="<?php echo $exibir["sobrenomeFuncionario"]; ?>" placeholder="Sobrenome" style="width: 41%" required>
                         </div>
 
-                        <div style="height: 75px;"></div>
+                        <div style="height: 10vh;"></div>
 
                         <div class="input-block">
                             <label for="emailFunc">Email:</label><br>
                             <input type="text" id="emailFunc" name="emailFunc" value="<?php echo $exibir["emailFuncionario"]; ?>" placeholder="exemplo@gmail.com" required>
                         </div>
 
-                        <div style="height: 75px;"></div>
+                        <div style="height: 10vh;"></div>
 
                         <div class=divcadastro>
                             <input type="submit" id="enviar" value="Cadastrar" style="margin-right: 10%;" class="btn btn-outline-primary">
                             <a href="index.html"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
                         </div>
+                        <div style="height: 10vh;"></div>
                     </form>
-                    <div style="height: 15px;"></div>
                 </fieldset>
                 <script src="../javascript/funcionario.js"></script>
             <?php

@@ -137,7 +137,7 @@ session_start();
                             <input type="text" id="nomeItem" name="nomeItem" placeholder="Nome" required value="<?php echo $exibir['nomeItem']; ?>">
                         </div>
 
-                        <div style="height: 45px;"></div>
+                        <div style="height: 10vh;"></div>
 
                         <?php
                         if (isset($splitDesc)) {
@@ -159,7 +159,7 @@ session_start();
                                 </div>
                             </div>
 
-                            <div style="height: 45px;"></div>
+                            <div style="height: 10vh;"></div>
 
                             <div class="input-block">
                                 <label for="desc">Descrição:</label><br>
@@ -168,7 +168,7 @@ session_start();
                         </textarea>
                             </div>
 
-                            <div style="height: 45px;"></div>
+                            <div style="height: 10vh;"></div>
 
                             <div class="input-block">
                                 <div id="containerPreco">
@@ -199,14 +199,14 @@ session_start();
                                 </div>
                             </div>
 
-                            <div style="height: 35px;"></div>
+                            <div style="height: 10vh;"></div>
 
                             <div class="input-block">
                                 <label for="desc">Descrição:</label><br>
                                 <textarea name="desc" id="desc" cols="50" rows="2" style="width: 85%;" placeholder="Descrição"><?php echo $exibir['descItem']; ?></textarea>
                             </div>
 
-                            <div style="height: 35px;"></div>
+                            <div style="height: 10vh;"></div>
 
                             <div class="input-block">
                                 <div id="containerPreco">
@@ -220,7 +220,7 @@ session_start();
                         }
                         ?>
 
-                        <div style="height: 30px;"></div>
+                        <div style="height: 10vh;"></div>
 
 
                         <div class="input-block">
@@ -252,7 +252,7 @@ session_start();
                             });
                         </script>
 
-                        <div style="height: 30px;"></div>
+                        <div style="height: 10vh;"></div>
 
 
                         <div class="input-block" style="animation: move 500ms; animation-delay: 1200ms; animation-fill-mode: backwards;">
@@ -268,7 +268,7 @@ session_start();
                             </div>
                         </div>
 
-                        <div style="height: 30px;"></div>
+                        <div style="height: 10vh;"></div>
 
                         <div class="input-block" id="divBotao">
                             <label style="margin-left: 12%;" for="avisoMudar">Deseja mudar a imagem desse item?</label>
@@ -287,14 +287,14 @@ session_start();
                             }
                         </script>
 
-                        <div style="height: 50px;"></div>
+                        <div style="height: 10vh;"></div>
 
                         <div class=divcadastro>
                             <input type="submit" id="enviar" value="Cadastrar" style="margin-right: 10%;" class="btn btn-outline-primary">
                             <a href="listaCardapio.php"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
                         </div>
 
-                        <div style="height: 75px;"></div>
+                        <div style="height: 10vh;"></div>
                     </form>
                 </fieldset>
                 <script src="../javascript/subtipo.js"></script>

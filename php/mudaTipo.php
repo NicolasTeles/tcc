@@ -102,7 +102,7 @@ session_start();
                                 <input type="submit" id="enviar" value="Atualizar" style="margin-right: 10%;" class="btn btn-outline-primary">
                                 <a href="index.php"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
                             </div>
-                            <div style="height: 70px;"></div>
+                            <div style="height: 10vh;"></div>
                         </form>
                     </fieldset>
                     <script src="../javascript/mudaTipo.js"></script>

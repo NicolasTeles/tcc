@@ -34,8 +34,8 @@
                 <input type="submit" id="enviar" value="Fazer Login" style="margin-right: 10%;" class="btn btn-outline-primary">
                 <a href="index.html"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
             </div>
-        </form>
         <div style="height: 10vh;"></div>
+        </form>
     </fieldset>
  
     <script src="../javascript/formulario.js"></script>

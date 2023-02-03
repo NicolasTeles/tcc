@@ -45,7 +45,7 @@
     }
     if (isset($_SESSION["idFunc"])) {
         if (isset($_GET["idFunc"])) {
-            $idFunc = $GET["idFunc"];
+            $idFunc = $_GET["idFunc"];
             $select = "SELECT * FROM funcionario WHERE idFuncionario = $idFunc";
             $resultado = $conn->query($select);
             if ($resultado->num_rows > 0) {
@@ -62,7 +62,7 @@
                                 <i class="bi bi-eye-slash bi-eye" id="botaoSenha"></i>
                             </div>
 
-                            <div style="height: 75px;"></div>
+                            <div style="height: 10vh;"></div>
 
                             <div class="input-block">
                                 <label for="confirmaSenha">Confirme a senha:</label><br>
@@ -70,14 +70,14 @@
                                 <i class="bi bi-eye-slash bi-eye" id="botaoConfirma"></i>
                             </div>
 
-                            <div style="height: 75px;"></div>
+                            <div style="height: 10vh;"></div>
 
                             <div class=divcadastro>
                                 <input type="submit" id="enviar" value="Cadastrar" style="margin-right: 10%;" class="btn btn-outline-primary">
                                 <a href="index.html"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
                             </div>
+                            <div style="height: 10vh;"></div>
                         </form>
-                        <div style="height: 15px;"></div>
                     </fieldset>
                     <script src="../javascript/funcionario.js"></script>
                 <?php

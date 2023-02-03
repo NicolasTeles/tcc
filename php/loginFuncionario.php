@@ -21,7 +21,7 @@
                 <input type="text" id="emailFunc" name="emailFunc" placeholder="exemplo@gmail.com" required>
             </div>
 
-            <div style="height: 75px;"></div>
+            <div style="height: 10vh;"></div>
 
             <div class="input-block">
                 <label for="senhaFunc">Senha:</label><br>
@@ -29,14 +29,14 @@
                 <i class="bi bi-eye-slash bi-eye" id="botaoSenha"></i>
             </div>
 
-            <div style="height: 75px;"></div>
+            <div style="height: 10vh;"></div>
 
             <div class= divcadastro>
                 <input type="submit" id="enviar" value="Cadastrar" style="margin-right: 10%;" class="btn btn-outline-primary">
                 <a href="index.html"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
             </div>
+            <div style="height: 10vh;"></div>
         </form>
-        <div style="margin-top: -3%;"></div>
     </fieldset>
     
     <script src="../javascript/loginFuncScript.js"></script>

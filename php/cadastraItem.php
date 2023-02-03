@@ -45,7 +45,7 @@ session_start();
                 <input type="text" id="nomeItem" name="nomeItem" placeholder="Nome" required>
             </div>
 
-            <div style="height: 45px;"></div>
+            <div style="height: 10vh;"></div>
 
             <div class="input-block">
                 <input type="checkbox" name="confereTamanho" id="confereTamanho" onchange="checou()">
@@ -57,14 +57,14 @@ session_start();
                 </div>
             </div>
 
-            <div style="height: 45px;"></div>
+            <div style="height: 10vh;"></div>
 
             <div class="input-block">
                 <label for="desc">Descrição:</label><br>
                 <textarea name="desc" id="desc" cols="50" rows="2" style="width: 85%;" placeholder="Descrição"></textarea>
             </div>
 
-            <div style="height: 45px;"></div>
+            <div style="height: 10vh;"></div>
 
             <div class="input-block">
                 <div id="containerPreco">
@@ -74,7 +74,7 @@ session_start();
                 <input type="text" name="preco" id="preco" placeholder="Preço">
             </div>
 
-            <div style="height: 30px;"></div>
+            <div style="height: 10vh;"></div>
 
             
             <div class="input-block">
@@ -87,7 +87,7 @@ session_start();
                 </div>
             </div>
 
-            <div style="height: 30px;"></div>
+            <div style="height: 10vh;"></div>
 
             
             <div class="input-block"  style="animation: move 500ms; animation-delay: 1200ms; animation-fill-mode: backwards;">
@@ -103,7 +103,7 @@ session_start();
                 </div>
             </div>
 
-            <div style="height: 30px;"></div>
+            <div style="height: 10vh;"></div>
 
             <div class="imganima">
             <label for="imagem">Imagem:</label>
@@ -116,7 +116,7 @@ session_start();
                 <a href="index.html"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
             </div>
   
-    <div style="height: 75px;"></div>
+    <div style="height: 10vh;"></div>
     </form>
     </fieldset> 
     <script src="../javascript/subtipo.js"></script>

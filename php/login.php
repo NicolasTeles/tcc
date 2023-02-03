@@ -21,21 +21,21 @@
                 <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" style="width: 41%" required>
             </div>
 
-            <div style="height: 75px;"></div>
+            <div style="height: 10vh;"></div>
 
             <div class="input-block">    
                 <label for="cel">Telefone:</label><br>
                 <input type="text" id="cel" name="cel" placeholder="(99) 9 9999-9999" maxlength="16" required>
             </div>
 
-            <div style="height: 75px;"></div>
+            <div style="height: 10vh;"></div>
 
             <div class= divcadastro>
                 <input type="submit" id="enviar" value="Fazer Login" style="margin-right: 10%;" class="btn btn-outline-primary">
                 <a href="index.html"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
             </div>
+        <div style="height: 10vh;"></div>
         </form>
-        <div style="height: 15px;"></div>
     </fieldset>
  
     <script src="../javascript/formulario.js"></script>
