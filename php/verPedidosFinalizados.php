@@ -18,7 +18,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
     if (!isset($_SESSION["nomeFunc"])) {
-    ?>
+        ?>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
             body {
@@ -32,18 +32,18 @@ session_start();
                 color: #3a1624;
             }
         </style>
-    <?php
+        <?php
     }
     ?>
     <title>Pedidos finalizados</title>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             listar_registros();
 
 
 
-            $("#formPesquisar").submit(function(evento) {
+            $("#formPesquisar").submit(function (evento) {
                 evento.preventDefault();
                 listar_registros();
             });
@@ -55,7 +55,7 @@ session_start();
             let dados = {
                 pesquisa: pesquisar
             }
-            $.post("pesquisaData.php", dados, function(retorna) {
+            $.post("pesquisaData.php", dados, function (retorna) {
                 $(".resultadosPesquisa").html(retorna)
             });
         }
@@ -65,7 +65,7 @@ session_start();
 <body>
     <?php
     if (isset($_SESSION["idFunc"])) {
-    ?>
+        ?>
         <header><img src="../img/logo3.png" class="logoimg">
             <ul class="headerUL">
                 <li class="headerLI"><button class="menu-btn" onclick="home()"><i class="fa-solid fa-house-chimney carrinho fa-3x"></i> </button></li>
@@ -78,7 +78,8 @@ session_start();
 
             <div class="al">
                 <input type="date" name="inputPesquisar" id="inputPesquisar">
-                <button type="submit" name="EnviarPesquisar" id="inputBotao"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button type="submit" name="EnviarPesquisar" id="inputBotao"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
             </div>
         </form>
         <br>
@@ -90,13 +91,13 @@ session_start();
         </footer>
 
         <script src="../javascript/home.js"></script>
-    <?php
+        <?php
     } else {
-    ?>
+        ?>
         <div class="text-center alert alert-warning">
             Usuário não logado, favor <a href="loginFuncionario.php">fazer login</a>
         </div>
-    <?php
+        <?php
     }
     ?>
 </body>

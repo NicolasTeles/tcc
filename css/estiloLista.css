@@ -1,7 +1,7 @@
+.titulo:before,
+.titulo:after {
 
-.titulo:before, .titulo:after{
-   
-    background-color:#adabab;
+    background-color: #adabab;
     content: "";
     display: inline-block;
     height: 6px;
@@ -10,6 +10,7 @@
     border: 0.5px solid #acaaaa;
     width: 80%;
 }
+
 .titulo:before {
     right: .5em;
     margin-left: -80%;
@@ -19,30 +20,36 @@
     left: .5em;
     margin-right: -80%;
 }
-h1{
+
+h1 {
     position: relative;
     top: 150px;
     font-family: sans-serif;
     font-weight: 600;
     font-size: 35px;
-    
-} 
-.imgex{
+
+}
+
+.imgex {
     width: 300px;
     height: auto;
     border: 2px solid #6e6e6e;
-    border-radius: 15px; 
+    border-radius: 15px;
 }
-.imged{
+
+.imged {
     width: 120px;
     height: auto;
 }
-table, td, th{
+
+table,
+td,
+th {
     font-size: 20px;
     border-collapse: collapse;
-    border-bottom: 3px solid #adabab; 
-  }
-  
-.div_1{
+    border-bottom: 3px solid #adabab;
+}
+
+.div_1 {
     margin-top: 250px;
 }

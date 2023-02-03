@@ -5,9 +5,10 @@ echo $_POST['idHidden'];
 $selectUpdate = 'SELECT * FROM `pedido`';
 $selectPedidos = $conn->query($selectUpdate);
 
-while($updatePedidos = $selectPedidos->fetch_assoc()){
-    if($updatePedidos['status_pedido'] == 'Pedido feito'){
-        $updatePendente = 'UPDATE `pedido` SET `status_pedido`="Pedido em processo" WHERE id_pedido='.$_POST['idHidden']; 
+while ($updatePedidos = $selectPedidos->fetch_assoc()) {
+    if ($updatePedidos['status_pedido'] == 'Pedido feito') {
+        $updatePendente = 'UPDATE `pedido` SET `status_pedido`="Pedido em processo" WHERE id_pedido=' . $_POST['idHidden'];
         $conn->query($updatePendente);
     }
 }
+?>

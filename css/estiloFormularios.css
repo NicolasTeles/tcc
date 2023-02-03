@@ -1,44 +1,48 @@
-*{
+* {
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
-body{
+
+body {
     background: linear-gradient(90deg, #711613, #3a1624);
     overflow: hidden;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     display: flex;
 }
 
-.titulo{   
+.titulo {
     font-weight: bold;
     position: relative;
-    color:whitesmoke;
+    color: whitesmoke;
     font-size: 50px;
     animation: fade 1s;
     margin-top: 8%;
 }
-.bordaForm{
+
+.bordaForm {
     border: 1px solid rgb(78, 77, 77);
     border-radius: 10px;
     width: 30%;
     margin-top: 3%;
-    height: 420px;
     background-color: white;
     animation: fade 1s;
 }
+
 .divlink {
     animation: fade 1s;
 }
+
 .divlink a {
     text-decoration: none;
     font-size: 22px;
     color: whitesmoke;
     width: 100px;
 }
-.divlink a:hover{
+
+.divlink a:hover {
     background: white;
     border-radius: 6px;
     height: auto;
@@ -48,38 +52,42 @@ body{
 }
 
 
-form{
+form {
     margin-left: 10%;
     position: relative;
-    top: 50px; 
+    top: 50px;
     overflow: hidden;
 }
-form .input-block:nth-child(1){
-     animation: move 500ms;
-     animation-delay: 100ms;
-     animation-fill-mode: backwards;
+
+form .input-block:nth-child(1) {
+    animation: move 500ms;
+    animation-delay: 100ms;
+    animation-fill-mode: backwards;
 
 }
-form .input-block:nth-child(3){
+
+form .input-block:nth-child(3) {
     animation: move 500ms;
     animation-delay: 400ms;
     animation-fill-mode: backwards;
 }
-form .divcadastro{
-    text-align: center; 
+
+form .divcadastro {
+    text-align: center;
     margin-right: 15%;
     animation: move 500ms;
     animation-delay: 600ms;
     animation-fill-mode: backwards;
 }
-label{
+
+label {
     font-weight: bold;
     font-size: 1.5rem;
-   
+
 }
 
-input[type=text]{
-    background-color:rgb(251, 249, 249);
+input[type=text] {
+    background-color: rgb(251, 249, 249);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     width: 85%;
@@ -88,69 +96,84 @@ input[type=text]{
     padding: 10px;
     font-size: .9rem;
 }
-input:focus{
+
+input:focus {
     outline: none;
 }
 
 
 /*Keyframes para Animações*/
 @keyframes fade {
-    from{
+    from {
         opacity: 0;
         transform: scale(0.8);
     }
-    to{
+
+    to {
         opacity: 1;
         transform: scale(1);
     }
 }
+
 @keyframes move {
-    from{
+    from {
         opacity: 0;
         transform: translateX(-35%);
     }
-    to{
+
+    to {
         opacity: 1;
         transform: translateX(0%);
     }
 }
-@keyframes bot{
-    from{
+
+@keyframes bot {
+    from {
         transform: scale(1);
     }
-    to{
+
+    to {
         transform: scale(1.05);
     }
 }
+
 @media (max-width: 1280px) {
-    body{
+    body {
         overflow-y: scroll;
     }
-    .titulo{
+
+    .titulo {
         margin-top: 4%;
     }
-    .bordaForm{
+
+    .bordaForm {
         width: 95%;
         height: auto;
-        }
-        input[type=button], input[type=submit]{
-    
-            font-weight: bold;
-            border: 2px solid;
-            width: 35vw;
-            height: 50px;
-        }   
-    } 
-@media (max-width: 950px) {
-    .bordaForm{
-    width: 95%;
-    height: auto;
-    margin-top: 10%;
     }
-    .titulo{
+
+    input[type=button],
+    input[type=submit] {
+
+        font-weight: bold;
+        border: 2px solid;
+        width: 35vw;
+        height: 50px;
+    }
+}
+
+@media (max-width: 950px) {
+    .bordaForm {
+        width: 95%;
+        height: auto;
+        margin-top: 10%;
+    }
+
+    .titulo {
         margin-top: 20%;
     }
-    input[type=button], input[type=submit]{
+
+    input[type=button],
+    input[type=submit] {
         font-weight: bold;
         width: 35vw;
         height: 50px;

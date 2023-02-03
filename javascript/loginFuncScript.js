@@ -4,9 +4,9 @@ let senha = document.getElementById("senhaFunc");
 toggleSenha.addEventListener("click", function () {
     // toggle the type attribute
     const tipo = senha.getAttribute("type") === "password" ? "text" : "password";
-    //console.log(tipo);    
+    //console.log(tipo);
     senha.setAttribute("type", tipo);
-        
+
     // toggle the icon
     this.classList.toggle("bi-eye");
     console.log(this.classList);
@@ -14,6 +14,6 @@ toggleSenha.addEventListener("click", function () {
 
 //converter pra password qndo enviar
 let cadastra = document.getElementById("enviar");
-    cadastra.addEventListener("click", function(){
+cadastra.addEventListener("click", function () {
     senha.setAttribute("type", "password");
 });

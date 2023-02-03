@@ -15,8 +15,8 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <?php
     if (!isset($_SESSION["nomeFunc"])) {
-    ?>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">    
+        ?>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
             body {
                 background: linear-gradient(800deg, #3a1624, #741413);
@@ -29,7 +29,7 @@ session_start();
                 color: #3a1624;
             }
         </style>
-    <?php
+        <?php
     }
     ?>
     <title>Ver pedidos</title>
@@ -38,10 +38,11 @@ session_start();
 <body>
     <?php
     if (isset($_SESSION["idFunc"])) {
-    ?>
+        ?>
         <header><img src="../img/logo3.png" class="logoimg">
             <ul class="headerUL">
-                <li class="headerLI"><button class="menu-btn" onclick="home()"><i class="fa-solid fa-house-chimney carrinho fa-3x"></i> </button></li>
+                <li class="headerLI"><button class="menu-btn" onclick="home()"><i
+                            class="fa-solid fa-house-chimney carrinho fa-3x"></i> </button></li>
             </ul>
         </header>
         <div style="height: 24vh"></div>
@@ -53,7 +54,7 @@ session_start();
                 $select = 'SELECT * FROM `pedido` WHERE `status_pedido`= "Pedido feito"';
                 $pedidosPedentes = $conn->query($select);
                 if ($pedidosPedentes->num_rows > 0) {
-                ?>
+                    ?>
                     <table class='tabela'>
                         <tr>
 
@@ -67,15 +68,27 @@ session_start();
                         </tr>
                         <?php
                         while ($exibirPedido = $pedidosPedentes->fetch_assoc()) {
-                        ?>
+                            ?>
                             <tr>
                                 <td><img src="<?php echo $exibirPedido['img_produto'] ?>"></td>
-                                <td><?php echo $exibirPedido['nm_produto'] ?></td>
-                                <td><?php echo $exibirPedido['qtde_produto'] ?></td>
-                                <td><?php echo $exibirPedido['obs_produto'] ?></td>
-                                <td><?php echo $exibirPedido['preco_produto'] ?></td>
-                                <td><?php echo $exibirPedido['total_produto'] ?></td>
-                                <td><?php echo $exibirPedido["nomeCliente"] ?></td>
+                                <td>
+                                    <?php echo $exibirPedido['nm_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $exibirPedido['qtde_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $exibirPedido['obs_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $exibirPedido['preco_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $exibirPedido['total_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $exibirPedido["nomeCliente"] ?>
+                                </td>
                                 <td>
                                     <div class='divStatus'>
                                         <form action='atualizarPedidoFeito.php' method='POST'>
@@ -92,20 +105,20 @@ session_start();
                                     </div>
                                 </td>
                             </tr>
-                        <?php
+                            <?php
                         }
                         ?>
                     </table>
-                <?php
+                    <?php
                 } else {
-                ?>
+                    ?>
                     <script>
                         const divPedidoBranca_Pedente = document.querySelector('.divPedidoBranca_Pendente');
                         divPedidoBranca_Pedente.classList.remove("divPedidoBranca_Pendente");
                         divPedidoBranca_Pedente.classList.add("divPedidoBranca_vazia");
                     </script>
                     <p class='textoPedido'>Não existem pedidos pendentes <i class="fa-regular fa-calendar-xmark"></i></p>
-                <?php
+                    <?php
                 }
                 ?>
             </div>
@@ -118,7 +131,7 @@ session_start();
                 $select = 'SELECT * FROM `pedido` WHERE `status_pedido`= "Pedido em processo"';
                 $pedidosPedentes = $conn->query($select);
                 if ($pedidosPedentes->num_rows > 0) {
-                ?>
+                    ?>
                     <table class='tabela' border='1'>
                         <tr>
 
@@ -132,15 +145,27 @@ session_start();
                         </tr>
                         <?php
                         while ($exibirPedido = $pedidosPedentes->fetch_assoc()) {
-                        ?>
+                            ?>
                             <tr>
                                 <td><img src="<?php echo $exibirPedido['img_produto'] ?>"></td>
-                                <td><?php echo $exibirPedido['nm_produto'] ?></td>
-                                <td><?php echo $exibirPedido['qtde_produto'] ?></td>
-                                <td><?php echo $exibirPedido['obs_produto'] ?></td>
-                                <td><?php echo $exibirPedido['preco_produto'] ?></td>
-                                <td><?php echo $exibirPedido['total_produto'] ?></td>
-                                <td><?php echo $exibirPedido["nomeCliente"] ?></td>
+                                <td>
+                                    <?php echo $exibirPedido['nm_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $exibirPedido['qtde_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $exibirPedido['obs_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $exibirPedido['preco_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $exibirPedido['total_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $exibirPedido["nomeCliente"] ?>
+                                </td>
                                 <td>
                                     <div class='divStatus'>
                                         <form action='atualizarPedidoProcesso.php' method='POST'>
@@ -158,20 +183,20 @@ session_start();
                                 </td>
                             </tr>
 
-                        <?php
+                            <?php
                         }
                         ?>
                     </table>
-                <?php
+                    <?php
                 } else {
-                ?>
+                    ?>
                     <script>
                         const divPedidoBranca_Processo = document.querySelector('.divPedidoBranca_Processo');
                         divPedidoBranca_Processo.classList.remove("divPedidoBranca_Processo");
                         divPedidoBranca_Processo.classList.add("divPedidoBranca_vazia");
                     </script>
                     <p class='textoPedido'>Não existem pedidos em processo <i class="fa-regular fa-calendar-xmark"></i></p>
-                <?php
+                    <?php
                 }
                 ?>
             </div>
@@ -184,7 +209,7 @@ session_start();
                 $select = 'SELECT * FROM `pedido` WHERE `status_pedido`= "Pedido concluído"';
                 $pedidosPedentes = $conn->query($select);
                 if ($pedidosPedentes->num_rows > 0) {
-                ?>
+                    ?>
                     <table class='tabela' border='1'>
                         <tr>
                             <th colspan=2>Nome</th>
@@ -197,15 +222,27 @@ session_start();
                         </tr>
                         <?php
                         while ($exibirPedido = $pedidosPedentes->fetch_assoc()) {
-                        ?>
+                            ?>
                             <tr>
                                 <td><img src="<?php echo $exibirPedido['img_produto'] ?>"></td>
-                                <td><?php echo $exibirPedido['nm_produto'] ?></td>
-                                <td><?php echo $exibirPedido['qtde_produto'] ?></td>
-                                <td><?php echo $exibirPedido['obs_produto'] ?></td>
-                                <td><?php echo $exibirPedido['preco_produto'] ?></td>
-                                <td><?php echo $exibirPedido['total_produto'] ?></td>
-                                <td><?php echo $exibirPedido["nomeCliente"] ?></td>
+                                <td>
+                                    <?php echo $exibirPedido['nm_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $exibirPedido['qtde_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $exibirPedido['obs_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $exibirPedido['preco_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $exibirPedido['total_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $exibirPedido["nomeCliente"] ?>
+                                </td>
                                 <td>
                                     <div class='divStatus'>
                                         <form action='ocultarPedidoConcluido.php' method='POST'>
@@ -216,20 +253,20 @@ session_start();
                                 </td>
                             </tr>
 
-                        <?php
+                            <?php
                         }
                         ?>
                     </table>
-                <?php
+                    <?php
                 } else {
-                ?>
+                    ?>
                     <script>
                         const divPedidoBranca_Concluido = document.querySelector('.divPedidoBranca_Concluido');
                         divPedidoBranca_Concluido.classList.remove("divPedidoBranca_Concluido");
                         divPedidoBranca_Concluido.classList.add("divPedidoBranca_vazia");
                     </script>
                     <p class='textoPedido'>Não existem pedidos concluídos <i class="fa-regular fa-calendar-xmark"></i></p>
-                <?php
+                    <?php
                 }
                 ?>
             </div>
@@ -238,13 +275,13 @@ session_start();
             <i class="fa-solid fa-mug-saucer fa-2x" aria-hidden="true"></i>
         </footer>
         <script src="../javascript/home.js"></script>
-    <?php
+        <?php
     } else {
-    ?>
+        ?>
         <div class="text-center alert alert-warning">
             Usuário não logado, favor <a href="loginFuncionario.php">fazer login</a>
         </div>
-    <?php
+        <?php
     }
     ?>
 </body>

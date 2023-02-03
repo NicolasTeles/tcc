@@ -14,8 +14,8 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <?php
-    if (!isset($_SESSION["idFunc"])) {
-    ?>
+    if (!isset($_SESSION["idFunc"]) or $_SESSION["tipoFunc"] != "ADMIN") {
+        ?>
         <style>
             body {
                 background: linear-gradient(800deg, #3a1624, #741413);
@@ -28,7 +28,7 @@ session_start();
                 color: #3a1624;
             }
         </style>
-    <?php
+        <?php
     }
     ?>
 </head>
@@ -63,7 +63,7 @@ session_start();
 
                 if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] != UPLOAD_ERR_NO_FILE) {
                     $file = $_FILES["imagem"];
-                    $folder = "imagens";
+                    $folder = "../imagens";
                     $permite = array("tif", "jpg", "png", "jpeg");
                     $msg = array();
                     $erroMsg = array(
@@ -127,33 +127,37 @@ session_start();
                     $splitDesc = explode("@@", $novaDesc);
                     $splitPreco = explode("@@", $novoPreco);
                 }
-    ?>
+                ?>
                 <h1 class="titulo" style="top: 100px;">Edição de Itens</h1>
                 <fieldset class="bordaForm">
                     <form action="editarItem.php?idItem=<?php echo $_GET['idItem'] ?>" method="post" enctype="multipart/form-data">
 
                         <div class="input-block">
                             <label for="nomeItem">Nome:</label><br>
-                            <input type="text" id="nomeItem" name="nomeItem" placeholder="Nome" required value="<?php echo $exibir['nomeItem']; ?>">
+                            <input type="text" id="nomeItem" name="nomeItem" placeholder="Nome" required
+                                value="<?php echo $exibir['nomeItem']; ?>">
                         </div>
 
                         <div style="height: 10vh;"></div>
 
                         <?php
                         if (isset($splitDesc)) {
-                        ?>
+                            ?>
                             <div class="input-block">
                                 <input type="checkbox" name="confereTamanho" id="confereTamanho" onchange="checou()" checked>
                                 <p id="bold">Deseja ter tamanhos diferentes para esse item?</p>
-                                <input type="number" name="qtdeTamanhos" id="qtdeTamanhos" max="3" min="1" value="<?php echo sizeof($splitDesc); ?>">
-                                <button type="button" class="btn btn-secondary" id="criaOpcao" onclick="criaOpcoes()">Criar opções</button>
+                                <input type="number" name="qtdeTamanhos" id="qtdeTamanhos" max="3" min="1"
+                                    value="<?php echo sizeof($splitDesc); ?>">
+                                <button type="button" class="btn btn-secondary" id="criaOpcao" onclick="criaOpcoes()">Criar
+                                    opções</button>
                                 <div id="container">
                                     <?php
                                     for ($i = 0; $i < sizeof($splitDesc); $i++) {
-                                    ?>
+                                        ?>
                                         <label for="field<?php echo $i; ?>" class="labelTamanho"><?php echo $i + 1; ?>ª opção</label>
-                                        <input type="text" name="field<?php echo $i; ?>" id="field<?php echo $i; ?>" value="<?php echo $splitDesc[$i]; ?>" oninput="criaDesc()" class="tamanhos">
-                                    <?php
+                                        <input type="text" name="field<?php echo $i; ?>" id="field<?php echo $i; ?>"
+                                            value="<?php echo $splitDesc[$i]; ?>" oninput="criaDesc()" class="tamanhos">
+                                        <?php
                                     }
                                     ?>
                                 </div>
@@ -164,8 +168,8 @@ session_start();
                             <div class="input-block">
                                 <label for="desc">Descrição:</label><br>
                                 <textarea name="desc" id="desc" cols="50" rows="2" style="width: 85%;" placeholder="Descrição" disabled>
-                            <?php echo $exibir["descItem"]; ?>
-                        </textarea>
+                                    <?php echo $exibir["descItem"]; ?>
+                                </textarea>
                             </div>
 
                             <div style="height: 10vh;"></div>
@@ -174,26 +178,29 @@ session_start();
                                 <div id="containerPreco">
                                     <?php
                                     for ($i = 0; $i < sizeof($splitPreco); $i++) {
-                                    ?>
+                                        ?>
                                         <label for="custo<?php echo $i; ?>" class="labelPreco"><?php echo $i + 1; ?>° preço</label>
                                         <br>
-                                        <input type="text" name="custo<?php echo $i; ?>" id="custo<?php echo $i; ?>" value="<?php echo $splitPreco[$i]; ?>" oninput="criaPreco()" class="precoMultiplo"><br>
-                                    <?php
+                                        <input type="text" name="custo<?php echo $i; ?>" id="custo<?php echo $i; ?>"
+                                            value="<?php echo $splitPreco[$i]; ?>" oninput="criaPreco()" class="precoMultiplo"><br>
+                                        <?php
                                     }
                                     ?>
                                 </div>
                                 <label for="preco">Preço:</label><br>
-                                <input type="text" name="preco" id="preco" placeholder="Preço" disabled value="<?php echo $exibir["precoItem"]; ?>">
+                                <input type="text" name="preco" id="preco" placeholder="Preço" disabled
+                                    value="<?php echo $exibir["precoItem"]; ?>">
                             </div>
-                        <?php
+                            <?php
                         } else {
-                        ?>
+                            ?>
 
                             <div class="input-block">
                                 <input type="checkbox" name="confereTamanho" id="confereTamanho" onchange="checou()">
                                 <p id="bold">Deseja ter tamanhos diferentes para esse item?</p>
                                 <input type="number" name="qtdeTamanhos" id="qtdeTamanhos" max="3" min="1" hidden>
-                                <button type="button" class="btn btn-secondary" id="criaOpcao" onclick="criaOpcoes()" hidden>Criar opções</button>
+                                <button type="button" class="btn btn-secondary" id="criaOpcao" onclick="criaOpcoes()" hidden>Criar
+                                    opções</button>
                                 <div id="container" hidden>
 
                                 </div>
@@ -203,7 +210,9 @@ session_start();
 
                             <div class="input-block">
                                 <label for="desc">Descrição:</label><br>
-                                <textarea name="desc" id="desc" cols="50" rows="2" style="width: 85%;" placeholder="Descrição"><?php echo $exibir['descItem']; ?></textarea>
+                                <textarea name="desc" id="desc" cols="50" rows="2" style="width: 85%;" placeholder="Descrição">
+                                    <?php echo $exibir['descItem']; ?>
+                                </textarea>
                             </div>
 
                             <div style="height: 10vh;"></div>
@@ -213,10 +222,11 @@ session_start();
 
                                 </div>
                                 <label for="preco">Preço:</label><br>
-                                <input type="text" name="preco" id="preco" placeholder="Preço" value="<?php echo $exibir['precoItem']; ?>">
+                                <input type="text" name="preco" id="preco" placeholder="Preço"
+                                    value="<?php echo $exibir['precoItem']; ?>">
                             </div>
 
-                        <?php
+                            <?php
                         }
                         ?>
 
@@ -237,13 +247,13 @@ session_start();
                             for (let i = 0; i < 2; i++) {
                                 if (document.getElementById('tipo').options.item(i).value == '<?php echo $exibir['tipoItem'] ?>') {
                                     document.getElementById('tipo').options.item(i).selected = true;
-                                    $(document).ready(function() {
+                                    $(document).ready(function () {
                                         mudaOpcao();
                                     });
                                 }
                             }
 
-                            $(document).ready(function() {
+                            $(document).ready(function () {
                                 for (let j = 0; j < $('#subtipo option').length; j++) {
                                     if (document.getElementById('subtipo').options.item(j).value == '<?php echo $exibir['subtipoItem'] ?>') {
                                         document.getElementById('subtipo').options.item(j).selected = true;
@@ -255,7 +265,8 @@ session_start();
                         <div style="height: 10vh;"></div>
 
 
-                        <div class="input-block" style="animation: move 500ms; animation-delay: 1200ms; animation-fill-mode: backwards;">
+                        <div class="input-block"
+                            style="animation: move 500ms; animation-delay: 1200ms; animation-fill-mode: backwards;">
                             <label style="margin-left: 36%;" for="subtipo">Sub-tipo:</label><br>
                             <div style="margin-left: 20%;">
                                 <select name="subtipo" id="subtipo" style="width: 60%;">
@@ -272,7 +283,8 @@ session_start();
 
                         <div class="input-block" id="divBotao">
                             <label style="margin-left: 12%;" for="avisoMudar">Deseja mudar a imagem desse item?</label>
-                            <input type="button" onclick="mostraFile()" class="btn btn-warning" name="avisoMudar" id="avisoMudar" value="Mudar imagem do item" style="margin-left: 25%; width: 35%;">
+                            <input type="button" onclick="mostraFile()" class="btn btn-warning" name="avisoMudar" id="avisoMudar"
+                                value="Mudar imagem do item" style="margin-left: 25%; width: 35%;">
                         </div>
 
                         <div id="divImagem" hidden>
@@ -290,7 +302,8 @@ session_start();
                         <div style="height: 10vh;"></div>
 
                         <div class=divcadastro>
-                            <input type="submit" id="enviar" value="Cadastrar" style="margin-right: 10%;" class="btn btn-outline-primary">
+                            <input type="submit" id="enviar" value="Cadastrar" style="margin-right: 10%;"
+                                class="btn btn-outline-primary">
                             <a href="listaCardapio.php"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
                         </div>
 
@@ -298,27 +311,27 @@ session_start();
                     </form>
                 </fieldset>
                 <script src="../javascript/subtipo.js"></script>
-            <?php
+                <?php
             } else {
-            ?>
+                ?>
                 <div class="text-center alert alert-warning">
                     Id de item não informado,<a href="listaCardapio.php">voltar para listagem do cardápio</a>
                 </div>
-            <?php
+                <?php
             }
         } else {
             ?>
             <div class="text-center alert alert-warning">
                 Usuário não autenticado,<a href="listaCardapio.php">voltar para listagem do cardápio</a>
             </div>
-        <?php
+            <?php
         }
     } else {
         ?>
         <div class="text-center alert alert-warning">
             Usuário não logado, favor <a href="loginFuncionario.php">fazer login</a>
         </div>
-    <?php
+        <?php
     }
     ?>
 </body>

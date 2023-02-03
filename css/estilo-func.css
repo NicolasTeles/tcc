@@ -1,22 +1,23 @@
-*{
+* {
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
-body{
+
+body {
     background: linear-gradient(90deg, #711613, #3a1624);
 }
 
-i{
+i {
     margin-left: -30px;
     cursor: pointer;
 }
 
-.titulo{
-    text-align: center;    
+.titulo {
+    text-align: center;
     font-weight: bold;
     position: relative;
-    color:whitesmoke;
+    color: whitesmoke;
     font-size: 50px;
     animation: fade 1s;
 }
@@ -24,7 +25,8 @@ i{
 .divlink {
     animation: fade 1s;
 }
-.divlink{
+
+.divlink {
     text-decoration: none;
     font-size: 22px;
     color: whitesmoke;
@@ -32,52 +34,60 @@ i{
 }
 
 
-form{
+form {
     margin-left: 10%;
     position: relative;
-    top: 50px; 
+    top: 50px;
     overflow: hidden;
 }
-form .input-block:nth-child(1){
-     animation: move 500ms;
-     animation-delay: 100ms;
-     animation-fill-mode: backwards;
+
+form .input-block:nth-child(1) {
+    animation: move 500ms;
+    animation-delay: 100ms;
+    animation-fill-mode: backwards;
 
 }
-form .input-block:nth-child(3){
+
+form .input-block:nth-child(3) {
     animation: move 500ms;
     animation-delay: 400ms;
     animation-fill-mode: backwards;
 }
-form .input-block:nth-child(5){
+
+form .input-block:nth-child(5) {
     animation: move 500ms;
     animation-delay: 600ms;
     animation-fill-mode: backwards;
 }
-form .input-block:nth-child(7){
+
+form .input-block:nth-child(7) {
     animation: move 500ms;
     animation-delay: 800ms;
     animation-fill-mode: backwards;
 }
-form .input-block:nth-child(9){
+
+form .input-block:nth-child(9) {
     animation: move 500ms;
     animation-delay: 900ms;
     animation-fill-mode: backwards;
-} 
-.divcadastro{
-    text-align: center; 
+}
+
+.divcadastro {
+    text-align: center;
     margin-right: 15%;
     animation: fade 500ms;
     animation-delay: 1000ms;
     animation-fill-mode: backwards;
 }
-label{
+
+label {
     font-weight: bold;
     font-size: 1.5rem;
-   
+
 }
-textarea{
-    background-color:#fbf9f9;
+
+textarea {
+    background-color: #fbf9f9;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     width: 85%;
@@ -87,8 +97,8 @@ textarea{
     font-size: .5rem;
 }
 
-input[type=text]{
-    background-color:#fbf9f9;
+input[type=text] {
+    background-color: #fbf9f9;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     width: 85%;
@@ -97,8 +107,9 @@ input[type=text]{
     padding: 10px;
     font-size: .9rem;
 }
-input[type=number]{
-    background-color:rgb(251, 249, 249);
+
+input[type=number] {
+    background-color: rgb(251, 249, 249);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     width: 85%;
@@ -107,8 +118,9 @@ input[type=number]{
     padding: 10px;
     font-size: .9rem;
 }
-input[type=password]{
-    background-color:rgb(251, 249, 249);
+
+input[type=password] {
+    background-color: rgb(251, 249, 249);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     width: 85%;
@@ -117,8 +129,9 @@ input[type=password]{
     padding: 10px;
     font-size: .9rem;
 }
-select{
-    background-color:rgb(251, 249, 249);
+
+select {
+    background-color: rgb(251, 249, 249);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     width: 33%;
@@ -128,12 +141,13 @@ select{
     font-size: .9rem;
     text-align: justify;
 }
-input:focus{
+
+input:focus {
     outline: none;
 }
 
-input[type=file]{
-    background-color:rgb(251, 249, 249);
+input[type=file] {
+    background-color: rgb(251, 249, 249);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     width: 85%;
@@ -146,7 +160,7 @@ input[type=file]{
     height: 40px;
 }
 
-.bordaFunc{
+.bordaFunc {
     border: 1px solid rgb(78, 77, 77);
     border-radius: 10px;
     width: 40%;
@@ -157,36 +171,41 @@ input[type=file]{
     animation: fade 1s;
 }
 
-button{
+button {
     border: none;
 }
 
 /*Keyframes para Animações*/
 @keyframes fade {
-    from{
+    from {
         opacity: 0;
         transform: scale(0.8);
     }
-    to{
+
+    to {
         opacity: 1;
         transform: scale(1);
     }
 }
+
 @keyframes move {
-    from{
+    from {
         opacity: 0;
         transform: translateX(-35%);
     }
-    to{
+
+    to {
         opacity: 1;
         transform: translateX(0%);
     }
 }
-@keyframes bot{
-    from{
+
+@keyframes bot {
+    from {
         transform: scale(1);
     }
-    to{
+
+    to {
         transform: scale(1.05);
     }
 }

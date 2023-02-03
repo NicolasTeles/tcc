@@ -1,9 +1,9 @@
-function confereText(){
+function confereText() {
     const textPesquisar = document.querySelector('textPesquisar');
-    if(textPesquisar==''){
+    if (textPesquisar == '') {
         alert('Escreva a data!');
-    }else{
-        
+    } else {
+
     }
 }
 if (history.scrollRestoration) {
@@ -11,6 +11,6 @@ if (history.scrollRestoration) {
 } else {
     window.onbeforeunload = function () {
         window.scrollTo(0, 0);
-        
-    }}
-    
+
+    }
+}

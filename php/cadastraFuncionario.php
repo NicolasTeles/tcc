@@ -13,8 +13,8 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <?php
-    if (!isset($_SESSION["nomeFunc"])) {
-    ?>
+    if (!isset($_SESSION["nomeFunc"]) or $_SESSION["tipoFunc"] != "ADMIN") {
+        ?>
         <style>
             body {
                 background: linear-gradient(800deg, #3a1624, #741413);
@@ -27,7 +27,7 @@ session_start();
                 color: #3a1624;
             }
         </style>
-    <?php
+        <?php
     }
     ?>
 </head>
@@ -36,7 +36,7 @@ session_start();
     <?php
     if (isset($_SESSION["idFunc"])) {
         if ($_SESSION["tipoFunc"] == "ADMIN") {
-    ?>
+            ?>
             <h1 class="titulo" style="top: 100px;">Cadastro de Funcionário</h1>
             <fieldset class="bordaFunc">
                 <form action="insertFuncionario.php" method="post">
@@ -44,7 +44,8 @@ session_start();
                     <div class="input-block">
                         <label for="nomeFunc">Nome:</label><br>
                         <input type="text" id="nomeFunc" name="nomeFunc" placeholder="Nome" style="width: 42%" required>
-                        <input type="text" id="sobrenomeFunc" name="sobrenomeFunc" placeholder="Sobrenome" style="width: 41%" required>
+                        <input type="text" id="sobrenomeFunc" name="sobrenomeFunc" placeholder="Sobrenome" style="width: 41%"
+                            required>
                     </div>
 
                     <div style="height: 10vh;"></div>
@@ -86,27 +87,28 @@ session_start();
                     <div style="height: 10vh;"></div>
 
                     <div class=divcadastro>
-                        <input type="submit" id="enviar" value="Cadastrar" style="margin-right: 10%;" class="btn btn-outline-primary">
-                        <a href="index.html"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
+                        <input type="submit" id="enviar" value="Cadastrar" style="margin-right: 10%;"
+                            class="btn btn-outline-primary">
+                        <a href="admin.php"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
                     </div>
                     <div style="height: 10vh;"></div>
                 </form>
             </fieldset>
             <script src="../javascript/funcionario.js"></script>
-        <?php
+            <?php
         } else {
-        ?>
+            ?>
             <div class="text-center alert alert-warning">
                 Usuário não autenticado,<a href="admin.php">voltar para a página inicial</a>
             </div>
-        <?php
+            <?php
         }
     } else {
         ?>
         <div class="text-center alert alert-warning">
             Usuário não logado, favor <a href="loginFuncionario.php">fazer login</a>
         </div>
-    <?php
+        <?php
     }
     ?>
 </body>

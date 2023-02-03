@@ -1,5 +1,5 @@
 .popup-fundo {
-    background: rgba(0,0,0,.5);
+    background: rgba(0, 0, 0, .5);
     position: fixed;
     top: 0;
     left: 0;
@@ -8,7 +8,7 @@
     display: none;
 }
 
-.popup{
+.popup {
     font-family: arial;
     text-align: center;
     width: 100%;
@@ -19,24 +19,25 @@
     position: relative;
     border-radius: 15px;
 }
-.popup-fechar{
+
+.popup-fechar {
     position: absolute;
     top: 5px;
     right: 10px;
     cursor: pointer;
 }
 
-.d1{
+.d1 {
     background-color: lightgrey;
     width: 300px;
     height: 100px;
     border-radius: 15px;
     display: inline-block;
-    
+
 }
 
 
-button.popup-link{
+button.popup-link {
     text-align: center;
     display: block;
     height: 100%;
@@ -45,7 +46,8 @@ button.popup-link{
     border: none;
     background-color: transparent;
 }
-button:visited{
+
+button:visited {
     color: black;
     background-color: transparent;
 }

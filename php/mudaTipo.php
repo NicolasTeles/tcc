@@ -14,8 +14,8 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <?php
-    if (!isset($_SESSION["nomeFunc"])) {
-    ?>
+    if (!isset($_SESSION["nomeFunc"]) or $_SESSION["tipoFunc"] != "ADMIN" or !isset($_GET["idFunc"])) {
+        ?>
         <style>
             body {
                 background: linear-gradient(800deg, #3a1624, #741413);
@@ -28,12 +28,12 @@ session_start();
                 color: #3a1624;
             }
         </style>
-    <?php
+        <?php
     }
     ?>
     <?php
     if (!isset($_SESSION["nomeFunc"])) {
-    ?>
+        ?>
         <style>
             body {
                 background: linear-gradient(800deg, #3a1624, #741413);
@@ -46,7 +46,7 @@ session_start();
                 color: #3a1624;
             }
         </style>
-    <?php
+        <?php
     }
     ?>
 </head>
@@ -77,7 +77,7 @@ session_start();
                 $consulta = $conn->query($sql);
                 if ($consulta->num_rows > 0) {
                     $exibir = $consulta->fetch_assoc();
-    ?>
+                    ?>
 
 
                     <h1 class="titulo" style="top: 100px;">Mudar tipo</h1>
@@ -88,52 +88,53 @@ session_start();
                                 <br><br>
                                 <div style="margin-left: 25%; margin-right: 25%;">
                                     <input type="radio" name="tipoFunc" id="tipoAdm" value="ADMIN" <?php if ($exibir["tipoFuncionario"] == "ADMIN") {
-                                                                                                        echo "checked";
-                                                                                                    } ?>>
+                                        echo "checked";
+                                    } ?>>
                                     <label for="tipoFunc" onclick="marcaTipo('tipoAdm')">Admin</label>
                                     <input type="radio" name="tipoFunc" id="tipoComum" value="COMUM" <?php if ($exibir["tipoFuncionario"] == "COMUM") {
-                                                                                                            echo "checked";
-                                                                                                        } ?>>
+                                        echo "checked";
+                                    } ?>>
                                     <label for="tipoFunc" onclick="marcaTipo('tipoComum')">Comum</label>
                                 </div>
                             </div>
 
                             <div class=divcadastro>
-                                <input type="submit" id="enviar" value="Atualizar" style="margin-right: 10%;" class="btn btn-outline-primary">
-                                <a href="index.php"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
+                                <input type="submit" id="enviar" value="Mudar" style="margin-right: 10%;"
+                                    class="btn btn-outline-primary">
+                                <a href="listaFuncionario.php"><input type="button" value="Cancelar" class="btn btn-outline-danger"></a>
                             </div>
                             <div style="height: 10vh;"></div>
                         </form>
                     </fieldset>
                     <script src="../javascript/mudaTipo.js"></script>
-                <?php
+                    <?php
                 } else {
-                ?>
+                    ?>
                     <div class="text-center alert alert-warning">
                         Id de usuário informado não existe no banco de dados<a href="admin.php">voltar para a página inicial</a>
                     </div>
-                <?php
+                    <?php
                 }
             } else {
                 ?>
                 <div class="text-center alert alert-warning">
                     Id de funcionário não informado,<a href="admin.php">voltar para a página inicial</a>
                 </div>
-            <?php
+                <?php
             }
         } else {
             ?>
             <div class="text-center alert alert-warning">
                 Usuário não autenticado,<a href="admin.php">voltar para a página inicial</a>
             </div>
-        <?php
+            <?php
         }
     } else {
         ?>
         <div class="text-center alert alert-warning">
             Usuário não logado, favor <a href="loginFuncionario.php">fazer login</a>
         </div>
-    <?php
+        <?php
     }
     ?>
 </body>

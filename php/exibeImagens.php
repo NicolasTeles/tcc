@@ -17,7 +17,7 @@ session_start();
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <?php
   if (!isset($_SESSION["nomeFunc"])) {
-  ?>
+    ?>
     <style>
       body {
         background: linear-gradient(800deg, #3a1624, #741413);
@@ -38,7 +38,7 @@ session_start();
 <body>
   <?php
   if (isset($_SESSION["idFunc"])) {
-  ?>
+    ?>
     <header><img src="../img/logo3.png" class="logoimg">
       <ul class="nav justify-content-end">
         <li class="nav-item">
@@ -82,7 +82,7 @@ session_start();
                 }
               }
 
-            ?>
+              ?>
               <tr>
                 <td><img class=imgex src="<?php echo $dir . $file; ?>"></td>
                 <td>
@@ -106,7 +106,7 @@ session_start();
     </footer>
   <?php
   } else {
-  ?>
+    ?>
     <div class="text-center alert alert-warning">
       Usuário não logado, favor <a href="loginFuncionario.php">fazer login</a>
     </div>

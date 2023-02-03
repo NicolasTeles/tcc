@@ -1,33 +1,37 @@
-const pendente = document.querySelector('.divPendente');
-const escurecePendente = document.querySelector('.fundoPendente');
-const escurecePronto = document.querySelector('.fundoPronto');
-const fecha = document. querySelector('.popupFechar');
-const pronto = document.querySelector('.divPronto');
+const pendente = document.querySelector(".divPendente");
+const escurecePendente = document.querySelector(".fundoPendente");
+const escurecePronto = document.querySelector(".fundoPronto");
+const fecha = document.querySelector(".popupFechar");
+const pronto = document.querySelector(".divPronto");
 
-pronto.addEventListener('click', () => {
-    escurecePronto.style.display = 'block';
-})
+pronto.addEventListener("click", () => {
+    escurecePronto.style.display = "block";
+});
 
-pendente.addEventListener('click', () => {
-    escurecePendente.style.display = 'block';
-})
+pendente.addEventListener("click", () => {
+    escurecePendente.style.display = "block";
+});
 
-escurecePendente.addEventListener('click', event => {
+escurecePendente.addEventListener("click", (event) => {
     const classNameOfClickedElement = event.target.classList[0];
-    const nomesClasses = ['popupFechar', 'fundoPendente'];
-    const deveFechar = nomesClasses.some(nomeClasse => nomeClasse === classNameOfClickedElement);
+    const nomesClasses = ["popupFechar", "fundoPendente"];
+    const deveFechar = nomesClasses.some(
+        (nomeClasse) => nomeClasse === classNameOfClickedElement
+    );
 
-    if(deveFechar || event.target.className == 'fa-solid fa-xmark'){
-        escurecePendente.style.display = 'none';
+    if (deveFechar || event.target.className == "fa-solid fa-xmark") {
+        escurecePendente.style.display = "none";
     }
-})
+});
 
-escurecePronto.addEventListener('click', event => {
+escurecePronto.addEventListener("click", (event) => {
     const classNameOfClickedElement = event.target.classList[0];
-    const nomesClasses = ['popupFechar', 'fundoPronto'];
-    const deveFechar = nomesClasses.some(nomeClasse => nomeClasse === classNameOfClickedElement);
+    const nomesClasses = ["popupFechar", "fundoPronto"];
+    const deveFechar = nomesClasses.some(
+        (nomeClasse) => nomeClasse === classNameOfClickedElement
+    );
 
-    if(deveFechar || event.target.className == 'fa-solid fa-xmark'){
-        escurecePronto.style.display = 'none';
+    if (deveFechar || event.target.className == "fa-solid fa-xmark") {
+        escurecePronto.style.display = "none";
     }
-})
+});

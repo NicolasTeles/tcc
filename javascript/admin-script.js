@@ -1,5 +1,5 @@
-function abreReferencia(referencia){
-    window.location = "../php/"+referencia+".php";
+function abreReferencia(referencia) {
+  window.location = "../php/" + referencia + ".php";
 }
 
 function unloadScrollBars() {

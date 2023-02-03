@@ -1,49 +1,55 @@
-*{
+* {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
 }
-header{
+
+header {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;  
+    align-items: center;
     position: fixed;
     top: 0%;
     padding: 0px 50px;
     background: linear-gradient(800deg, #3a1624, #711613);
     z-index: 1000;
 }
-body{
+
+body {
     align-items: center;
     display: flex;
     flex-direction: column;
 }
-  .logoimg{
-        height: 115px;
-        width: 120px; 
-    }
 
-img{   
+.logoimg {
+    height: 115px;
+    width: 120px;
+}
+
+img {
     margin-top: 5px;
     width: 100px;
     height: auto;
     border-radius: 5px;
 }
-.menu-btn{ 
+
+.menu-btn {
     cursor: pointer;
     background: transparent;
     border: none;
     width: 50px;
     height: auto;
 }
-.menu-btn:hover{
-    transition: .2s linear; 
+
+.menu-btn:hover {
+    transition: .2s linear;
     background: white;
     height: 55px;
     width: 60px;
     border-radius: 8px;
 }
+
 .blog-title:before,
 .blog-title:after {
     background-color: #adabab;
@@ -70,13 +76,14 @@ h1 {
     margin-top: 5vh;
     padding: 0 5%;
     color: #6e6e6e;
- /**border-bottom: 4px solid #adabab;**/
+    /**border-bottom: 4px solid #adabab;**/
     border-radius: 2px;
     animation: anima 700ms ease;
-    
+
 }
-.divPedido{
-    animation: anima2 700ms ease;     
+
+.divPedido {
+    animation: anima2 700ms ease;
     margin-top: 20px;
     box-shadow: 0px 5px 1em #3f0c0b;
     background: #94443c;
@@ -87,21 +94,25 @@ h1 {
     align-items: center;
     justify-content: center;
     align-items: center;
-  }
-  .divPedido:nth-child(3){
+}
+
+.divPedido:nth-child(3) {
     margin-top: 10vh;
-    width: 37vw; 
-  }
-  .divPesquisar{
+    width: 37vw;
+}
+
+.divPesquisar {
     text-align: center;
-    margin-bottom: 10px;  
-  }
-  #formPesquisar{
+    margin-bottom: 10px;
+}
+
+#formPesquisar {
     margin-top: 7vh;
     animation: anima 700ms ease;
-  }
-  #inputPesquisar{
-    
+}
+
+#inputPesquisar {
+
     background: #fdfdfd;
     width: 20vw;
     height: 45px;
@@ -110,44 +121,49 @@ h1 {
     color: #adabab;
     font-weight: bold;
     font-size: 15px;
-    cursor:text;
+    cursor: text;
     text-indent: 1ch;
-    border-top-right-radius:0;
-    border-bottom-right-radius:0;
-  }
-::-webkit-calendar-picker-indicator{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+::-webkit-calendar-picker-indicator {
     padding: 10px;
 }
-  #inputBotao{
+
+#inputBotao {
     color: #fdfdfd;
     background: #846c7c;
     width: 55px;
-    border-top-right-radius:10px;
-    border-bottom-right-radius:10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     height: 45px;
     border: 2px solid #846c7c;
     cursor: pointer;
     border-left: none;
-  }
-  #inputBotao:hover{
-    background:#755e6e;
-  }
-  
-  label{
-      font-size: 20px;
-      font-weight: bold;
-      color: #6e6e6e;
-   
-  }
-  .al{
+}
+
+#inputBotao:hover {
+    background: #755e6e;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+    color: #6e6e6e;
+
+}
+
+.al {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     word-spacing: 1em;
- 
-  }
-  .tabela{
+
+}
+
+.tabela {
     border: 3px solid #adabab;
     border-radius: 10px;
     overflow: hidden;
@@ -156,41 +172,47 @@ h1 {
     background: #fafdff;
     cursor: default;
 }
-th{ 
+
+th {
     color: #383737;
     background-color: #adabab;
     padding: 10px;
 
 }
-td{
+
+td {
     padding: 10px;
     text-align: center;
     border: none;
     border-bottom: 2px solid #adabab;
 }
-tr:nth-child(even){
-    background:#e1e4e6;
+
+tr:nth-child(even) {
+    background: #e1e4e6;
 }
-.textoAtualizar{
+
+.textoAtualizar {
     text-align: center;
 }
 
-.textoPedido{
+.textoPedido {
     text-align: center;
     font-size: 25px;
     font-weight: bold;
-    color:#474646;  
+    color: #474646;
 }
-.SemP{
+
+.SemP {
     justify-content: center;
     display: flex;
-    align-items: center; 
+    align-items: center;
     background: #fafdff;
     width: 65vh;
     height: 10vh;
     border-radius: 10px;
 }
-footer{  
+
+footer {
     color: #fafdff;
     align-items: center;
     margin-top: 35vh;
@@ -199,25 +221,29 @@ footer{
     display: flex;
     background: #444;
     padding: 0px 50px;
-   
+
 }
+
 /*Keyframes para Animações*/
 @keyframes anima {
-    from{
+    from {
         transform: scale(0.99);
-        opacity: 0;    
+        opacity: 0;
     }
-    to{
+
+    to {
         transform: scale(1);
         opacity: 1;
     }
 }
+
 @keyframes anima2 {
-    from{
+    from {
         transform: translateY(10%);
-        opacity: 0;    
+        opacity: 0;
     }
-    to{
+
+    to {
         transform: translateX(0%);
         opacity: 1;
     }

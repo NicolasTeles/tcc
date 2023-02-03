@@ -151,7 +151,9 @@ popdiv.forEach((mostra) => {
   mostra.addEventListener("click", () => {
     mostra.classList.add("referencia");
     imagemClicada = document.querySelector(".referencia").querySelector(".im2");
-    tituloClicado = document.querySelector(".referencia").querySelector(".nomeTable");
+    tituloClicado = document
+      .querySelector(".referencia")
+      .querySelector(".nomeTable");
     custoClicado = document
       .querySelector(".referencia")
       .querySelector(".precoTable");
@@ -164,19 +166,20 @@ popdiv.forEach((mostra) => {
     custoDiv = document.querySelector(".custoDiv");
     descDiv = document.querySelector(".descDiv");
     document.querySelector(".textpop").value = "";
+    document.querySelector("#qtde").value = "";
 
-    if (descClicada.innerText.includes("@@")) {
-      document.querySelector("div.radio").innerText = "";
+    if (descClicada.textContent.includes("@@")) {
+      document.querySelector("div.radio").textContent = "";
       document.querySelector("#rowDesc").hidden = true;
       document.querySelector("#rowObs").hidden = true;
       document.querySelector("div.radio").hidden = false;
 
       paragrafo = document.createElement("p");
-      paragrafo.innerText = "Opções:";
+      paragrafo.textContent = "Opções:";
       document.querySelector("div.radio").appendChild(paragrafo);
 
-      custoClicado = custoClicado.innerText.replace("R$", "");
-      var descricaoClicada = descClicada.innerText.replace("@@", "");
+      custoClicado = custoClicado.textContent.replace("R$", "");
+      var descricaoClicada = descClicada.textContent.replace("@@", "");
       custoClicado = custoClicado.split("/");
       descricaoClicada = descricaoClicada.split("/");
       for (let i = 0; i < custoClicado.length; i++) {
@@ -188,25 +191,25 @@ popdiv.forEach((mostra) => {
         opcao.setAttribute("onchange", "geraPreco(" + i + ")");
 
         labelOpcao = document.createElement("label");
-        labelOpcao.innerText = descricaoClicada[i];
+        labelOpcao.textContent = descricaoClicada[i];
         labelOpcao.id = "labelObs" + i;
         labelOpcao.setAttribute("onclick", "labelMarca(" + i + ")");
         document.querySelector("div.radio").appendChild(opcao);
         document.querySelector("div.radio").appendChild(labelOpcao);
       }
-      custoDiv.innerText = "R$" + custoClicado[0];
-      descDiv.innerText = descricaoClicada;
+      custoDiv.textContent = "R$" + custoClicado[0];
+      descDiv.textContent = descricaoClicada;
     } else {
       document.querySelector("#rowDesc").hidden = false;
       document.querySelector("#rowObs").hidden = false;
       document.querySelector("div.radio").hidden = true;
-      custoDiv.innerText = custoClicado.innerText;
-      descDiv.innerText = descClicada.innerText;
+      custoDiv.textContent = custoClicado.textContent;
+      descDiv.textContent = descClicada.textContent;
     }
 
     popup.style.display = "block";
     imagemDiv.src = imagemClicada.src;
-    tituloDiv.innerText = tituloClicado.innerText;
+    tituloDiv.textContent = tituloClicado.textContent;
 
     unloadScrollBars();
     mostra.classList.remove("referencia");
@@ -214,7 +217,7 @@ popdiv.forEach((mostra) => {
 });
 
 function geraPreco(index) {
-  document.querySelector(".custoDiv").innerText = "R$" + custoClicado[index];
+  document.querySelector(".custoDiv").textContent = "R$" + custoClicado[index];
 }
 
 function labelMarca(index) {
@@ -280,7 +283,7 @@ function VerifyActive(item, content, content_actived) {
   const icon_item = item.querySelector(".icon");
   const icon_item_active = document.querySelectorAll(".icon");
 
-  icon_item_active.forEach((item) => (item.innerText = "+"));
+  icon_item_active.forEach((item) => (item.textContent = "+"));
 
   if (content_actived) {
     content_actived.style.height = 0;
@@ -288,7 +291,7 @@ function VerifyActive(item, content, content_actived) {
   }
 
   if (content !== content_actived) {
-    icon_item.innerText = "-";
+    icon_item.textContent = "-";
     content.classList.add("activeacc");
     content.style.height = content.scrollHeight + 10 + "px";
   }
@@ -313,8 +316,8 @@ popdiv.forEach((cada) => {
     precoClicado = document
       .querySelector(".referencia")
       .querySelector(".precoTable");
-    item = nomeClicado.innerText;
-    precoUnit = precoClicado.innerText;
+    item = nomeClicado.textContent;
+    precoUnit = precoClicado.textContent;
     cada.classList.remove("referencia");
   });
 });
@@ -354,7 +357,7 @@ class Produto {
         if (produto.obs == array[i].obs) {
           inserir = false;
           this.arrayProdutos[i].qtde =
-          parseInt(this.arrayProdutos[i].qtde) + parseInt(produto.qtde);
+            parseInt(this.arrayProdutos[i].qtde) + parseInt(produto.qtde);
         }
       }
     }
@@ -390,18 +393,17 @@ class Produto {
       for (let input of radioInputs) {
         if (input.checked) {
           let index = input.id.replace("obs", "");
-          produto.obs = document.querySelector("#labelObs" + index).innerText;
+          produto.obs = document.querySelector("#labelObs" + index).textContent;
           break;
         } else {
-          produto.obs = document.querySelector("#labelObs0").innerText;
+          produto.obs = document.querySelector("#labelObs0").textContent;
         }
       }
-      console.log("teste");
     }
     return produto;
   }
   listaTabela() {
-    tbody.innerText = ""; //sempre que adicino um novo valor ao array, ele limpa os dados da tabela, para que assim não haja repetição, porque o for ele passa denovo pelo mesmo lugar do array
+    tbody.textContent = ""; //sempre que adicino um novo valor ao array, ele limpa os dados da tabela, para que assim não haja repetição, porque o for ele passa denovo pelo mesmo lugar do array
     for (let i = 0; i < this.arrayProdutos.length; i++) {
       let tr = tbody.insertRow(); //criar uma nova linha para a tabela
 
@@ -415,19 +417,19 @@ class Produto {
       let td_total = tr.insertCell();
       let td_acao = tr.insertCell();
 
-      //td_id.innerText = this.arrayProdutos[i].id;//dou valor as linhas da tabela
-      td_obs.innerText = this.arrayProdutos[i].obs;
-      td_nome.innerText = this.arrayProdutos[i].nomeProduto;
-      td_preco.innerText = this.arrayProdutos[i].preco;
+      //td_id.textContent = this.arrayProdutos[i].id;//dou valor as linhas da tabela
+      td_obs.textContent = this.arrayProdutos[i].obs;
+      td_nome.textContent = this.arrayProdutos[i].nomeProduto;
+      td_preco.textContent = this.arrayProdutos[i].preco;
       var precoSeparado = this.arrayProdutos[i].preco.split(/[$,]/);
       var precoNum = Number(precoSeparado[1] + "." + precoSeparado[2]);
       var totalNum = precoNum * this.arrayProdutos[i].qtde;
       var totalString = totalNum.toString().split(".");
       if (totalString[1] != undefined && totalString[1] != null) {
-        td_total.innerText =
+        td_total.textContent =
           "R$" + (totalString[0] + "," + totalString[1] + "0");
       } else {
-        td_total.innerText = "R$" + (totalString[0] + ",00");
+        td_total.textContent = "R$" + (totalString[0] + ",00");
       }
 
       let imgProduto = document.createElement("img");
@@ -474,7 +476,7 @@ class Produto {
     }
   }
   enviaPedido() {
-    for (var i = 0; i < this.arrayProdutos.length; i++) {
+    outer:for (var i = 0; i < this.arrayProdutos.length; i++) {
       var img_produto = this.arrayProdutos[i].imagem;
       var nm_produto = this.arrayProdutos[i].nomeProduto;
       var qtde_produto = this.arrayProdutos[i].qtde;
@@ -496,6 +498,8 @@ class Produto {
 
       var preco_produto = this.arrayProdutos[i].preco;
 
+      var bool;
+
       var src =
         "../php/enviaPedido.php?data=" +
         dataBrasil +
@@ -513,9 +517,16 @@ class Produto {
         status_pedido +
         "&obs=" +
         obs_produto;
-      if (confirm("Tem certeza de enviar seu pedido?")) {
-        window.location.assign(src);
-      }
+        if (bool) {
+          window.location.assign(src);
+        }else{
+          if (confirm("Tem certeza de enviar seu pedido?")) {
+            bool = true;
+            window.location.assign(src);
+          }else{
+            break outer;
+          }
+        }
     }
   }
   deletar(idDeletar) {
@@ -527,7 +538,11 @@ class Produto {
         index = i;
       }
     }
-    if (confirm("Deseja realmente remover o item "+nomeDeletar+" do seu carrinho?")) {
+    if (
+      confirm(
+        "Deseja realmente remover o item " + nomeDeletar + " do seu carrinho?"
+      )
+    ) {
       this.arrayProdutos.splice(index, 1); //essa função deleta um array por meio do indice passado (i), e deletará apenas um registro
       tbody.deleteRow(index); //deleto da tabela a linha com o indice enviado
       this.btnConfereCarrinho();
@@ -558,10 +573,9 @@ class Produto {
 }
 var produto = new Produto();
 
-
-function login(){
+function login() {
   window.location = "../php/login.php";
 }
-function login_telefone(){
+function login_telefone() {
   window.location = "../php/login_telefone.php";
 }
