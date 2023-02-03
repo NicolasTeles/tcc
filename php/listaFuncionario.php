@@ -81,7 +81,7 @@ session_start();
                                     if ($_SESSION["tipoFunc"] == "ADMIN") {
                                     ?>
                                         <td><?php echo $exibir["idFuncionario"]; ?></td>
-                                        <td><a style="color: #d66f01;" href="editarFuncionario.php?idFunc=<?php echo $exibir['idFuncionario'] ?>"><i class="fa-regular fa-pen-to-square fa-lg"></i></a></td>
+                                        <td><a style="color: #d66f01;" href="mudaTipo.php?idFunc=<?php echo $exibir['idFuncionario'] ?>"><i class="fa-regular fa-pen-to-square fa-lg"></i></a></td>
                                         <td><a href="#" onclick="confirmaApagar(
                         '<?php echo $exibir['nomeFuncionario'] ?>', <?php echo $exibir['idFuncionario'] ?>)">
                                                 <i style="color: #bd2a33;" class="fa-trash fa-solid fa-lg"></i>

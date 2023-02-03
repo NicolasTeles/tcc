@@ -8,6 +8,8 @@
   unset($_SESSION["nomeFunc"]);
   unset($_SESSION["sobrenomeFunc"]);
   unset($_SESSION["emailFunc"]);
+  unset($_SESSION["idFunc"]);
+  unset($_SESSION["tipoFunc"]);
   ?>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">

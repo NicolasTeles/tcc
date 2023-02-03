@@ -57,7 +57,7 @@ session_start();
         }
 
         if (isset($_GET["idFunc"])) {
-            if ($_GET["idFunc"] == $_SESSION["iFunc"]) {
+            if ($_GET["idFunc"] == $_SESSION["idFunc"]) {
                 $idFunc = $_GET['idFunc'];
                 $consulta = "SELECT *  FROM funcionario WHERE idFuncionario = $idFunc";
                 $resultado = $conn->query($consulta);
