@@ -403,6 +403,8 @@ h1 {
   width: 47vw;
   animation: animaindex3 1000ms ease;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .accordion_header {
@@ -507,11 +509,17 @@ p {
   .accordion_content {
     justify-content: center;
     display: flex;
+    flex-direction: column;
   }
 
   .accordion_header {
     padding: 35px;
     font-size: 100%;
+  }
+  
+  .activeacc{
+    padding-bottom: 0;
+    height: auto;
   }
 
   .classcabecalho {

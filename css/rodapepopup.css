@@ -179,7 +179,6 @@ footer .caixa:nth-child(4) {
     width: 295px;
     height: 100px;
     border-radius: 10px;
-    display: inline-block;
 
 }
 
@@ -359,7 +358,7 @@ p {
     }
 
     .popup {
-        max-width: 95%;
+        max-width: 100%;
     }
 
     .popupbranco {
@@ -398,7 +397,7 @@ p {
     }
 
     .textpop {
-        width: 80vw;
+        width: 70vw;
         height: 9vh;
     }
 

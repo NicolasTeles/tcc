@@ -36,8 +36,9 @@
 
     if (isset($_POST["senhaFunc"])) {
         $senhaFunc = $_POST["senhaFunc"];
+        $idFunc = $_GET["idFunc"];
 
-        $sql = "UPDATE funcionario SET senhaFuncionario = '$senhaFunc'";
+        $sql = "UPDATE funcionario SET senhaFuncionario = '$senhaFunc' WHERE idFuncionario = $idFunc";
         if ($conn->query($sql)) {
             echo "<script>alert('Senha atualizada com êxito');</script>";
             echo "<script>window.location = 'admin.php';</script>";

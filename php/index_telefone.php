@@ -822,7 +822,7 @@
         <div class="popup-content">
           <table class="popup-tabela" border=0>
             <tr class="popuptr">
-              <td colspan=2> <img class="popup-tabimg" src="img/pao.jpg"></td>
+              <td colspan=2> <img class="popup-tabimg" src=""></td>
             </tr>
             <tr class="popuptr">
               <th colspan=2>

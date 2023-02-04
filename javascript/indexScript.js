@@ -293,7 +293,11 @@ function VerifyActive(item, content, content_actived) {
   if (content !== content_actived) {
     icon_item.textContent = "-";
     content.classList.add("activeacc");
-    content.style.height = content.scrollHeight + 10 + "px";
+    if (window.location.href.includes("telefone")) {
+      content.style.height = "auto";
+    }else{
+      content.style.height = content.scrollHeight + 10 + "px";
+    }
   }
 }
 

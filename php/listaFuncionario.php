@@ -62,6 +62,7 @@ session_start();
                             <tr>
                                 <th>Nome</th>
                                 <th>Email</th>
+                                <th>Tipo</th>
                                 <?php
                                 if ($_SESSION["tipoFunc"] == "ADMIN") {
                                     ?>
@@ -82,6 +83,7 @@ session_start();
                                     <td>
                                         <?php echo $exibir["emailFuncionario"]; ?>
                                     </td>
+                                    <td><?php echo $exibir["tipoFuncionario"]; ?></td>
                                     <?php
                                     if ($_SESSION["tipoFunc"] == "ADMIN") {
                                         ?>
