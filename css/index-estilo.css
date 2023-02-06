@@ -396,7 +396,6 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 2px;
-
 }
 
 .accordion_item {
@@ -405,6 +404,8 @@ h1 {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
 
 .accordion_header {
@@ -421,6 +422,8 @@ h1 {
   height: 0;
   transition: all .5s ease;
   font-size: 15px;
+  justify-content: center;
+  text-align: center;
 }
 
 span,

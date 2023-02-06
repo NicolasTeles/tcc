@@ -11,16 +11,17 @@ if ($resultado->num_rows <= 0) {
     echo "<script>window.location = 'loginFuncionario.php';</script>";
 } else {
     $select = $resultado->fetch_assoc();
-    if ($senha != $select["senhaFuncionario"]) {
-        echo "<script>alert('".$senha.", ".$select["senhaFuncionario"]."');</script>";
-        echo "<script>window.location = 'loginFuncionario.php';</script>";
-    } else {
+    $senhaBD = $select["senhaFuncionario"];
+    if (password_verify($senha, $senhaBD)) {
         $_SESSION["nomeFunc"] = $select["nomeFuncionario"];
         $_SESSION["sobrenomeFunc"] = $select["sobrenomeFuncionario"];
         $_SESSION["emailFunc"] = $select["emailFuncionario"];
         $_SESSION["tipoFunc"] = $select["tipoFuncionario"];
         $_SESSION["idFunc"] = $select["idFuncionario"];
         header("Location: admin.php");
+    } else {
+        echo "<script>alert('Senha Incorreta');</script>";
+        echo "<script>window.location = 'loginFuncionario.php';</script>";
     }
 }
 ?>
