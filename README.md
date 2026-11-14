@@ -1,6 +1,6 @@
 # TCC – Cardápio Virtual ("Café secreto")
 
-Sistema web de cardápio virtual para uma cafeteria, feito como **trabalho de conclusão do curso técnico em Informática**. O cliente faz o pedido pelo navegador e a equipe acompanha e atualiza o andamento em uma área restrita.
+Sistema web de cardápio virtual para uma cafeteria, feito como **trabalho de conclusão do curso técnico em Informática do IFMG – campus Ouro Branco**. O cliente faz o pedido pelo navegador e a equipe acompanha e atualiza o andamento em uma área restrita.
 
 Desenvolvido em trio por **Eduardo Octávio**, **Guilherme Victor** e **Nicolas Teles**, e aprovado como TCC.
 
