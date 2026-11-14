@@ -23,7 +23,7 @@ O projeto é um trabalho de escola, escrito com foco em funcionar, e **não est�
 - **A mudança do hash de senha ficou incompleta no banco de dados.** O código novo espera um hash, mas os arquivos `sql/` não foram atualizados: a coluna `senhaFuncionario` continua `varchar(30)`, pequena demais para um hash Argon2 (cerca de 100 caracteres), e o funcionário administrador de exemplo ainda tem a senha em texto puro. Com o `bdcadastro.sql` do repositório, esse login não funciona e senhas novas não são salvas por inteiro. Para usar, é preciso mudar a coluna para `varchar(255)` e gerar um hash para o administrador. O problema foi percebido depois e ainda **não foi corrigido**.
 - As consultas SQL são montadas concatenando texto vindo do usuário, o que permite **injeção de SQL** em vários arquivos de `php/`.
 - O acesso ao banco usa `root` sem senha (`php/conexao.php` e `php/conexaoPedido.php`).
-- Os arquivos `sql/` trazem dados de exemplo.
+- Os arquivos `sql/` trazem dados de exemplo: nomes e telefones fictícios ou de integrantes do grupo, que autorizaram o uso.
 
 Não publique este código em um servidor acessível pela internet sem corrigir esses pontos.
 
